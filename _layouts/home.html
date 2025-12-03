@@ -18,12 +18,19 @@ layout: default
     <div class="portfolio-container">
         <div class="portfolio-left">
             {% for project in site.data.portfolio %}
-            <div class="project-description" data-project-index="{{ forloop.index0 }}">
+            <div class="project-description" data-project-index="{{ forloop.index0 }}" {% if project.readme_url
+                %}data-readme-url="{{ project.readme_url }}" {% endif %}>
                 <div class="mobile-project-image">
                     <img src="{{ project.image }}" alt="{{ project.title }}">
                 </div>
                 <h2>{{ project.title }}</h2>
-                <p>{{ project.description }}</p>
+                <div class="project-description-content">
+                    {% if project.readme_url %}
+                    <p class="loading-readme">Loading description...</p>
+                    {% else %}
+                    <p>{{ project.description }}</p>
+                    {% endif %}
+                </div>
 
                 {% if project.awards %}
                 <div class="portfolio-awards">
@@ -58,6 +65,9 @@ layout: default
     </div>
 </section>
 
+<!-- Markdown Parser -->
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         const descriptions = document.querySelectorAll('.project-description');
@@ -66,6 +76,62 @@ layout: default
         console.log('Portfolio observer initialized', {
             descriptionsCount: descriptions.length,
             imagesCount: images.length
+        });
+
+        // Fetch README content for projects with readme_url
+        descriptions.forEach(desc => {
+            const readmeUrl = desc.getAttribute('data-readme-url');
+            if (readmeUrl) {
+                const contentDiv = desc.querySelector('.project-description-content');
+
+                fetch(readmeUrl)
+                    .then(response => {
+                        if (!response.ok) throw new Error('Failed to fetch README');
+                        return response.text();
+                    })
+                    .then(markdown => {
+                        // Parse markdown to HTML
+                        const html = marked.parse(markdown);
+
+                        // Extract first few paragraphs (skip title and warnings)
+                        const tempDiv = document.createElement('div');
+                        tempDiv.innerHTML = html;
+
+                        // Find the "WHAT IS THIS?" section or similar meaningful content
+                        const headings = tempDiv.querySelectorAll('h3');
+                        let contentToShow = '';
+
+                        for (let heading of headings) {
+                            if (heading.textContent.includes('WHAT IS THIS')) {
+                                // Get content after this heading until next heading
+                                let elem = heading.nextElementSibling;
+                                let paragraphs = [];
+
+                                while (elem && elem.tagName !== 'H3' && paragraphs.length < 3) {
+                                    if (elem.tagName === 'P') {
+                                        paragraphs.push(elem.outerHTML);
+                                    }
+                                    elem = elem.nextElementSibling;
+                                }
+
+                                contentToShow = paragraphs.join('');
+                                break;
+                            }
+                        }
+
+                        // Fallback: use first few paragraphs if no specific section found
+                        if (!contentToShow) {
+                            const paragraphs = Array.from(tempDiv.querySelectorAll('p')).slice(0, 2);
+                            contentToShow = paragraphs.map(p => p.outerHTML).join('');
+                        }
+
+                        contentDiv.innerHTML = contentToShow || '<p>Unable to load description.</p>';
+                    })
+                    .catch(error => {
+                        console.error('Error fetching README:', error);
+                        contentDiv.innerHTML = '<p>Unable to load description from GitHub.</p>';
+                    });
+            }
         });
 
         const observerOptions = {

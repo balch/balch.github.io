@@ -1,7 +1,8 @@
 - title: Recipes Reference App
-  description: An Android reference app demonstrating modern tech stack principles by merging Meal and Code Recipes, where the UX itself showcases the coding techniques it describes.
+  description: A reference app showcasing the latest Android architecture and patterns. Since I love a good double entendre, this app conflates Meal and Code Recipes, creating a UX to demonstrate the techniques it describes.
   image: /assets/images/portfolio/recipes-app.svg
   link: https://github.com/balch/RecipeApp
+  readme_url: https://raw.githubusercontent.com/balch/Recipes/main/README.md
   technologies:
     - Android Patterns
     - Compose
