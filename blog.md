@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Blog
+permalink: /blog/
 ---
 
 <ul class="post-list">
