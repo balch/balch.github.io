@@ -1,12 +1,48 @@
-- title: Project Alpha
-  description: A revolutionary web app that changes everything.
-  image: https://via.placeholder.com/600x400
-  link: #
-- title: Project Beta
-  description: An innovative mobile-first experience.
-  image: https://via.placeholder.com/600x400
-  link: #
-- title: Project Gamma
-  description: AI-powered analytics dashboard.
-  image: https://via.placeholder.com/600x400
-  link: #
+- title: Recipes Reference App
+  description: An Android reference app demonstrating modern tech stack principles by merging Meal and Code Recipes, where the UX itself showcases the coding techniques it describes.
+  image: /assets/images/portfolio/recipes-app.svg
+  link: https://github.com/balch/RecipeApp
+  technologies:
+    - Android Patterns
+    - Compose
+    - Hilt
+    - Nav3
+    - Ktor
+  screenshots:
+    - /assets/images/portfolio/recipes-dark-category.png
+    - /assets/images/portfolio/recipes-light-code.png
+    - /assets/images/portfolio/recipes-light-detail.png
+    - /assets/images/portfolio/recipes-dark-meal.png
+
+- title: 🤔🎭🎶 Mood Music AI
+  description: A web-based game where players guess the mood of AI-generated music. See if you and the AI are in the same emotional space.
+  image: /assets/images/portfolio/mood-music.svg
+  link: https://github.com/balch/MoodMusicAI
+  technologies:
+    - Google AI Studio
+    - Prompt Engineering
+    - AI
+  screenshots:
+    - /assets/images/portfolio/mood-mobile.png
+    - /assets/images/portfolio/mood-won.png
+    - /assets/images/portfolio/mood-prompt.png
+    - /assets/images/portfolio/mood-large.png
+
+- title: "VIBE LANDER: Retro Game Built on KMP 🎮"
+  description: A retro-style Lunar Lander game built with Junie (an AI coding partner) using Kotlin and Compose Multiplatform. Featured in Kotlin Weekly #459 and Android Weekly #676.
+  image: /assets/images/portfolio/vibe-lander.svg
+  link: https://github.com/balch/VibeLander
+  technologies:
+    - Kotlin Multiplatform
+    - Compose Multiplatform
+    - koin
+    - Junie
+    - Intellij IDEA
+  screenshots:
+    - /assets/images/portfolio/vibe-android-tablet.png
+    - /assets/images/portfolio/vibe-ios-phone.png
+    - /assets/images/portfolio/vibe-previews.png
+  featured: true
+  awards:
+    - Kotlin Weekly #459
+    - Android Weekly #676

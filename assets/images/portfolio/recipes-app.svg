@@ -1,0 +1,5 @@
+<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="400" fill="#1a1a1a"/>
+  <text x="300" y="180" font-family="Arial, sans-serif" font-size="48" fill="#8b5cf6" text-anchor="middle">Recipes</text>
+  <text x="300" y="240" font-family="Arial, sans-serif" font-size="48" fill="#8b5cf6" text-anchor="middle">Reference App</text>
+</svg>
