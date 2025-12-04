@@ -5,64 +5,66 @@ layout: default
 <!-- Bio Section -->
 <section id="bio" class="bio-section">
     <div class="bio-content">
-        <h1>{{ page.hero_title }}</h1>
-        <p>{{ page.hero_description }}</p>
-        <div class="bio-links">
-            <a href="#portfolio" class="btn">View My Work</a>
+        <h1 class="typewriter-text" data-text="Jay Balcher"></h1>
+        <h2 class="typewriter-text" data-text="Android Software Engineer" data-delay="1000"></h2>
+        <div class="bio-body typewriter-block" data-delay="2500">
+            <p>A strategic software engineer with diverse experience architecting and building robust solutions that
+                drive business growth. My expertise lies in tackling complex logic and delivering high-impact features
+                for both fast-paced startups (contributing to successful IPOs and acquisitions) and large-scale
+                corporations delivering features at a global scale. I thrive on ownership, transforming challenging
+                requirements and legacy systems into clean, maintainable code that directly contributes to business
+                value and user satisfaction.</p>
         </div>
     </div>
 </section>
+<div class="portfolio-container">
+    <div class="portfolio-left">
+        {% for project in site.data.portfolio %}
+        <div class="project-description" data-project-index="{{ forloop.index0 }}" {% if project.readme_url
+            %}data-readme-url="{{ project.readme_url }}" {% endif %}>
+            <div class="mobile-project-image">
+                <img src="{{ project.image }}" alt="{{ project.title }}">
+            </div>
+            <h2>{{ project.title }}</h2>
+            <div class="project-description-content">
+                {% if project.readme_url %}
+                <p class="loading-readme">Loading description...</p>
+                {% else %}
+                <p>{{ project.description }}</p>
+                {% endif %}
+            </div>
 
-<!-- Portfolio Section -->
-<section id="portfolio" class="portfolio-section">
-    <div class="portfolio-container">
-        <div class="portfolio-left">
+            {% if project.awards %}
+            <div class="portfolio-awards">
+                {% for award in project.awards %}
+                <span class="award-badge">🏆 {{ award }}</span>
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            {% if project.technologies %}
+            <div class="tech-tags">
+                {% for tech in project.technologies %}
+                <span class="tech-tag">{{ tech }}</span>
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            <a href="{{ project.link }}" class="btn project-link" target="_blank">View Project</a>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="portfolio-right">
+        <div class="project-images">
             {% for project in site.data.portfolio %}
-            <div class="project-description" data-project-index="{{ forloop.index0 }}" {% if project.readme_url
-                %}data-readme-url="{{ project.readme_url }}" {% endif %}>
-                <div class="mobile-project-image">
-                    <img src="{{ project.image }}" alt="{{ project.title }}">
-                </div>
-                <h2>{{ project.title }}</h2>
-                <div class="project-description-content">
-                    {% if project.readme_url %}
-                    <p class="loading-readme">Loading description...</p>
-                    {% else %}
-                    <p>{{ project.description }}</p>
-                    {% endif %}
-                </div>
-
-                {% if project.awards %}
-                <div class="portfolio-awards">
-                    {% for award in project.awards %}
-                    <span class="award-badge">🏆 {{ award }}</span>
-                    {% endfor %}
-                </div>
-                {% endif %}
-
-                {% if project.technologies %}
-                <div class="tech-tags">
-                    {% for tech in project.technologies %}
-                    <span class="tech-tag">{{ tech }}</span>
-                    {% endfor %}
-                </div>
-                {% endif %}
-
-                <a href="{{ project.link }}" class="btn project-link" target="_blank">View Project</a>
+            <div class="project-image {% if forloop.first %}active{% endif %}"
+                data-project-index="{{ forloop.index0 }}">
+                <img src="{{ project.image }}" alt="{{ project.title }}">
             </div>
             {% endfor %}
         </div>
-        <div class="portfolio-right">
-            <div class="project-images">
-                {% for project in site.data.portfolio %}
-                <div class="project-image {% if forloop.first %}active{% endif %}"
-                    data-project-index="{{ forloop.index0 }}">
-                    <img src="{{ project.image }}" alt="{{ project.title }}">
-                </div>
-                {% endfor %}
-            </div>
-        </div>
     </div>
+</div>
 </section>
 
 <!-- Markdown Parser -->
@@ -70,8 +72,136 @@ layout: default
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
+        // --- Typewriter Logic ---
+        const typewriters = document.querySelectorAll('.typewriter-text');
+        const blocks = document.querySelectorAll('.typewriter-block');
+
+        // Helper to create a character span with random jitter variables
+        const createCharSpan = (char) => {
+            const span = document.createElement('span');
+            span.textContent = char;
+            span.className = 'char';
+            // Random offset between -5px and 5px for X and Y
+            const tx = (Math.random() - 0.5) * 10;
+            const ty = (Math.random() - 0.5) * 10;
+            span.style.setProperty('--tx', `${tx}px`);
+            span.style.setProperty('--ty', `${ty}px`);
+            return span;
+        };
+
+        const typeString = async (element, text, startDelay = 0) => {
+            element.classList.add('typing'); // Make visible
+            // Clear content and add cursor
+            element.innerHTML = '';
+            const cursor = document.createElement('span');
+            cursor.className = 'cursor';
+            element.appendChild(cursor);
+
+            // Wait for start delay
+            if (startDelay > 0) await new Promise(r => setTimeout(r, startDelay));
+
+            const chars = text.split('');
+            for (let i = 0; i < chars.length; i++) {
+                const charSpan = createCharSpan(chars[i]);
+                element.insertBefore(charSpan, cursor);
+
+                // Trigger animation
+                requestAnimationFrame(() => charSpan.classList.add('visible'));
+
+                // Faster typing: 10-30ms
+                let delay = 10 + Math.random() * 20;
+
+                // Add extra delay for punctuation
+                if (['.', ',', '!', '?'].includes(chars[i])) {
+                    delay += 50;
+                }
+
+                await new Promise(r => setTimeout(r, delay));
+            }
+
+            // Remove cursor after typing is done
+            cursor.remove();
+        };
+
+        const rippleBlock = async (element, startDelay = 0) => {
+            element.classList.add('typing'); // Make visible
+            const p = element.querySelector('p');
+            if (!p) return;
+
+            // Measure and lock height to prevent layout shift
+            const originalHeight = p.offsetHeight;
+            p.style.minHeight = `${originalHeight}px`;
+
+            // Fix spacing: trim and collapse multiple spaces
+            const text = p.textContent.replace(/\s+/g, ' ').trim();
+            p.textContent = ''; // Clear it
+            p.style.opacity = 1; // Ensure container is visible
+
+            if (startDelay > 0) await new Promise(r => setTimeout(r, startDelay));
+
+            const words = text.split(' ');
+
+            // Create spans for all words first (invisible)
+            words.forEach((word, index) => {
+                const span = document.createElement('span');
+                span.textContent = word;
+                span.className = 'ripple-word';
+                // Stagger delay based on index (top-left to bottom-right flow)
+                span.style.animationDelay = `${index * 30}ms`;
+                p.appendChild(span);
+
+                // Add a real space after the word (except the last one)
+                if (index < words.length - 1) {
+                    p.appendChild(document.createTextNode(' '));
+                }
+            });
+
+            // Trigger animation class
+            requestAnimationFrame(() => {
+                const spans = p.querySelectorAll('.ripple-word');
+                spans.forEach(span => span.classList.add('visible'));
+            });
+        };
+
+        // Orchestrate the typing
+        const startTyping = async () => {
+            // Wait for fonts to ensure correct height measurement
+            await document.fonts.ready;
+
+            // Pre-calculate and lock heights for H1 and H2
+            const typewriters = document.querySelectorAll('.typewriter-text');
+            typewriters.forEach(el => {
+                const text = el.getAttribute('data-text');
+                if (text) {
+                    // Temporarily set text to measure height
+                    el.textContent = text;
+                    const height = el.offsetHeight;
+                    el.style.minHeight = `${height}px`;
+                    el.textContent = ''; // Clear again
+                }
+            });
+
+            // 1. Name
+            const nameEl = document.querySelector('.typewriter-text[data-text="Jay Balcher"]');
+            if (nameEl) await typeString(nameEl, "Jay Balcher", 200);
+
+            // 2. Title
+            const titleEl = document.querySelector('.typewriter-text[data-text="Android Software Engineer"]');
+            if (titleEl) await typeString(titleEl, "Android Software Engineer", 100);
+
+            // 3. Bio Body (Ripple Effect)
+            const bioBlock = document.querySelector('.typewriter-block');
+            if (bioBlock) await rippleBlock(bioBlock, 100);
+
+
+        };
+
+        startTyping();
+
+        // --- Existing Portfolio Observer Logic ---
         const descriptions = document.querySelectorAll('.project-description');
         const images = document.querySelectorAll('.project-image');
+
 
         console.log('Portfolio observer initialized', {
             descriptionsCount: descriptions.length,

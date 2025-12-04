@@ -52,15 +52,15 @@ h6 {
 }
 
 h1 {
-    font-size: 3.5rem;
+    font-size: clamp(2rem, 1.5rem + 3vw, 3.5rem);
 }
 
 h2 {
-    font-size: 2.5rem;
+    font-size: clamp(1.75rem, 1.25rem + 2vw, 2.5rem);
 }
 
 h3 {
-    font-size: 1.75rem;
+    font-size: clamp(1.25rem, 1rem + 1.5vw, 1.75rem);
 }
 
 p {
@@ -168,7 +168,7 @@ nav {
 }
 
 .hero h1 {
-    font-size: 4rem;
+    font-size: clamp(2rem, 1rem + 4vw, 4rem);
     margin-bottom: 1.5rem;
     background: var(--accent-gradient);
     -webkit-background-clip: text;
@@ -179,7 +179,7 @@ nav {
 }
 
 .hero p {
-    font-size: 1.25rem;
+    font-size: clamp(1rem, 0.85rem + 0.75vw, 1.25rem);
     max-width: 600px;
     margin: 0 auto 2.5rem;
     color: var(--text-secondary);
@@ -477,25 +477,176 @@ footer a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
+    text-align: left;
     padding: 2rem;
     box-sizing: border-box;
+    position: relative;
+    /* overflow: hidden; Removed to prevent clipping */
+}
+
+/* Background Image with Overlay */
+.bio-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/bio-bg.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.8;
+    /* Subtle visibility */
+    z-index: -1;
+    filter: brightness(0.6) contrast(1.2);
+}
+
+/* Gradient Overlay for better text readability */
+.bio-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(13, 13, 13, 0.7) 0%, rgba(13, 13, 13, 0.95) 100%);
+    z-index: -1;
 }
 
 .bio-content {
     max-width: 800px;
+    position: relative;
+    z-index: 1;
 }
 
 .bio-content h1 {
-    font-size: 4rem;
-    margin-bottom: 1rem;
+    font-size: clamp(3rem, 2rem + 4vw, 5rem);
+    margin-bottom: 0.5rem;
     line-height: 1.1;
+    min-height: 1.2em;
+    /* Prevent layout shift */
 }
 
-.bio-content p {
-    font-size: 1.5rem;
+.bio-content h2 {
+    font-size: clamp(1.5rem, 1rem + 2vw, 2.5rem);
+    color: var(--accent-primary);
     margin-bottom: 2rem;
-    opacity: 0.8;
+    min-height: 1.2em;
+    font-weight: 500;
+}
+
+.bio-body {
+    font-size: clamp(1.1rem, 1rem + 0.5vw, 1.3rem);
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+    color: var(--text-secondary);
+    min-height: 300px;
+    /* Prevent layout jump */
+}
+
+/* Typewriter Effects */
+.typewriter-text,
+.typewriter-block {
+    visibility: hidden;
+    /* Hide initially */
+}
+
+.typewriter-text.typing,
+.typewriter-block.typing {
+    visibility: visible;
+}
+
+.char {
+    opacity: 0;
+    display: inline-block;
+    position: relative;
+    white-space: pre-wrap;
+    /* Preserve spaces and wrapping */
+}
+
+.char.visible {
+    opacity: 1;
+    animation: jitter-in 0.1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    /* Faster animation */
+}
+
+/* Simulates the key hitting the paper with a slight random offset */
+@keyframes jitter-in {
+    0% {
+        opacity: 0;
+        transform: translate(var(--tx), var(--ty)) scale(1.2);
+        filter: blur(2px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0, 0) scale(1);
+        filter: blur(0);
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+    /* Prevent scrollbar jump */
+}
+
+/* Glass Ripple Effect */
+.ripple-word {
+    display: inline-block;
+    opacity: 0;
+    transform-origin: 50% 100%;
+    /* Removed will-change to prevent potential blurriness on some screens */
+    /* margin-right: 0.25em; Removed in favor of real spaces */
+    backface-visibility: hidden;
+    /* Sharpness fix */
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+.ripple-word.visible {
+    animation: glass-ripple 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes glass-ripple {
+    0% {
+        opacity: 0;
+        transform: translateY(20px) rotateX(45deg) scale(0.95);
+        filter: blur(8px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) rotateX(0) scale(1);
+        filter: blur(0);
+        /* Explicitly clear blur */
+    }
+}
+
+/* Cursor */
+.cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1em;
+    background-color: var(--accent-secondary);
+    margin-left: 2px;
+    vertical-align: text-bottom;
+    animation: blink 0.8s step-end infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.8s ease forwards;
 }
 
 /* Portfolio Section */
@@ -579,26 +730,6 @@ footer a:hover {
         padding: 5rem 0 3rem;
     }
 
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero p {
-        font-size: 1.1rem;
-    }
-
-    h1 {
-        font-size: 2.5rem;
-    }
-
-    h2 {
-        font-size: 2rem;
-    }
-
-    h3 {
-        font-size: 1.5rem;
-    }
-
     .nav-links {
         gap: 1.5rem;
     }
@@ -607,14 +738,7 @@ footer a:hover {
         grid-template-columns: 1fr;
     }
 
-    /* Responsive */
-    .bio-content h1 {
-        font-size: 2.5rem;
-    }
-
-    .bio-content p {
-        font-size: 1.2rem;
-    }
+    /* Responsive - clamp() handles font scaling */
 
     .portfolio-container {
         flex-direction: column;
@@ -649,9 +773,7 @@ footer a:hover {
         font-size: 0.875rem;
     }
 
-    .hero h1 {
-        font-size: 2rem;
-    }
+
 
     .btn {
         padding: 0.875rem 1.5rem;
