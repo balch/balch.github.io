@@ -108,12 +108,12 @@ layout: default
                 // Trigger animation
                 requestAnimationFrame(() => charSpan.classList.add('visible'));
 
-                // Faster typing: 10-30ms
-                let delay = 10 + Math.random() * 20;
+                // Slower typing: 50-150ms
+                let delay = 50 + Math.random() * 100;
 
                 // Add extra delay for punctuation
                 if (['.', ',', '!', '?'].includes(chars[i])) {
-                    delay += 50;
+                    delay += 150;
                 }
 
                 await new Promise(r => setTimeout(r, delay));
