@@ -4,8 +4,12 @@ layout: default
 
 <!-- Bio Section -->
 <section id="bio" class="bio-section">
+    <div class="bio-parallax-bg"></div>
     <div class="bio-content">
-        <h1 class="typewriter-text" data-text="Jay Balcher"></h1>
+        <div class="bio-header">
+            <img src="{{ '/assets/images/profile-pic.jpg' | relative_url }}" alt="Jay Balcher" class="profile-pic">
+            <h1 class="typewriter-text" data-text="Jay Balcher"></h1>
+        </div>
         <h2 class="typewriter-text" data-text="Android Software Engineer" data-delay="1000"></h2>
         <div class="bio-body typewriter-block" data-delay="2500">
             <p>A strategic software engineer with diverse experience architecting and building robust solutions that
@@ -72,6 +76,45 @@ layout: default
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
+        // --- Parallax Background Effect ---
+        const bioSection = document.getElementById('bio');
+        const parallaxBg = document.querySelector('.bio-parallax-bg');
+
+        if (bioSection && parallaxBg) {
+            const parallaxSpeed = 0.5; // Background moves 50% faster relative to scroll
+
+            const updateParallax = () => {
+                const rect = bioSection.getBoundingClientRect();
+                const sectionTop = rect.top;
+                const sectionHeight = rect.height;
+                const windowHeight = window.innerHeight;
+
+                // Only apply effect when bio section is visible
+                if (rect.bottom > 0 && rect.top < windowHeight) {
+                    // Calculate how far we've scrolled into the section
+                    const scrollProgress = (windowHeight - sectionTop) / (windowHeight + sectionHeight);
+                    // Translate the background faster (creates the parallax)
+                    const translateY = scrollProgress * sectionHeight * parallaxSpeed;
+                    parallaxBg.style.transform = `translateY(${translateY}px)`;
+                }
+            };
+
+            // Use requestAnimationFrame for smooth scrolling
+            let ticking = false;
+            window.addEventListener('scroll', () => {
+                if (!ticking) {
+                    requestAnimationFrame(() => {
+                        updateParallax();
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            }, { passive: true });
+
+            // Initial call
+            updateParallax();
+        }
+
         // --- Typewriter Logic ---
         const typewriters = document.querySelectorAll('.typewriter-text');
         const blocks = document.querySelectorAll('.typewriter-block');
@@ -181,8 +224,10 @@ layout: default
                 }
             });
 
-            // 1. Name
+            // 1. Name - also start fading the background
             const nameEl = document.querySelector('.typewriter-text[data-text="Jay Balcher"]');
+            const parallaxBg = document.querySelector('.bio-parallax-bg');
+            if (parallaxBg) parallaxBg.classList.add('faded'); // Start fade immediately
             if (nameEl) await typeString(nameEl, "Jay Balcher", 200);
 
             // 2. Title
@@ -192,7 +237,6 @@ layout: default
             // 3. Bio Body (Ripple Effect)
             const bioBlock = document.querySelector('.typewriter-block');
             if (bioBlock) await rippleBlock(bioBlock, 100);
-
 
         };
 
