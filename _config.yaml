@@ -6,7 +6,7 @@ navigation:
   - title: Home
     url: /
   - title: Portfolio
-    url: /portfolio/
+    url: /#portfolio
   - title: Blog
     url: /blog/
 social:

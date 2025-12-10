@@ -302,6 +302,22 @@ main {
     margin-bottom: 1.25rem;
 }
 
+/* Portfolio Screenshots */
+.portfolio-screenshots {
+    margin: 1rem 0;
+    position: relative;
+    height: 280px;
+}
+
+.portfolio-screenshots .screenshot-carousel {
+    height: 100%;
+}
+
+.portfolio-screenshots .screenshot {
+    max-height: 260px;
+    border-radius: 12px;
+}
+
 /* Technology Tags */
 .tech-tags {
     display: flex;
@@ -753,6 +769,54 @@ html {
     padding: 4rem 0;
 }
 
+/* Scroll Section Styles */
+.project-header {
+    padding: 4rem 0 2rem;
+}
+
+.project-header h2 {
+    font-size: clamp(1.75rem, 1.25rem + 2vw, 2.5rem);
+    margin-bottom: 1rem;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.project-footer {
+    padding: 2rem 0 4rem;
+}
+
+.scroll-section {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 4rem 0;
+    border-bottom: 1px solid rgba(139, 92, 246, 0.15);
+}
+
+.scroll-section:last-of-type {
+    border-bottom: none;
+}
+
+.scroll-section-title {
+    font-size: clamp(1.25rem, 1rem + 1vw, 1.5rem);
+    color: var(--accent-secondary);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.scroll-section-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+}
+
+.scroll-section-content p {
+    margin-bottom: 1.5rem;
+}
+
 .project-images {
     width: 100%;
     height: 100%;
@@ -770,19 +834,82 @@ html {
     width: 100%;
     max-height: 80vh;
     opacity: 0;
-    transition: opacity 0.5s ease-in-out;
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s;
     pointer-events: none;
+    z-index: 0;
 }
 
 .project-image.active {
     opacity: 1;
+    visibility: visible;
+    z-index: 1;
 }
 
 .project-image img {
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 400px;
+    max-height: 70vh;
+    width: auto;
+    height: auto;
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Screenshot Carousel */
+.screenshot-carousel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.screenshot-carousel .screenshot {
+    position: absolute;
+    max-width: 280px;
+    max-height: 70vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.screenshot-carousel .screenshot.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+}
+
+.carousel-indicators .indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.carousel-indicators .indicator.active {
+    background: var(--accent-primary);
+    box-shadow: 0 0 10px rgba(139, 92, 246, 0.6);
+}
+
+.carousel-indicators .indicator:hover {
+    background: rgba(255, 255, 255, 0.6);
 }
 
 /* Responsive Design */
@@ -829,6 +956,47 @@ html {
     .mobile-project-image {
         display: block;
         /* Show on mobile */
+    }
+
+    /* Scroll section mobile styles - text wraps around image */
+    .scroll-section {
+        min-height: auto;
+        padding: 2rem 0;
+        overflow: hidden;
+        /* Contain floats */
+    }
+
+    .scroll-section .mobile-project-image {
+        display: block !important;
+        float: right !important;
+        width: 40% !important;
+        margin: 0.5rem 0 1rem 1rem !important;
+        box-shadow: none !important;
+    }
+
+    .scroll-section .mobile-project-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .scroll-section-title {
+        font-size: 1.1rem;
+        overflow: hidden;
+        /* Don't wrap around image */
+    }
+
+    .scroll-section-content {
+        font-size: 1rem;
+    }
+
+    .project-header {
+        padding: 2rem 0 1rem;
+    }
+
+    .project-footer {
+        padding: 1rem 0 2rem;
     }
 }
 

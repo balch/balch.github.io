@@ -23,54 +23,130 @@ layout: default
         </div>
     </div>
 </section>
-<div class="portfolio-container">
-    <div class="portfolio-left">
-        {% for project in site.data.portfolio %}
-        <div class="project-description" data-project-index="{{ forloop.index0 }}" {% if project.readme_url
-            %}data-readme-url="{{ project.readme_url }}" {% endif %}>
-            <div class="mobile-project-image">
-                <img src="{{ project.image }}" alt="{{ project.title }}">
-            </div>
-            <h2>{{ project.title }}</h2>
-            <div class="project-description-content">
-                {% if project.readme_url %}
-                <p class="loading-readme">Loading description...</p>
-                {% else %}
-                <p>{{ project.description }}</p>
+<section id="portfolio" class="portfolio-section">
+    <div class="portfolio-container">
+        <div class="portfolio-left">
+            {% for project in site.data.portfolio %}
+            {% if project.scroll_sections %}
+            <!-- Project with scroll sections -->
+            <div class="project-header" data-project-index="{{ forloop.index0 }}">
+                <h2>{{ project.title }}</h2>
+                {% if project.awards %}
+                <div class="portfolio-awards">
+                    {% for award in project.awards %}
+                    <span class="award-badge">🏆 {{ award }}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                {% if project.technologies %}
+                <div class="tech-tags">
+                    {% for tech in project.technologies %}
+                    <span class="tech-tag">{{ tech }}</span>
+                    {% endfor %}
+                </div>
                 {% endif %}
             </div>
-
-            {% if project.awards %}
-            <div class="portfolio-awards">
-                {% for award in project.awards %}
-                <span class="award-badge">🏆 {{ award }}</span>
-                {% endfor %}
-            </div>
-            {% endif %}
-
-            {% if project.technologies %}
-            <div class="tech-tags">
-                {% for tech in project.technologies %}
-                <span class="tech-tag">{{ tech }}</span>
-                {% endfor %}
-            </div>
-            {% endif %}
-
-            <a href="{{ project.link }}" class="btn project-link" target="_blank">View Project</a>
-        </div>
-        {% endfor %}
-    </div>
-    <div class="portfolio-right">
-        <div class="project-images">
-            {% for project in site.data.portfolio %}
-            <div class="project-image {% if forloop.first %}active{% endif %}"
-                data-project-index="{{ forloop.index0 }}">
-                <img src="{{ project.image }}" alt="{{ project.title }}">
+            {% for section in project.scroll_sections %}
+            <div class="scroll-section" data-project-index="{{ forloop.parentloop.index0 }}"
+                data-section-index="{{ forloop.index0 }}">
+                <div class="mobile-project-image">
+                    <img src="{{ section.image }}" alt="{{ section.title }}">
+                </div>
+                <h3 class="scroll-section-title">{{ section.title }}</h3>
+                <div class="scroll-section-content">
+                    {{ section.content | markdownify }}
+                </div>
             </div>
             {% endfor %}
+            <div class="project-footer" data-project-index="{{ forloop.index0 }}">
+                <a href="{{ project.link }}" class="btn project-link" target="_blank">View Project</a>
+            </div>
+            {% else %}
+            <!-- Original project card style -->
+            <div class="project-description" data-project-index="{{ forloop.index0 }}" {% if project.readme_url
+                %}data-readme-url="{{ project.readme_url }}" {% endif %}>
+                <div class="mobile-project-image">
+                    {% if project.screenshots and project.screenshots.size > 0 %}
+                    <div class="screenshot-carousel">
+                        {% for screenshot in project.screenshots %}
+                        <img src="{{ screenshot }}" alt="{{ project.title }} screenshot {{ forloop.index }}"
+                            class="screenshot {% if forloop.first %}active{% endif %}">
+                        {% endfor %}
+                        <div class="carousel-indicators">
+                            {% for screenshot in project.screenshots %}
+                            <span class="indicator {% if forloop.first %}active{% endif %}"
+                                data-index="{{ forloop.index0 }}"></span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% else %}
+                    <img src="{{ project.image }}" alt="{{ project.title }}">
+                    {% endif %}
+                </div>
+                <h2>{{ project.title }}</h2>
+                <div class="project-description-content">
+                    {% if project.readme_url %}
+                    <p class="loading-readme">Loading description...</p>
+                    {% else %}
+                    <p>{{ project.description }}</p>
+                    {% endif %}
+                </div>
+                {% if project.awards %}
+                <div class="portfolio-awards">
+                    {% for award in project.awards %}
+                    <span class="award-badge">🏆 {{ award }}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                {% if project.technologies %}
+                <div class="tech-tags">
+                    {% for tech in project.technologies %}
+                    <span class="tech-tag">{{ tech }}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                <a href="{{ project.link }}" class="btn project-link" target="_blank">View Project</a>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+        <div class="portfolio-right">
+            <div class="project-images">
+                {% for project in site.data.portfolio %}
+                {% if project.scroll_sections %}
+                <!-- Images for scroll sections -->
+                {% for section in project.scroll_sections %}
+                <div class="project-image {% if forloop.parentloop.first and forloop.first %}active{% endif %}"
+                    data-project-index="{{ forloop.parentloop.index0 }}" data-section-index="{{ forloop.index0 }}">
+                    <img src="{{ section.image }}" alt="{{ section.title }}">
+                </div>
+                {% endfor %}
+                {% else %}
+                <!-- Original carousel style -->
+                <div class="project-image {% if forloop.first %}active{% endif %}"
+                    data-project-index="{{ forloop.index0 }}">
+                    {% if project.screenshots and project.screenshots.size > 0 %}
+                    <div class="screenshot-carousel">
+                        {% for screenshot in project.screenshots %}
+                        <img src="{{ screenshot }}" alt="{{ project.title }} screenshot {{ forloop.index }}"
+                            class="screenshot {% if forloop.first %}active{% endif %}">
+                        {% endfor %}
+                        <div class="carousel-indicators">
+                            {% for screenshot in project.screenshots %}
+                            <span class="indicator {% if forloop.first %}active{% endif %}"
+                                data-index="{{ forloop.index0 }}"></span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% else %}
+                    <img src="{{ project.image }}" alt="{{ project.title }}">
+                    {% endif %}
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
         </div>
     </div>
-</div>
 </section>
 
 <!-- Markdown Parser -->
@@ -254,11 +330,12 @@ layout: default
 
         // --- Existing Portfolio Observer Logic ---
         const descriptions = document.querySelectorAll('.project-description');
+        const scrollSections = document.querySelectorAll('.scroll-section');
         const images = document.querySelectorAll('.project-image');
-
 
         console.log('Portfolio observer initialized', {
             descriptionsCount: descriptions.length,
+            scrollSectionsCount: scrollSections.length,
             imagesCount: images.length
         });
 
@@ -324,17 +401,64 @@ layout: default
             threshold: [0, 0.5, 1]
         };
 
-        const observer = new IntersectionObserver((entries) => {
+        // Observer for scroll sections (with section-index)
+        // Track which sections are currently visible
+        const visibleSections = new Set();
+
+        const scrollSectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const projectIndex = entry.target.getAttribute('data-project-index');
+                const sectionIndex = entry.target.getAttribute('data-section-index');
+                const sectionKey = `${projectIndex}-${sectionIndex}`;
+
+                if (entry.isIntersecting) {
+                    visibleSections.add(sectionKey);
+                    console.log('Scroll section entering:', projectIndex, sectionIndex);
+
+                    // Update active image - match both project and section index
+                    images.forEach(img => {
+                        const imgProjectIndex = img.getAttribute('data-project-index');
+                        const imgSectionIndex = img.getAttribute('data-section-index');
+
+                        if (imgProjectIndex === projectIndex && imgSectionIndex === sectionIndex) {
+                            img.classList.add('active');
+                        } else if (imgSectionIndex !== null) {
+                            // Only remove active from scroll-section images
+                            img.classList.remove('active');
+                        }
+                    });
+                } else {
+                    visibleSections.delete(sectionKey);
+                    console.log('Scroll section leaving:', projectIndex, sectionIndex);
+
+                    // If no scroll sections visible, hide all scroll-section images
+                    if (visibleSections.size === 0) {
+                        images.forEach(img => {
+                            if (img.getAttribute('data-section-index') !== null) {
+                                img.classList.remove('active');
+                            }
+                        });
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Observer for legacy project descriptions (without section-index)
+        const projectObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const index = entry.target.getAttribute('data-project-index');
                     console.log('Project intersecting:', index, 'ratio:', entry.intersectionRatio);
 
-                    // Update active image
+                    // Update active image - match project index only (no section-index)
                     images.forEach(img => {
-                        if (img.getAttribute('data-project-index') === index) {
+                        const imgProjectIndex = img.getAttribute('data-project-index');
+                        const imgSectionIndex = img.getAttribute('data-section-index');
+
+                        // Only match images without section-index (legacy style)
+                        if (imgSectionIndex === null && imgProjectIndex === index) {
                             img.classList.add('active');
-                        } else {
+                        } else if (imgSectionIndex === null) {
                             img.classList.remove('active');
                         }
                     });
@@ -342,9 +466,56 @@ layout: default
             });
         }, observerOptions);
 
+        // Observe scroll sections
+        scrollSections.forEach(section => {
+            scrollSectionObserver.observe(section);
+            console.log('Observing scroll section:', section.getAttribute('data-project-index'), section.getAttribute('data-section-index'));
+        });
+
+        // Observe legacy project descriptions
         descriptions.forEach(desc => {
-            observer.observe(desc);
+            projectObserver.observe(desc);
             console.log('Observing:', desc.getAttribute('data-project-index'));
+        });
+
+        // --- Screenshot Carousel Auto-rotation ---
+        const carousels = document.querySelectorAll('.screenshot-carousel');
+
+        carousels.forEach(carousel => {
+            const screenshots = carousel.querySelectorAll('.screenshot');
+            const indicators = carousel.querySelectorAll('.indicator');
+
+            if (screenshots.length <= 1) return;
+
+            let currentIndex = 0;
+            let intervalId = null;
+
+            const showScreenshot = (index) => {
+                screenshots.forEach((s, i) => {
+                    s.classList.toggle('active', i === index);
+                });
+                indicators.forEach((ind, i) => {
+                    ind.classList.toggle('active', i === index);
+                });
+                currentIndex = index;
+            };
+
+            const nextScreenshot = () => {
+                const next = (currentIndex + 1) % screenshots.length;
+                showScreenshot(next);
+            };
+
+            // Start auto-rotation
+            intervalId = setInterval(nextScreenshot, 3000);
+
+            // Click on indicators to change
+            indicators.forEach((ind, i) => {
+                ind.addEventListener('click', () => {
+                    clearInterval(intervalId);
+                    showScreenshot(i);
+                    intervalId = setInterval(nextScreenshot, 3000);
+                });
+            });
         });
     });
 </script>

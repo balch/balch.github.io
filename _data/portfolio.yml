@@ -1,19 +1,37 @@
 - title: Recipes Reference App
-  description: A reference app showcasing the latest Android architecture and patterns. Since I love a good double entendre, this app conflates Meal and Code Recipes, creating a UX to demonstrate the techniques it describes.
   image: /assets/images/portfolio/recipes-app.svg
-  link: https://github.com/balch/RecipeApp
-  readme_url: https://raw.githubusercontent.com/balch/Recipes/main/README.md
+  link: https://github.com/balch/Recipes
   technologies:
     - Android Patterns
     - Compose
-    - Hilt
+    - Metro DI
     - Nav3
     - Ktor
-  screenshots:
-    - /assets/images/portfolio/recipes-dark-category.png
-    - /assets/images/portfolio/recipes-light-code.png
-    - /assets/images/portfolio/recipes-light-detail.png
-    - /assets/images/portfolio/recipes-dark-meal.png
+  scroll_sections:
+    - title: "What Is This?"
+      image: /assets/images/portfolio/recipes/recipes-category.png
+      content: |
+        Keeping up with the latest Android trends is always a challenge. One of the techniques I use is to always have a reference app handy. These apps should showcase the latest Android architecture and patterns for UI and business logic separation, navigation UX and theming, data and image retrieval, threading, dependency injection, and testing.
+        
+        The latest incarnation of my reference app is called Recipes. Since I love a good double entendre, this app conflates Meal and Code Recipes, creating a UX to demonstrate the techniques it describes. The goal was to brush up on the latest Android tech stack components and pack as many features as I could into an app created over a few weekends of watching sports on the couch.
+    - title: "Meal Recipes"
+      image: /assets/images/portfolio/recipes/recipes-detail.png
+      content: |
+        One data source for this app is from the excellent (and free) TheMealDB which has a nice amount of categorized data with textual and visual information describing a semi-complex process—aka, a Meal Recipe. The app features beautiful category and cuisine browsing, detailed ingredient lists with measurements, and step-by-step cooking instructions.
+        
+        The UI showcases Material 3 design with adaptive layouts for phones, tablets, and foldables. Shared element transitions create fluid navigation between list and detail views. The data layer uses Ktor for HTTP client operations with proper caching and offline support via SQLDelight.
+    - title: "Code Recipes"
+      image: /assets/images/portfolio/recipes/lightmode-code.png
+      content: |
+        The other data source was my brain—describing the code used to build the app in the form of Code Recipes (sprinkled in amongst the Meal Recipes). These recipes mostly originate from Android community sources and describe the wiring and plumbing used to create a visually compelling Android Application.
+        
+        Code Recipes cover topics like Metro dependency injection patterns, Compose navigation with Nav3, shared element transitions, adaptive layouts with Compose Material 3 Adaptive, and integration with SQLDelight for offline-first architecture. Each recipe includes markdown-formatted descriptions rendered beautifully with syntax highlighting.
+    - title: "AI Agent Integration"
+      image: /assets/images/portfolio/recipes/recipes-agent.png
+      content: |
+        This app integrates Koog AI Agents to provide an intelligent cooking assistant powered by Google's Gemini models. The AI agent can help users with recipe suggestions, cooking tips, and navigation through the app. Features include AI-powered chat for interactive cooking assistance, multi-model support for Gemini 2.5 Pro/Flash/Lite, and advanced tool integration for contextual responses.
+        
+        Another reason this app came together so nicely is due to the plethora of free and easy-to-use Android Tools and Libraries supplied by both Big-Biz (hello Google and JetBrains) and the Android Community ICs toiling away on GitHub and Medium. Junie and Claude actually did a lot of work, and came through in frontend design, dependency management, and kicking off new features.
 
 - title: 🤔🎭🎶 Mood Music AI
   description: A web-based game where players guess the mood of AI-generated music. See if you and the AI are in the same emotional space.
