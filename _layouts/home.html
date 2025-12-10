@@ -211,15 +211,17 @@ layout: default
             // Wait for fonts to ensure correct height measurement
             await document.fonts.ready;
 
-            // Pre-calculate and lock heights for H1 and H2
+            // Pre-calculate and lock dimensions for H1 and H2 to prevent flex layout shift
             const typewriters = document.querySelectorAll('.typewriter-text');
             typewriters.forEach(el => {
                 const text = el.getAttribute('data-text');
                 if (text) {
-                    // Temporarily set text to measure height
+                    // Temporarily set text to measure dimensions
                     el.textContent = text;
                     const height = el.offsetHeight;
+                    const width = el.offsetWidth;
                     el.style.minHeight = `${height}px`;
+                    el.style.minWidth = `${width}px`;
                     el.textContent = ''; // Clear again
                 }
             });
