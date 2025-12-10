@@ -34,18 +34,32 @@
         Another reason this app came together so nicely is due to the plethora of free and easy-to-use Android Tools and Libraries supplied by both Big-Biz (hello Google and JetBrains) and the Android Community ICs toiling away on GitHub and Medium. Junie and Claude actually did a lot of work, and came through in frontend design, dependency management, and kicking off new features.
 
 - title: 🤔🎭🎶 Mood Music AI
-  description: A web-based game where players guess the mood of AI-generated music. See if you and the AI are in the same emotional space.
   image: /assets/images/portfolio/mood-music.svg
-  link: https://github.com/balch/MoodMusicAI
+  link: https://github.com/balch/MoodMusic
   technologies:
-    - Google AI Studio
-    - Prompt Engineering
-    - AI
-  screenshots:
-    - /assets/images/portfolio/mood-mobile.png
-    - /assets/images/portfolio/mood-won.png
-    - /assets/images/portfolio/mood-prompt.png
-    - /assets/images/portfolio/mood-large.png
+    - Kotlin Multiplatform
+    - Compose Multiplatform
+    - Lyria Realtime
+    - Gemini API
+  scroll_sections:
+    - title: "The Game"
+      image: /assets/images/portfolio/mood-music/1-initial_game_display.png
+      content: |
+        Mood Music is a game where the user guesses what kind of mood the music they are hearing represents. Players are presented with colorful buttons, each assigned a secret mood. Press a button to hear AI-generated music, then guess which emotion it evokes.
+        
+        The game features multiple difficulty modes. In Easy mode, only the moods used in that round appear in the dropdown. Hard mode tests your emotional IQ by showing all possible moods. Track your attempts and compete for the lowest guess count!
+    - title: "Making Your Guess"
+      image: /assets/images/portfolio/mood-music/2-after_user_click_button.png
+      content: |
+        When you press a button, the AI springs into action, generating unique music based on the button's hidden mood. The mood selector automatically opens, presenting you with emoji-labeled options like 🎉 Happy, 🌧️ Sad, or ⚡️ Energetic.
+        
+        Each button has a randomly assigned icon with its own distinctive color palette, creating a visually engaging experience. The music stops when you make your selection, building anticipation for the reveal!
+    - title: "The Reveal"
+      image: /assets/images/portfolio/mood-music/3-after_user_hits_reveal_button.png
+      content: |
+        Once all buttons have guesses, the Reveal Button activates. Correct guesses light up green, while incorrect ones flash red—keep trying until all buttons are green to win! Hit the Victory button to hear an AI-generated celebration song.
+        
+        Built on Kotlin Multiplatform with Compose Multiplatform UI, the app uses Google's Lyria Realtime for AI music generation. Each mood has carefully crafted prompts—from the "intense, aggressive Heavy Metal" of Angry to the "calm, peaceful flowing ambient textures" of Relaxed.
 
 - title: "VIBE LANDER: Retro Game Built on KMP 🎮"
   description: A retro-style Lunar Lander game built with Junie (an AI coding partner) using Kotlin and Compose Multiplatform. Featured in Kotlin Weekly #459 and Android Weekly #676.
