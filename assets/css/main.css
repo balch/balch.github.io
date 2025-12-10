@@ -619,10 +619,8 @@ footer a:hover {
 .bio-body {
     font-size: clamp(1.1rem, 1rem + 0.5vw, 1.3rem);
     line-height: 1.8;
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.5rem;
     color: var(--text-secondary);
-    min-height: 300px;
-    /* Prevent layout jump */
 }
 
 /* Typewriter Effects */
@@ -635,6 +633,20 @@ footer a:hover {
 .typewriter-text.typing,
 .typewriter-block.typing {
     visibility: visible;
+}
+
+/* Disclosure Block - Fades in after typewriter completes */
+.disclosure-block,
+.into-block {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.disclosure-block.visible,
+.into-block.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .char {
