@@ -968,6 +968,30 @@ html {
     .mobile-project-image {
         display: block;
         /* Show on mobile */
+        float: right;
+        width: 40%;
+        margin: 0 0 1rem 1rem;
+    }
+
+    .mobile-project-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .project-description {
+        overflow: hidden;
+        /* Contain floats */
+    }
+
+    .project-description h2 {
+        clear: none;
+    }
+
+    .project-description .project-description-content {
+        overflow: hidden;
+        /* Text wraps around floated image */
     }
 
     /* Scroll section mobile styles - text wraps around image */
@@ -982,8 +1006,12 @@ html {
         display: block !important;
         float: right !important;
         width: 40% !important;
-        margin: 0.5rem 0 1rem 1rem !important;
+        margin: 0 0 1rem 1rem !important;
         box-shadow: none !important;
+        /* Use shape-outside to create text wrapping above the image */
+        shape-outside: inset(6rem 0 0 0);
+        /* Add padding at top to match the shape offset */
+        padding-top: 6rem;
     }
 
     .scroll-section .mobile-project-image img {
@@ -995,12 +1023,12 @@ html {
 
     .scroll-section-title {
         font-size: 1.1rem;
-        overflow: hidden;
-        /* Don't wrap around image */
     }
 
     .scroll-section-content {
         font-size: 1rem;
+        overflow: hidden;
+        /* Contain the floated image */
     }
 
     .project-header {

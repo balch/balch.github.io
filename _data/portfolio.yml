@@ -8,7 +8,7 @@
     - Nav3
     - Ktor
   scroll_sections:
-    - title: "What Is This?"
+    - title: "Reference App?"
       image: /assets/images/portfolio/recipes/recipes-category.png
       content: |
         Keeping up with the latest Android trends is always a challenge. One of the techniques I use is to always have a reference app handy. These apps should showcase the latest Android architecture and patterns for UI and business logic separation, navigation UX and theming, data and image retrieval, threading, dependency injection, and testing.
