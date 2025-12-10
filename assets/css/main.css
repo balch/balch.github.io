@@ -476,9 +476,9 @@ footer a:hover {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     text-align: left;
-    padding: 2rem;
+    padding: 2rem 2rem 2rem 4rem;
     box-sizing: border-box;
     position: relative;
     overflow: hidden;
@@ -494,16 +494,21 @@ footer a:hover {
     background-image: url('../images/sharky-bg.jpg');
     background-size: cover;
     background-position: center;
-    opacity: 0.55;
+    opacity: 0;
     z-index: -2;
     filter: brightness(0.65) contrast(1.1) saturate(0.9);
     will-change: transform, opacity;
-    transition: opacity 2.5s cubic-bezier(0.7, 0, 1, 0.5);
-    transition-delay: 350ms;
+    transition: opacity 0.5s ease-out;
+}
+
+.bio-parallax-bg.visible {
+    opacity: 0.62;
 }
 
 .bio-parallax-bg.faded {
     opacity: 0.4;
+    transition: opacity 2.5s cubic-bezier(0.7, 0, 1, 0.5);
+    transition-delay: 350ms;
 }
 
 /* Gradient Overlay for better text readability */
@@ -529,7 +534,12 @@ footer a:hover {
     display: flex;
     align-items: center;
     gap: 1.5rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.bio-header-text {
+    display: flex;
+    flex-direction: column;
 }
 
 .profile-pic {
@@ -569,6 +579,8 @@ footer a:hover {
 
     .bio-section {
         text-align: center;
+        justify-content: center;
+        padding: 2rem;
     }
 }
 
@@ -583,7 +595,7 @@ footer a:hover {
 .bio-content h2 {
     font-size: clamp(1.5rem, 1rem + 2vw, 2.5rem);
     color: var(--accent-primary);
-    margin-bottom: 2rem;
+    margin-bottom: 0.5rem;
     min-height: 1.2em;
     font-weight: 500;
 }

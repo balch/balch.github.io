@@ -8,9 +8,11 @@ layout: default
     <div class="bio-content">
         <div class="bio-header">
             <img src="{{ '/assets/images/profile-pic.jpg' | relative_url }}" alt="Jay Balcher" class="profile-pic">
-            <h1 class="typewriter-text" data-text="Jay Balcher"></h1>
+            <div class="bio-header-text">
+                <h1 class="typewriter-text" data-text="Jay Balcher"></h1>
+                <h2 class="typewriter-text" data-text="Android Software Engineer" data-delay="1000"></h2>
+            </div>
         </div>
-        <h2 class="typewriter-text" data-text="Android Software Engineer" data-delay="1000"></h2>
         <div class="bio-body typewriter-block" data-delay="2500">
             <p>A strategic software engineer with diverse experience architecting and building robust solutions that
                 drive business growth. My expertise lies in tackling complex logic and delivering high-impact features
@@ -226,10 +228,16 @@ layout: default
                 }
             });
 
-            // 1. Name - also start fading the background
-            const nameEl = document.querySelector('.typewriter-text[data-text="Jay Balcher"]');
+            // 0. First fade in the background image so user can appreciate it
             const parallaxBg = document.querySelector('.bio-parallax-bg');
-            if (parallaxBg) parallaxBg.classList.add('faded'); // Start fade immediately
+            if (parallaxBg) {
+                parallaxBg.classList.add('visible');
+                await new Promise(r => setTimeout(r, 500)); // Wait for 0.5s fade-in
+            }
+
+            // 1. Name - start fading the background to dimmer state
+            const nameEl = document.querySelector('.typewriter-text[data-text="Jay Balcher"]');
+            if (parallaxBg) parallaxBg.classList.add('faded'); // Start dim transition
             if (nameEl) await typeString(nameEl, "Jay Balcher", 200);
 
             // 2. Title
