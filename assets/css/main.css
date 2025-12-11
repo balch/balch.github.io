@@ -382,8 +382,8 @@ main {
 
 /* Portfolio Section Header */
 .portfolio-section-header {
-    padding: 2rem 0 1rem;
-    margin-bottom: 1rem;
+    padding: 1rem 0 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
 .portfolio-section-header h2 {
@@ -835,16 +835,24 @@ html {
 
 /* Scroll Section Styles */
 .project-header {
-    padding: 4rem 0 2rem;
+    padding: 1rem 0 0.5rem;
 }
 
 .project-header h2 {
     font-size: clamp(1.75rem, 1.25rem + 2vw, 2.5rem);
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     background: var(--accent-gradient);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+/* Normalize emoji display in project headers */
+.project-header h2 .emoji,
+.project-header h2 img.emoji {
+    height: 1em;
+    width: 1em;
+    vertical-align: -0.1em;
 }
 
 .project-footer {
@@ -852,11 +860,10 @@ html {
 }
 
 .scroll-section {
-    min-height: 90vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 4rem 0;
+    padding: 1.5rem 0;
     border-bottom: 1px solid rgba(139, 92, 246, 0.15);
 }
 
@@ -867,7 +874,7 @@ html {
 .scroll-section-title {
     font-size: clamp(1.25rem, 1rem + 1vw, 1.5rem);
     color: var(--accent-secondary);
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.75rem;
     font-weight: 600;
 }
 
@@ -1084,7 +1091,7 @@ html {
     }
 
     .project-header {
-        padding: 2rem 0 1rem;
+        padding: 0.5rem 0;
     }
 
     .project-footer {

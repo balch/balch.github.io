@@ -33,7 +33,7 @@
         
         Another reason this app came together so nicely is due to the plethora of free and easy-to-use Android Tools and Libraries supplied by both Big-Biz (hello Google and JetBrains) and the Android Community ICs toiling away on GitHub and Medium. Junie and Claude actually did a lot of work, and came through in frontend design, dependency management, and kicking off new features.
 
-- title: 🤔🎭🎶 Mood Music AI
+- title: Mood Music AI
   image: /assets/images/portfolio/mood-music.svg
   link: https://github.com/balch/MoodMusic
   technologies:
