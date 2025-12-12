@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: " en" }}">
+<html lang="{{ site.lang | default: 'en' }}">
 
 <head>
   <meta charset="UTF-8">
@@ -10,14 +10,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Outfit:wght@500;700&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
 </head>
 
 <body>
   <header>
     <div class="container">
       <nav>
-        <a href="{{ "/" | relative_url }}" class="logo">{{ site.title }}</a>
+        <a href="{{ '/' | relative_url }}" class="logo">{{ site.title }}</a>
         <ul class="nav-links">
           {% for item in site.navigation %}
           <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
@@ -34,6 +34,9 @@
   <footer>
     <div class="container">
       <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.</p>
+      <p class="footer-subtle-link">
+        <a href="{{ '/employment/' | relative_url }}">Job Highlights</a>
+      </p>
       <p>
         {% if site.social.github %}
         <a href="https://github.com/{{ site.social.github }}">GitHub</a>
@@ -44,6 +47,7 @@
       </p>
     </div>
   </footer>
+
 </body>
 
 </html>

@@ -1,0 +1,101 @@
+# Print Resume Data
+personal_info:
+  name: "Jay Balcher"
+  title: "Android Software Engineer"
+  email: "jay@balcher.com"
+  linkedin: "linkedin.com/in/balch"
+  github: "github.com/balch"
+
+summary: "Principal Android Engineer with deep expertise in media playback, system architecture, and team leadership. Passionate about building high-quality, scalable mobile applications and mentoring engineering teams."
+
+# Employment History
+experience:
+  - company: "The Walt Disney Company"
+    location: "Remote"
+    period: "Feb 2018 - Present (7+ years)"
+    awards:
+      - "2025 Voted \"Coach\" by Android Team"
+      - "2023 Key Employee Bonus"
+    roles:
+      - title: "Principal, Disney+ Android Playback"
+        period: "Feb 2023 - Present"
+        details:
+          - subject: "Android Playback UX Feature Delivery (Disney+)"
+            points:
+              - "Led the delivery of pivotal Disney+ features across multiple high-impact projects, including integrating ESPN and Hulu content with new live events and functionality for linear channels."
+              - "Engineered solutions to meet stringent product and legal requirements for a global user base, including support for regional ratings display standards and country-specific functionality."
+              - "Enhanced and maintained offline playback capabilities for Disney+, Hulu, and ESPN content, increasing user accessibility and engagement."
+          - subject: "System Architecture & Modernization"
+            points:
+              - "Architected and shipped a scalable, flexible, and stable redesign of the Disney+ Playback UX layer, significantly improving maintainability and performance."
+              - "Spearheaded an iterative development and incremental refactoring strategy, enabling the seamless integration of new features while modernizing the legacy codebase."
+              - "Designed a modular MVVM architecture that encapsulates complex business logic from multiple data sources, creating a more extensible and resilient application."
+              - "Orchestrated a resource-efficient system to manage multiple simultaneous players across diverse scenarios by leveraging the native UI infrastructure."
+          - subject: "Leadership & Innovation"
+            points:
+              - "Conducted technical interviews for multiple positions and teams."
+              - "Leveraged AI to rapidly prototype, validate, and refine new engineering concepts."
+              - "Participated in and promoted Hackathons demonstrating wearable integration."
+      - title: "Engineering Manager, Disney+"
+        period: "Feb 2022 - Feb 2023"
+        details:
+          - subject: "Android Playback Team - USA"
+            points:
+              - "Led a small team of Android engineers in delivering key features."
+              - "30% Mentoring · 60% Android Development · 10% People Management"
+      - title: "Senior Android Engineer, Disney+"
+        period: "Dec 2020 - Feb 2022"
+        details:
+          - "Developed and shipped key features for the Disney+ Playback UX."
+          - "Contributed to the successful launch of Star+ in Latin America, adapting core playback features for the new market."
+      - title: "NHL Android Lead"
+        period: "Feb 2018 - Dec 2020"
+        details:
+          - "Led a distributed engineering team through the full development lifecycle of the official NHL app for Android Mobile, Fire Tablet, Android TV, and Fire TV platforms."
+          - subject: "Feature Highlights"
+            points:
+              - "Engineered a new, fully native GameCenter experience to boost fan engagement."
+              - "Implemented 'GameFlow,' a real-time visualization of in-game momentum."
+              - "Created an engaging intermission animation visualizing the ice resurfacer's progress."
+
+# Print-only sections
+skills:
+  - category: "Architecture Principles"
+    items:
+      - "Iterative Development"
+      - "Incremental Refactor"
+      - "UI & Business Logic Encapsulation (MVVM, UDF)"
+      - "Separation of Concerns / Single Responsibility Principle"
+  - category: "Frameworks & Libraries"
+    items:
+      - "Android/Kotlin/Compose"
+      - "Kotlin & Compose Multiplatform"
+      - "Coroutines"
+      - "Dagger/Hilt"
+
+projects:
+  - name: "Recipes Reference App"
+    description: "An Android reference app demonstrating modern tech stack principles by merging Meal and Code Recipes, where the UX itself showcases the coding techniques it describes."
+    technologies:
+      - "Android Patterns"
+      - "Compose"
+      - "Metro"
+      - "Nav3"
+      - "Ktor"
+      - "Koog"
+    link: "github.com/balch/Recipes"
+  - name: "Mood Music AI"
+    description: "A web-based game where players guess the mood of AI-generated music. See if you and the AI are in the same emotional space."
+    technologies:
+      - "Google AI Studio"
+      - "Prompt Engineering"
+      - "AI"
+    link: "ai.studio/apps/drive/1zQoJMCepkacYnuYiGPXW2xO87LtYM_1G"
+  - name: "VIBE LANDER"
+    description: "A retro-style Lunar Lander game built with Junie (an AI coding partner) using Kotlin and Compose Multiplatform. Featured in Kotlin Weekly #459 and Android Weekly #676."
+    technologies:
+      - "Kotlin Multiplatform"
+      - "Compose Multiplatform"
+      - "Junie"
+      - "Koin"
+    link: "github.com/balch/lander"

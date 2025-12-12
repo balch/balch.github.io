@@ -7,8 +7,8 @@ navigation:
     url: /
   - title: Portfolio
     url: /#portfolio
-  - title: Blog
-    url: /blog/
+  - title: Balch Blog
+    url: /deep-thoughts/
 social:
   github: balch
   linkedin: balch

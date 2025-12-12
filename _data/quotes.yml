@@ -1,0 +1,41 @@
+- text: "90% of the work takes 90% of the time. The remaining 10% takes the other 90% of the time."
+  author: "James Koren"
+
+- text: "80% Unit Test coverage is easy to achieve, but the remaining 20% are the most valuable tests."
+  author: "Jay Balcher"
+
+- text: "Always test your screens in de_DE or Dutch."
+  author: "Jay Balcher"
+
+- text: "In Prompt Engineering, correct prompt order is the difference between success and chaos."
+  author: "Jay Balcher"
+
+- text: "How many seconds are in a day? That depends on your timezone and the DAY."
+  author: "Jay Balcher"
+
+- text: "CODE IS KING."
+  author: "Jay Balcher"
+
+- text: "If an app crashes in the background, does it make a sound?"
+  author: "Jay Balcher"
+
+- text: "Adapting to new technologies is the key to success. Just remember, you can't and shouldn't have to be an expert on everything."
+  author: "Jay Balcher"
+
+- text: "The details are in the data. Use SQL aggregate functions to unlock the patterns in the data and 💰."
+  author: "Jay Balcher"
+
+- text: "Always test the Release version of your App before shipping."
+  author: "Jay Balcher"
+
+- text: "It's usually NOT a good sign to see your App trending on Reddit."
+  author: "Jay Balcher"
+
+- text: "Talk is cheap. Show me the code."
+  author: "Linus Torvalds"
+
+- text: "The best way to predict the future is to invent it."
+  author: "Alan Kay"
+
+- text: "Simple things should be simple, complex things should be possible."
+  author: "Alan Kay"
