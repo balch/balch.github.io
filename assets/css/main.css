@@ -1493,8 +1493,9 @@ html {
         line-height: 1.4;
     }
 
-    header,
-    footer,
+    /* Hide site header/footer/nav but NOT resume-header */
+    body>header,
+    body>footer,
     nav {
         display: none !important;
     }
@@ -1513,40 +1514,50 @@ html {
     }
 
     .resume-header {
-        padding: 20pt 24pt 16pt;
-        border-bottom: 1px solid #e5e7eb;
-        background: #f9fafb;
+        display: block !important;
+        padding: 24pt 24pt 20pt;
+        border-bottom: 2px solid #2563eb;
+        background: linear-gradient(to right, #f9fafb, #ffffff);
+        margin-bottom: 0;
     }
 
     .resume-header h1 {
-        font-size: 22pt;
+        font-size: 26pt;
         font-weight: 800;
         text-transform: uppercase;
-        letter-spacing: 0.05em;
+        letter-spacing: 0.08em;
         color: #111827;
-        margin: 0 0 4pt;
+        margin: 0 0 6pt;
     }
 
     .resume-title {
-        font-size: 12pt;
+        font-size: 14pt;
         color: #2563eb;
         font-weight: 600;
-        margin: 0 0 8pt;
+        margin: 0 0 12pt;
     }
 
     .resume-contact {
         display: flex;
-        gap: 16pt;
-        font-size: 9pt;
-        color: #6b7280;
+        flex-wrap: wrap;
+        gap: 8pt 20pt;
+        font-size: 10pt;
+        color: #374151;
+        font-weight: 500;
+    }
+
+    .resume-contact span {
+        display: inline-block;
     }
 
     .resume-summary {
-        font-size: 9pt;
+        font-size: 10pt;
         color: #4b5563;
-        line-height: 1.5;
-        max-width: 80%;
-        margin: 12pt 0 0;
+        line-height: 1.6;
+        max-width: 100%;
+        margin: 16pt 24pt 0;
+        padding-bottom: 12pt;
+        border-bottom: 1px solid #e5e7eb;
     }
 
     .resume-two-column {

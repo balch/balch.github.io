@@ -7,6 +7,8 @@ navigation:
     url: /
   - title: Portfolio
     url: /#portfolio
+  - title: Career Highlights
+    url: /employment/
   - title: Balch Blog
     url: /deep-thoughts/
 social:
