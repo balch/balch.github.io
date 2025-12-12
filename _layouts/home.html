@@ -26,17 +26,20 @@ layout: default
             from other sites, but the <b>words</b> and
             <b>sentiments</b> are <b><i>all me</i></b>. Anybody who knows me understands my fun and engaging
             communication
-            style which was going on long before anybody was chatting with gemini, claude, or GPT.
+            style which was going on long before anybody was <i>chatting</i> with gemini, claude, or <i>GPT</i>.
         </div>
 
         <div class="bio-body into-block">
             <h3></h3><b>Who am I?</b></h3>
             I'm a software engineer with diverse experience architecting and building robust solutions that
-            drive business growth. My expertise lies in tackling complex logic and delivering high-impact features
-            for both fast-paced startups (contributing to successful IPOs and acquisitions) and large-scale
-            corporations delivering features at a global scale. I thrive on ownership, transforming challenging
-            requirements and legacy systems into clean, maintainable code that directly contributes to business
-            value and user satisfaction.
+            drive business growth. My expertise lies in tackling complex logic and delivering <b>high-impact
+                features</b>
+            for both fast-paced startups (contributing to <b><i>successful IPOs</i></b> and acquisitions) and
+            large-scale
+            corporations delivering features at a <b>global scale</b>. I thrive on ownership, transforming
+            challenging
+            requirements and legacy systems into clean, maintainable code that directly contributes to <b>business
+                value</b> and <b>user satisfaction</b>.
         </div>
 
 
@@ -85,8 +88,7 @@ layout: default
             </div>
             {% else %}
             <!-- Original project card style -->
-            <div class="project-description" data-project-index="{{ forloop.index0 }}" {% if project.readme_url
-                %}data-readme-url="{{ project.readme_url }}" {% endif %}>
+            <div class="project-description" data-project-index="{{ forloop.index0 }}">
                 <div class="mobile-project-image">
                     {% if project.screenshots and project.screenshots.size > 0 %}
                     <div class="screenshot-carousel">
@@ -107,11 +109,7 @@ layout: default
                 </div>
                 <h2>{{ project.title }}</h2>
                 <div class="project-description-content">
-                    {% if project.readme_url %}
-                    <p class="loading-readme">Loading description...</p>
-                    {% else %}
                     <p>{{ project.description }}</p>
-                    {% endif %}
                 </div>
                 {% if project.awards %}
                 <div class="portfolio-awards">
@@ -171,8 +169,6 @@ layout: default
     </div>
 </section>
 
-<!-- Markdown Parser -->
-<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -380,61 +376,6 @@ layout: default
             imagesCount: images.length
         });
 
-        // Fetch README content for projects with readme_url
-        descriptions.forEach(desc => {
-            const readmeUrl = desc.getAttribute('data-readme-url');
-            if (readmeUrl) {
-                const contentDiv = desc.querySelector('.project-description-content');
-
-                fetch(readmeUrl)
-                    .then(response => {
-                        if (!response.ok) throw new Error('Failed to fetch README');
-                        return response.text();
-                    })
-                    .then(markdown => {
-                        // Parse markdown to HTML
-                        const html = marked.parse(markdown);
-
-                        // Extract first few paragraphs (skip title and warnings)
-                        const tempDiv = document.createElement('div');
-                        tempDiv.innerHTML = html;
-
-                        // Find the "WHAT IS THIS?" section or similar meaningful content
-                        const headings = tempDiv.querySelectorAll('h3');
-                        let contentToShow = '';
-
-                        for (let heading of headings) {
-                            if (heading.textContent.includes('WHAT IS THIS')) {
-                                // Get content after this heading until next heading
-                                let elem = heading.nextElementSibling;
-                                let paragraphs = [];
-
-                                while (elem && elem.tagName !== 'H3' && paragraphs.length < 3) {
-                                    if (elem.tagName === 'P') {
-                                        paragraphs.push(elem.outerHTML);
-                                    }
-                                    elem = elem.nextElementSibling;
-                                }
-
-                                contentToShow = paragraphs.join('');
-                                break;
-                            }
-                        }
-
-                        // Fallback: use first few paragraphs if no specific section found
-                        if (!contentToShow) {
-                            const paragraphs = Array.from(tempDiv.querySelectorAll('p')).slice(0, 2);
-                            contentToShow = paragraphs.map(p => p.outerHTML).join('');
-                        }
-
-                        contentDiv.innerHTML = contentToShow || '<p>Unable to load description.</p>';
-                    })
-                    .catch(error => {
-                        console.error('Error fetching README:', error);
-                        contentDiv.innerHTML = '<p>Unable to load description from GitHub.</p>';
-                    });
-            }
-        });
 
         // Track current state to prevent duplicate updates
         let currentProjectIndex = null;

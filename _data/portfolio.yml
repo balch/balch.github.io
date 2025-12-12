@@ -11,27 +11,27 @@
     - title: "Reference App?"
       image: /assets/images/portfolio/recipes/recipes-category.png
       content: |
-        Keeping up with the latest Android trends is always a challenge. One of the techniques I use is to always have a reference app handy. These apps should showcase the latest Android architecture and patterns for UI and business logic separation, navigation UX and theming, data and image retrieval, threading, dependency injection, and testing.
+        Keeping up with the latest Android trends is always a challenge. One technique I use is to always have a **reference app** handy. These apps showcase the latest Android architecture and patterns for UI and business logic separation, navigation UX and theming, data retrieval, threading, dependency injection, and testing.
         
-        The latest incarnation of my reference app is called Recipes. Since I love a good double entendre, this app conflates Meal and Code Recipes, creating a UX to demonstrate the techniques it describes. The goal was to brush up on the latest Android tech stack components and pack as many features as I could into an app created over a few weekends of watching sports on the couch.
+        The latest incarnation is called Recipes. This app conflates *Meal and Code Recipes*, creating a UX to **demonstrate the techniques it describes**. The goal was to brush up on the latest Android tech stack and pack as many features as I could into an app created over a few weekends.
     - title: "Meal Recipes"
       image: /assets/images/portfolio/recipes/recipes-detail.png
       content: |
-        One data source for this app is from the excellent (and free) TheMealDB which has a nice amount of categorized data with textual and visual information describing a semi-complex process—aka, a Meal Recipe. The app features beautiful category and cuisine browsing, detailed ingredient lists with measurements, and step-by-step cooking instructions.
+        One data source is from **TheMealDB** which has categorized data with textual and visual information describing a semi-complex process—a Meal Recipe. The app features category and cuisine browsing, ingredient lists with measurements, and step-by-step cooking instructions.
         
-        The UI showcases Material 3 design with adaptive layouts for phones, tablets, and foldables. Shared element transitions create fluid navigation between list and detail views. The data layer uses Ktor for HTTP client operations with proper caching and offline support via SQLDelight.
+        The UI showcases **Material 3 design** with adaptive layouts for phones, tablets, and foldables. ***Shared element transitions*** create fluid navigation between views. The data layer uses Ktor with proper caching and **offline support** via SQLDelight.
     - title: "Code Recipes"
       image: /assets/images/portfolio/recipes/lightmode-code.png
       content: |
-        The other data source was my brain—describing the code used to build the app in the form of Code Recipes (sprinkled in amongst the Meal Recipes). These recipes mostly originate from Android community sources and describe the wiring and plumbing used to create a visually compelling Android Application.
+        The other data source was my brain—describing the code used to build the app in the form of *Code Recipes*. These recipes describe the wiring and plumbing used to create a visually compelling Android Application.
         
-        Code Recipes cover topics like Metro dependency injection patterns, Compose navigation with Nav3, shared element transitions, adaptive layouts with Compose Material 3 Adaptive, and integration with SQLDelight for offline-first architecture. Each recipe includes markdown-formatted descriptions rendered beautifully with syntax highlighting.
+        Topics include **Metro dependency injection**, Compose navigation with Nav3, shared element transitions, adaptive layouts, and **SQLDelight** for offline-first architecture. Each recipe includes markdown-formatted descriptions with syntax highlighting.
     - title: "AI Agent Integration"
       image: /assets/images/portfolio/recipes/recipes-agent.png
       content: |
-        This app integrates Koog AI Agents to provide an intelligent cooking assistant powered by Google's Gemini models. The AI agent can help users with recipe suggestions, cooking tips, and navigation through the app. Features include AI-powered chat for interactive cooking assistance, multi-model support for Gemini 2.5 Pro/Flash/Lite, and advanced tool integration for contextual responses.
+        This app integrates **Koog AI Agents** to provide an intelligent cooking assistant powered by Google's Gemini models. Features include AI-powered chat, *multi-model support* for Gemini 2.5 Pro/Flash/Lite, and tool integration for contextual responses.
         
-        Another reason this app came together so nicely is due to the plethora of free and easy-to-use Android Tools and Libraries supplied by both Big-Biz (hello Google and JetBrains) and the Android Community ICs toiling away on GitHub and Medium. Junie and Claude actually did a lot of work, and came through in frontend design, dependency management, and kicking off new features.
+        This app came together nicely due to the plethora of free Android tools and libraries from Google, JetBrains, and the Android Community. ***Junie and Claude*** came through in frontend design, dependency management, and kicking off new features.
 
 - title: Mood Music AI
   image: /assets/images/portfolio/mood-music.svg
@@ -45,21 +45,21 @@
     - title: "The Game"
       image: /assets/images/portfolio/mood-music/1-initial_game_display.png
       content: |
-        Mood Music is a game where the user guesses what kind of mood the music they are hearing represents. Players are presented with colorful buttons, each assigned a secret mood. Press a button to hear AI-generated music, then guess which emotion it evokes.
+        Mood Music is a game where users ***guess the mood*** of the music they hear. Players are presented with colorful buttons, each assigned a secret mood. Press a button to hear **AI-generated music**, then guess which emotion it evokes.
         
-        The game features multiple difficulty modes. In Easy mode, only the moods used in that round appear in the dropdown. Hard mode tests your emotional IQ by showing all possible moods. Track your attempts and compete for the lowest guess count!
+        The game features multiple difficulty modes. Easy mode shows only the moods used in that round. Hard mode tests your *emotional IQ* by showing all possible moods.
     - title: "Making Your Guess"
       image: /assets/images/portfolio/mood-music/2-after_user_click_button.png
       content: |
-        When you press a button, the AI springs into action, generating unique music based on the button's hidden mood. The mood selector automatically opens, presenting you with emoji-labeled options like 🎉 Happy, 🌧️ Sad, or ⚡️ Energetic.
+        When you press a button, the AI generates unique music based on the button's hidden mood. The mood selector opens with emoji-labeled options like 🎉 Happy, 🌧️ Sad, or ⚡️ Energetic.
         
-        Each button has a randomly assigned icon with its own distinctive color palette, creating a visually engaging experience. The music stops when you make your selection, building anticipation for the reveal!
+        Each button has a randomly assigned icon with its own distinctive color palette. The music stops when you make your selection, building anticipation for the reveal.
     - title: "The Reveal"
       image: /assets/images/portfolio/mood-music/3-after_user_hits_reveal_button.png
       content: |
-        Once all buttons have guesses, the Reveal Button activates. Correct guesses light up green, while incorrect ones flash red—keep trying until all buttons are green to win! Hit the Victory button to hear an AI-generated celebration song.
+        Once all buttons have guesses, the **Reveal Button** activates. Correct guesses light up green, incorrect ones flash red. Hit the Victory button to hear an AI-generated celebration song.
         
-        Built on Kotlin Multiplatform with Compose Multiplatform UI, the app uses Google's Lyria Realtime for AI music generation. Each mood has carefully crafted prompts—from the "intense, aggressive Heavy Metal" of Angry to the "calm, peaceful flowing ambient textures" of Relaxed.
+        Built on **Kotlin Multiplatform** with Compose Multiplatform UI, the app uses ***Lyria Realtime*** for AI music generation. Each mood has carefully crafted prompts—from "intense *Heavy Metal*" to "calm *ambient textures*."
 
 - title: "VIBE LANDER: Retro Game Built on KMP 🎮"
   image: /assets/images/portfolio/vibe-lander.svg
@@ -78,24 +78,24 @@
     - title: "Hello KMP World"
       image: /assets/images/portfolio/vibe-lander/android-tablet-play.png
       content: |
-        I've been coding for a while and have always searched for the elusive write once, run everywhere solution that works for me. Kotlin is my fave language and I really enjoy Coroutines and Flows. All the new build tools, plugins, libraries, and general support have me really excited to see what comes next.
+        I've always searched for the elusive ***write once, run everywhere*** solution. Kotlin is my favorite language and I enjoy **Coroutines and Flows**. All the new build tools and libraries have me excited about what comes next.
         
-        This repo contains my first KMP app, Koin app, Game Loop, All Compose app, and Vibe Code project. The app runs on Android, iOS, Desktop, and Web with shared code—delivering on the true multiplatform promise!
+        This repo contains my first **KMP app**, Koin app, Game Loop, All Compose app, and Vibe Code project. The app runs on *Android, iOS, Desktop, and Web* with shared code.
     - title: "Pair Programming with Junie"
       image: /assets/images/portfolio/vibe-lander/ios-play.png
       content: |
-        When Junie was released, I said why the hell not!?! I built an app that compiled and ran on all KMP platforms with an almost working game. It reminded me of how I start off a feature—crank out code until something works, then stash and start making commits one piece at a time.
+        When Junie was released, I built an app that compiled and ran on all KMP platforms with an almost working game. It reminded me of how I start features—**crank out code until something works**, then stash and start making commits.
         
-        The Stars rendering logic showed me how to use the Canvas Composable. The terrain generation algo did an awesome job of laying out landing pads with mountains, craters, and rocks. The PhysicsEngine math worked out well—I'm glad I didn't need a sin/cos refresher!
+        The *Stars rendering logic* showed how to use the **Canvas Composable**. The terrain generation laid out landing pads with mountains, craters, and rocks. The ***PhysicsEngine math*** worked out well.
     - title: "Multiplatform Magic"
       image: /assets/images/portfolio/vibe-lander/web-play.png
       content: |
-        The project leverages Kotlin Multiplatform with Compose Multiplatform to truly deliver on the "write once, run everywhere" promise. The screenshots don't lie—this thing runs on Android, iOS, Desktop, and Web with shared code! There's a clean MVVM separation between the UI (Screens), ViewModels, and data models.
+        The project leverages **Kotlin Multiplatform** with Compose Multiplatform to deliver on the "write once, run everywhere" promise. This runs on ***Android, iOS, Desktop, and Web*** with shared code. There's a clean **MVVM separation** between UI, ViewModels, and data models.
         
-        The game logic is nicely separated into components: Physics engine for game mechanics, Camera system with dynamic zooming, Procedural terrain generation, and Sound service abstraction. The camera implementation with dynamic zoom levels based on the lander's altitude is particularly elegant.
+        Game logic is separated into: *Physics engine*, **Camera system** with dynamic zooming, procedural terrain generation, and sound service abstraction.
     - title: "Compose Previews & Polish"
       image: /assets/images/portfolio/vibe-lander/IDE_Widgets_Previews.png
       content: |
-        This has been the most fun coding since the last canvas draw feature I worked on. I'm amazed I produced a working game using new technologies in a little over a fortnight. The highlight for me was mainly just producing code that I could learn by example from.
+        This has been the most fun coding since the last canvas draw feature I worked on. I produced a *working game* using new technologies in **a little over a fortnight**. The highlight was producing code I could learn by example from.
         
-        Learning to effectively communicate with an LLM will be a fun challenge. The skills of asking the right questions, validating the results, and iterating on the solution are still critical while using AI. So far, AI has been more useful for me when getting started and exploring new concepts and tech.
+        Learning to **communicate with an LLM** will be a fun challenge. The skills of asking the right questions, validating results, and iterating are still critical while using AI.

@@ -6,7 +6,7 @@ personal_info:
   linkedin: "linkedin.com/in/balch"
   github: "github.com/balch"
 
-summary: "Principal Android Engineer with deep expertise in media playback, system architecture, and team leadership. Passionate about building high-quality, scalable mobile applications and mentoring engineering teams."
+summary: "Principal Android Engineer with deep expertise in **media playback**, system architecture, and team leadership. Passionate about building high-quality, scalable mobile applications and mentoring engineering teams."
 
 # Employment History
 experience:
@@ -22,20 +22,20 @@ experience:
         details:
           - subject: "Android Playback UX Feature Delivery (Disney+)"
             points:
-              - "Led the delivery of pivotal Disney+ features across multiple high-impact projects, including integrating ESPN and Hulu content with new live events and functionality for linear channels."
-              - "Engineered solutions to meet stringent product and legal requirements for a global user base, including support for regional ratings display standards and country-specific functionality."
-              - "Enhanced and maintained offline playback capabilities for Disney+, Hulu, and ESPN content, increasing user accessibility and engagement."
+              - "Led the delivery of pivotal Disney+ features across multiple high-impact projects, including integrating **ESPN and Hulu content** with live events and linear channels."
+              - "Engineered solutions to meet stringent product and legal requirements for a **global user base**, including regional ratings and country-specific functionality."
+              - "Enhanced and maintained **offline playback** capabilities for Disney+, Hulu, and ESPN content."
           - subject: "System Architecture & Modernization"
             points:
-              - "Architected and shipped a scalable, flexible, and stable redesign of the Disney+ Playback UX layer, significantly improving maintainability and performance."
-              - "Spearheaded an iterative development and incremental refactoring strategy, enabling the seamless integration of new features while modernizing the legacy codebase."
-              - "Designed a modular MVVM architecture that encapsulates complex business logic from multiple data sources, creating a more extensible and resilient application."
-              - "Orchestrated a resource-efficient system to manage multiple simultaneous players across diverse scenarios by leveraging the native UI infrastructure."
+              - "Architected and shipped a ***scalable redesign*** of the Disney+ Playback UX layer, significantly improving maintainability and performance."
+              - "Spearheaded **iterative development** and incremental refactoring, enabling seamless integration of new features while modernizing legacy code."
+              - "Designed a **modular MVVM architecture** that encapsulates complex business logic from multiple data sources."
+              - "Orchestrated a resource-efficient system to manage **multiple simultaneous players** across diverse scenarios."
           - subject: "Leadership & Innovation"
             points:
               - "Conducted technical interviews for multiple positions and teams."
-              - "Leveraged AI to rapidly prototype, validate, and refine new engineering concepts."
-              - "Participated in and promoted Hackathons demonstrating wearable integration."
+              - "Leveraged **AI to rapidly prototype** and validate new engineering concepts."
+              - "Participated in Hackathons demonstrating wearable integration."
       - title: "Engineering Manager, Disney+"
         period: "Feb 2022 - Feb 2023"
         details:
@@ -47,15 +47,15 @@ experience:
         period: "Dec 2020 - Feb 2022"
         details:
           - "Developed and shipped key features for the Disney+ Playback UX."
-          - "Contributed to the successful launch of Star+ in Latin America, adapting core playback features for the new market."
+          - "Contributed to the **successful launch of Star+** in Latin America."
       - title: "NHL Android Lead"
         period: "Feb 2018 - Dec 2020"
         details:
-          - "Led a distributed engineering team through the full development lifecycle of the official NHL app for Android Mobile, Fire Tablet, Android TV, and Fire TV platforms."
+          - "Led a distributed engineering team through the **full development lifecycle** of the official NHL app for Android Mobile, Fire Tablet, Android TV, and Fire TV platforms."
           - subject: "Feature Highlights"
             points:
-              - "Engineered a new, fully native GameCenter experience to boost fan engagement."
-              - "Implemented 'GameFlow,' a real-time visualization of in-game momentum."
+              - "Engineered a ***fully native GameCenter*** experience to boost fan engagement."
+              - "Implemented **GameFlow**, a real-time visualization of in-game momentum."
               - "Created an engaging intermission animation visualizing the ice resurfacer's progress."
 
 # Print-only sections

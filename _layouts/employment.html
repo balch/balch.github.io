@@ -50,12 +50,13 @@ layout: default
                         <h4>{{ detail.subject }}</h4>
                         <ul>
                             {% for point in detail.points %}
-                            <li>{{ point }}</li>
+                            <li>{{ point | markdownify | remove: '<p>' | remove: '</p>' }}</li>
                             {% endfor %}
                         </ul>
                     </div>
                     {% else %}
-                    <p class="detail-text">{{ detail }}</p>
+                    <p class="detail-text">{{ detail | markdownify | remove: '
+                    <p>' | remove: '</p>' }}</p>
                     {% endif %}
                     {% endfor %}
                 </div>
@@ -120,12 +121,13 @@ layout: default
                             <h5>{{ detail.subject }}</h5>
                             <ul>
                                 {% for point in detail.points %}
-                                <li>{{ point }}</li>
+                                <li>{{ point | markdownify | remove: '<p>' | remove: '</p>' }}</li>
                                 {% endfor %}
                             </ul>
                         </div>
                         {% else %}
-                        <p class="resume-detail-text">{{ detail }}</p>
+                        <p class="resume-detail-text">{{ detail | markdownify | remove: '
+                        <p>' | remove: '</p>' }}</p>
                         {% endif %}
                         {% endfor %}
                     </div>
