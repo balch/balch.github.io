@@ -465,6 +465,13 @@ layout: default
         // Initial call
         updateActiveImage();
 
+        // Observer options for IntersectionObserver
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.3
+        };
+
         // Observer for legacy project descriptions (without section-index)
         const projectObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -533,5 +540,60 @@ layout: default
                 });
             });
         });
+
+        // --- Lightbox for Full-Screen Image View ---
+        const lightboxOverlay = document.createElement('div');
+        lightboxOverlay.className = 'lightbox-overlay';
+        lightboxOverlay.innerHTML = `
+            <button class="lightbox-close" aria-label="Close">
+                <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M18 6L6 18M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <img src="" alt="Full screen image">
+        `;
+        document.body.appendChild(lightboxOverlay);
+
+        const lightboxImg = lightboxOverlay.querySelector('img');
+        const lightboxClose = lightboxOverlay.querySelector('.lightbox-close');
+
+        const openLightbox = (src, alt) => {
+            lightboxImg.src = src;
+            lightboxImg.alt = alt || 'Full screen image';
+            lightboxOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        };
+
+        const closeLightbox = () => {
+            lightboxOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        };
+
+        // Click on any portfolio image to open lightbox
+        const clickableImages = document.querySelectorAll('.project-image img, .mobile-project-image img, .screenshot-carousel .screenshot');
+        console.log('Lightbox: Found', clickableImages.length, 'clickable images');
+
+        clickableImages.forEach(img => {
+            img.addEventListener('click', (e) => {
+                console.log('Lightbox: Image clicked!', img.src);
+                e.stopPropagation();
+                openLightbox(img.src, img.alt);
+            });
+        });
+
+        // Close lightbox on overlay click
+        lightboxOverlay.addEventListener('click', (e) => {
+            if (e.target === lightboxOverlay || e.target === lightboxClose || lightboxClose.contains(e.target)) {
+                closeLightbox();
+            }
+        });
+
+        // Close on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightboxOverlay.classList.contains('active')) {
+                closeLightbox();
+            }
+        });
     });
+
 </script>
