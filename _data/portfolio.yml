@@ -11,34 +11,35 @@
     - title: "Reference App?"
       image: /assets/images/portfolio/recipes/recipes-category.png
       content: |
-        Keeping up with the latest Android trends is always a challenge. One technique I use is to always have a **reference app** handy. These apps showcase the latest Android architecture and patterns for UI and business logic separation, navigation UX and theming, data retrieval, threading, dependency injection, and testing.
+        Keeping up with new Android **libraries and trends** is always a challenge. One technique I use is to always have a reference app handy. These apps showcase the latest Android **architecture and patterns** for UI and business logic separation, navigation UX and theming, data retrieval, threading, dependency injection, and testing.
         
-        The latest incarnation is called Recipes. This app conflates *Meal and Code Recipes*, creating a UX to **demonstrate the techniques it describes**. The goal was to brush up on the latest Android tech stack and pack as many features as I could into an app created over a few weekends.
+        The latest incarnation is called **_Recipes_**. This app **conflates** _Meal_ and _Code_ Recipes, creating a UX to demonstrate the techniques it describes. The goal was to brush up on the latest Android **tech stack** and pack as many features as I could into an app created in my _"spare"_ time.
     - title: "Meal Recipes"
       image: /assets/images/portfolio/recipes/recipes-detail.png
       content: |
-        One data source is from **TheMealDB** which has categorized data with textual and visual information describing a semi-complex process—a Meal Recipe. The app features category and cuisine browsing, ingredient lists with measurements, and step-by-step cooking instructions.
+        One data source is from **TheMealDB** which has categorized data with textual and visual information describing a semi-complex process (_aka_ **Meal Recipe**). The app features category and cuisine browsing, ingredient lists with measurements, and step-by-step cooking instructions.
         
-        The UI showcases **Material 3 design** with adaptive layouts for phones, tablets, and foldables. ***Shared element transitions*** create fluid navigation between views. The data layer uses Ktor with proper caching and **offline support** via SQLDelight.
+        The UI showcases **Material 3** design with **adaptive** layouts for phones, tablets, and foldables. Shared element transitions create fluid navigation between views. 
     - title: "Code Recipes"
       image: /assets/images/portfolio/recipes/lightmode-code.png
       content: |
-        The other data source was my brain—describing the code used to build the app in the form of *Code Recipes*. These recipes describe the wiring and plumbing used to create a visually compelling Android Application.
+        The other data source was my 🧠, describing the code used to build the app in the form of **Code Recipes**. These recipes describe the wiring and plumbing used to create a visually compelling Android Application.
         
-        Topics include **Metro dependency injection**, Compose navigation with Nav3, shared element transitions, adaptive layouts, and **SQLDelight** for offline-first architecture. Each recipe includes markdown-formatted descriptions with syntax highlighting.
+        Topics include **Metro** dependency injection, Compose navigation with Nav3, shared element transitions, and adaptive layouts. Each recipe includes **markdown-formatted** descriptions with code syntax highlighting.
     - title: "AI Agent Integration"
       image: /assets/images/portfolio/recipes/recipes-agent.png
       content: |
-        This app integrates **Koog AI Agents** to provide an intelligent cooking assistant powered by Google's Gemini models. Features include AI-powered chat, *multi-model support* for Gemini 2.5 Pro/Flash/Lite, and tool integration for contextual responses.
-        
-        This app came together nicely due to the plethora of free Android tools and libraries from Google, JetBrains, and the Android Community. ***Junie and Claude*** came through in frontend design, dependency management, and kicking off new features.
+        **Recipe Maestro** is the in-app chatbot that answers questions about meal and coding recipes.
+        The agent configuration provides **randomized mood** prompts for more **intesting engagement**.
 
+        The agent was built using **Koog** and integrates with the **Gemini** models. Multiple **tools** were created to provide access to remote and local data sources and allow for AI **recipe creation** and **navigation**. The Agent Screen also displays token and tool usage metrics.
+      
 - title: Mood Music AI
   image: /assets/images/portfolio/mood-music.svg
   link: https://github.com/balch/MoodMusic
   technologies:
-    - Kotlin Multiplatform
-    - Compose Multiplatform
+    - AI Studio
+    - React/TypeScript
     - Lyria Realtime
     - Gemini API
   scroll_sections:
