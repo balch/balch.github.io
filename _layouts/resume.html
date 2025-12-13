@@ -107,9 +107,6 @@ layout: default
                         <div class="contact-info">
                             <p><a href="mailto:{{ site.data.employment.personal_info.email }}">{{
                                     site.data.employment.personal_info.email }}</a></p>
-                            <p><a
-                                    href="tel:{{ site.data.employment.personal_info.phone | default: 'REDACTED' | remove: '(' | remove: ')' | remove: ' ' | remove: '-' }}">{{
-                                    site.data.employment.personal_info.phone | default: "REDACTED" }}</a></p>
                             <p>{{ site.data.employment.personal_info.location | default: "Beaverton, OR" }}</p>
                             <p><a href="https://{{ site.data.employment.personal_info.linkedin }}">{{
                                     site.data.employment.personal_info.linkedin }}</a></p>
