@@ -231,8 +231,8 @@ layout: default
                 // Trigger animation
                 requestAnimationFrame(() => charSpan.classList.add('visible'));
 
-                // Slower typing: 50-150ms
-                let delay = 50 + Math.random() * 100;
+                // Typing speed: ~44-132ms (12% faster)
+                let delay = 44 + Math.random() * 88;
 
                 // Add extra delay for punctuation
                 if (['.', ',', '!', '?'].includes(chars[i])) {
