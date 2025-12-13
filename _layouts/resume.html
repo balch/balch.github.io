@@ -659,93 +659,259 @@ layout: default
             page-break-inside: avoid;
         }
 
-        /* Header */
+        /* Header - Matching reference */
         .resume-header {
             background: #f8f8f8 !important;
-            padding: 1.25rem 1.5rem;
+            padding: 16pt 20pt 12pt;
         }
 
         .resume-header h1 {
-            font-size: 2rem;
+            font-size: 26pt;
             color: #1a1a1a !important;
+            margin-bottom: 4pt;
+            font-weight: 800;
+            letter-spacing: 0.02em;
         }
 
         .resume-title {
+            font-size: 14pt;
             color: #2563eb !important;
+            font-weight: 600;
         }
 
         .resume-summary-section {
-            padding: 0.85rem 1.5rem;
+            padding: 10pt 20pt;
+            border-bottom: 1pt solid #e5e7eb;
         }
 
+        .resume-summary-section p {
+            font-size: 10pt;
+            line-height: 1.5;
+            color: #4b5563 !important;
+        }
+
+        /* 2-column layout using FLEXBOX for print (more reliable than grid) */
         .resume-body {
-            padding: 0;
+            display: flex !important;
+            flex-direction: row !important;
+            width: 100% !important;
         }
 
         .resume-main {
-            padding: 1rem 1.5rem;
+            flex: 0 0 340pt !important;
+            width: 340pt !important;
+            max-width: 340pt !important;
+            padding: 12pt 16pt;
+            box-sizing: border-box !important;
         }
 
         .resume-sidebar {
+            flex: 1 1 auto !important;
+            width: auto !important;
             background: #f8fafc !important;
-            padding: 1rem;
+            border-left: 1pt solid #e5e7eb !important;
+            padding: 12pt 16pt;
+            box-sizing: border-box !important;
         }
 
         .resume-page-2 {
-            padding: 1rem 1.5rem;
+            padding: 12pt 20pt;
         }
 
-        /* Preserve all text colors */
+        /* Section titles - 8pt uppercase */
         .section-title {
-            color: #666 !important;
+            font-size: 8pt;
+            color: #9ca3af !important;
+            margin-bottom: 10pt;
+            padding-bottom: 4pt;
+            border-bottom: 1pt solid #e5e7eb;
+            letter-spacing: 0.15em;
+        }
+
+        /* Experience items */
+        .experience-item {
+            margin-bottom: 14pt;
+        }
+
+        .experience-header {
+            margin-bottom: 2pt;
         }
 
         .company-info h3 {
+            font-size: 12pt;
             color: #1a1a1a !important;
+            font-weight: 700;
         }
 
-        .role-header h4 {
-            color: #1a1a1a !important;
+        .location {
+            font-size: 8pt;
+            color: #6b7280 !important;
         }
 
         .period {
+            font-size: 9pt;
             color: #2563eb !important;
-            background: #f0f4ff !important;
+            background: #eff6ff !important;
+            padding: 2pt 8pt;
+            border-radius: 3pt;
+            font-weight: 600;
         }
 
-        .role-content li,
-        .detail-text,
-        .contact-info p,
-        .achievements-list li {
-            color: #333 !important;
-        }
-
-        .detail-group h5 {
-            color: #1a1a1a !important;
-        }
-
+        /* Achievements box */
         .key-achievements {
-            background: #e8f4fc !important;
-            border-color: #3b82f6 !important;
+            background: #eff6ff !important;
+            border-left: 3pt solid #3b82f6 !important;
+            padding: 8pt 10pt;
+            margin: 8pt 0;
+            border-radius: 0 4pt 4pt 0;
         }
 
         .achievements-title {
-            color: #1e40af !important;
+            font-size: 7pt;
+            color: #dc2626 !important;
+            margin-bottom: 4pt;
+            letter-spacing: 0.08em;
+            font-weight: 700;
         }
 
-        .resume-container .tech-tag {
-            background: #f0f0f0 !important;
-            color: #444 !important;
+        .achievements-list {
+            padding-left: 12pt;
         }
 
-        .contact-info a,
-        .project-link a,
-        .resume-footer a {
+        .achievements-list li {
+            font-size: 9pt;
+            color: #374151 !important;
+            margin-bottom: 2pt;
+            line-height: 1.4;
+        }
+
+        /* Roles */
+        .role {
+            margin-top: 10pt;
+            padding-left: 10pt;
+            border-left: 2pt solid #e5e7eb !important;
+        }
+
+        .role-header {
+            margin-bottom: 4pt;
+        }
+
+        .role-header h4 {
+            font-size: 11pt;
+            color: #1a1a1a !important;
+            font-weight: 700;
+        }
+
+        .role-period {
+            font-size: 8pt;
+            color: #6b7280 !important;
+            font-family: monospace;
+        }
+
+        .role-content {
+            font-size: 9pt;
+            line-height: 1.45;
+        }
+
+        .detail-group {
+            margin-bottom: 6pt;
+        }
+
+        .detail-group h5 {
+            font-size: 10pt;
+            color: #1a1a1a !important;
+            margin: 6pt 0 3pt;
+            font-weight: 700;
+        }
+
+        .role-content ul {
+            margin: 2pt 0 6pt;
+            padding-left: 12pt;
+        }
+
+        .role-content li {
+            color: #4b5563 !important;
+            margin-bottom: 2pt;
+            line-height: 1.4;
+        }
+
+        .detail-text {
+            color: #4b5563 !important;
+            margin: 3pt 0;
+            line-height: 1.4;
+        }
+
+        /* Sidebar */
+        .resume-sidebar .resume-section {
+            margin-bottom: 14pt;
+        }
+
+        .contact-info p {
+            font-size: 9pt;
+            margin-bottom: 4pt;
+            color: #374151 !important;
+        }
+
+        .contact-info a {
             color: #2563eb !important;
         }
 
+        /* Projects */
+        .project {
+            margin-bottom: 12pt;
+        }
+
+        .project h4 {
+            font-size: 10pt;
+            font-weight: 700;
+            margin-bottom: 2pt;
+        }
+
+        .project-link {
+            font-size: 8pt;
+            margin-bottom: 4pt;
+        }
+
+        .project-link a {
+            color: #2563eb !important;
+        }
+
+        .resume-container .tech-tags {
+            gap: 3pt;
+            margin-bottom: 4pt;
+        }
+
+        .resume-container .tech-tag {
+            font-size: 7pt;
+            background: #f3f4f6 !important;
+            color: #374151 !important;
+            padding: 2pt 6pt;
+            border: 1pt solid #d1d5db !important;
+            border-radius: 3pt;
+            font-weight: 600;
+        }
+
+        .project-desc {
+            font-size: 8pt;
+            line-height: 1.35;
+            color: #4b5563 !important;
+        }
+
+        /* Footer */
         .resume-footer {
-            background: #f8f8f8 !important;
+            padding: 8pt 20pt;
+            margin-top: 10pt;
+            background: #f9fafb !important;
+            border-top: 1pt solid #e5e7eb !important;
+        }
+
+        .resume-footer p {
+            font-size: 8pt;
+            color: #6b7280 !important;
+        }
+
+        .resume-footer a {
+            color: #2563eb !important;
         }
 
         @page {
@@ -754,8 +920,8 @@ layout: default
         }
     }
 
-    /* Mobile Responsive */
-    @media (max-width: 768px) {
+    /* Mobile Responsive - SCREEN ONLY (don't affect print) */
+    @media screen and (max-width: 768px) {
         .resume-page {
             padding: 0.5rem;
             max-width: none;
@@ -793,6 +959,7 @@ layout: default
 
         .resume-body {
             grid-template-columns: 1fr;
+            /* Mobile: single column on SCREEN only */
             gap: 0;
         }
 
@@ -917,7 +1084,7 @@ layout: default
         }
     }
 
-    @media (max-width: 480px) {
+    @media screen and (max-width: 480px) {
         .resume-page {
             padding: 0.25rem;
         }
