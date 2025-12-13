@@ -643,15 +643,12 @@ layout: default
             border-radius: 0;
         }
 
-        /* Page Break */
+        /* Page Break - hidden since content now fits */
         .page-break {
-            display: block;
-            page-break-after: always;
-            break-after: page;
+            display: none;
             height: 0;
             margin: 0;
             padding: 0;
-            background: none;
         }
 
         /* Ensure Page 1 stays together */
@@ -662,31 +659,31 @@ layout: default
         /* Header - Matching reference */
         .resume-header {
             background: #f8f8f8 !important;
-            padding: 16pt 20pt 12pt;
+            padding: 8pt 16pt 6pt;
         }
 
         .resume-header h1 {
-            font-size: 26pt;
+            font-size: 22pt;
             color: #1a1a1a !important;
-            margin-bottom: 4pt;
+            margin-bottom: 1pt;
             font-weight: 800;
             letter-spacing: 0.02em;
         }
 
         .resume-title {
-            font-size: 14pt;
+            font-size: 11pt;
             color: #2563eb !important;
             font-weight: 600;
         }
 
         .resume-summary-section {
-            padding: 10pt 20pt;
+            padding: 6pt 16pt;
             border-bottom: 1pt solid #e5e7eb;
         }
 
         .resume-summary-section p {
-            font-size: 10pt;
-            line-height: 1.5;
+            font-size: 8pt;
+            line-height: 1.35;
             color: #4b5563 !important;
         }
 
@@ -698,10 +695,10 @@ layout: default
         }
 
         .resume-main {
-            flex: 0 0 340pt !important;
-            width: 340pt !important;
-            max-width: 340pt !important;
-            padding: 12pt 16pt;
+            flex: 0 0 58% !important;
+            width: 58% !important;
+            max-width: 58% !important;
+            padding: 8pt 12pt;
             box-sizing: border-box !important;
         }
 
@@ -710,117 +707,135 @@ layout: default
             width: auto !important;
             background: #f8fafc !important;
             border-left: 1pt solid #e5e7eb !important;
-            padding: 12pt 16pt;
+            padding: 8pt 12pt;
             box-sizing: border-box !important;
         }
 
         .resume-page-2 {
-            padding: 12pt 20pt;
+            padding: 6pt 16pt;
         }
 
-        /* Section titles - 8pt uppercase */
+        /* Page 2 tight spacing */
+        .resume-experience-continued .experience-grid {
+            gap: 8pt !important;
+        }
+
+        .resume-page-2 .experience-item {
+            margin-bottom: 6pt;
+        }
+
+        .resume-page-2 .role {
+            margin-top: 3pt;
+        }
+
+        /* Section titles - 7pt uppercase */
         .section-title {
-            font-size: 8pt;
+            font-size: 7pt;
             color: #9ca3af !important;
-            margin-bottom: 10pt;
-            padding-bottom: 4pt;
+            margin-bottom: 5pt;
+            padding-bottom: 2pt;
             border-bottom: 1pt solid #e5e7eb;
             letter-spacing: 0.15em;
         }
 
         /* Experience items */
         .experience-item {
-            margin-bottom: 10pt;
+            margin-bottom: 6pt;
         }
 
         .experience-header {
-            margin-bottom: 2pt;
+            margin-bottom: 1pt;
         }
 
         .company-info h3 {
-            font-size: 12pt;
+            font-size: 10pt;
             color: #1a1a1a !important;
             font-weight: 700;
         }
 
         .location {
-            font-size: 8pt;
+            font-size: 7pt;
             color: #6b7280 !important;
         }
 
         .period {
-            font-size: 9pt;
+            font-size: 8pt;
             color: #2563eb !important;
             background: #eff6ff !important;
-            padding: 2pt 8pt;
-            border-radius: 3pt;
+            padding: 1pt 5pt;
+            border-radius: 2pt;
             font-weight: 600;
         }
 
         /* Achievements box */
         .key-achievements {
             background: #eff6ff !important;
-            border-left: 3pt solid #3b82f6 !important;
-            padding: 6pt 8pt;
-            margin: 6pt 0;
-            border-radius: 0 4pt 4pt 0;
+            border-left: 2pt solid #3b82f6 !important;
+            padding: 4pt 6pt;
+            margin: 4pt 0;
+            border-radius: 0 3pt 3pt 0;
         }
 
         .achievements-title {
-            font-size: 7pt;
+            font-size: 6pt;
             color: #dc2626 !important;
-            margin-bottom: 4pt;
+            margin-bottom: 2pt;
             letter-spacing: 0.08em;
             font-weight: 700;
         }
 
         .achievements-list {
-            padding-left: 12pt;
+            padding-left: 10pt;
         }
 
         .achievements-list li {
-            font-size: 9pt;
+            font-size: 7pt;
             color: #374151 !important;
-            margin-bottom: 2pt;
-            line-height: 1.4;
+            margin-bottom: 1pt;
+            line-height: 1.3;
         }
 
         /* Roles */
         .role {
-            margin-top: 8pt;
-            padding-left: 8pt;
+            margin-top: 4pt;
+            padding-left: 6pt;
             border-left: 2pt solid #e5e7eb !important;
         }
 
         .role-header {
-            margin-bottom: 4pt;
+            margin-bottom: 2pt;
         }
 
         .role-header h4 {
-            font-size: 11pt;
+            font-size: 9pt;
             color: #1a1a1a !important;
             font-weight: 700;
         }
 
         .role-period {
-            font-size: 8pt;
+            font-size: 7pt;
             color: #6b7280 !important;
             font-family: monospace;
         }
 
         .role-content {
-            font-size: 9pt;
-            line-height: 1.3;
+            font-size: 8pt;
+            line-height: 1.2;
         }
 
         .detail-group {
-            margin-bottom: 6pt;
+            margin-top: 0;
+            margin-bottom: 2pt;
+        }
+
+        .detail-text+.detail-group {
+            margin-top: 1pt;
         }
 
         .detail-group h5 {
-            font-size: 10pt;
+            font-size: 8pt;
             color: #1a1a1a !important;
-            margin: 4pt 0 2pt;
+            margin: 0 0 1pt !important;
             font-weight: 700;
         }
 
@@ -831,24 +846,29 @@ layout: default
 
         .role-content li {
             color: #4b5563 !important;
-            margin-bottom: 2pt;
-            line-height: 1.4;
+            margin-bottom: 1pt;
+            line-height: 1.2;
         }
 
         .detail-text {
             color: #4b5563 !important;
-            margin: 3pt 0;
-            line-height: 1.4;
+            margin: 0 !important;
+            padding: 0;
+            line-height: 1.2;
+        }
+
+        .role-content p {
+            margin: 0 !important;
         }
 
         /* Sidebar */
         .resume-sidebar .resume-section {
-            margin-bottom: 14pt;
+            margin-bottom: 10pt;
         }
 
         .contact-info p {
-            font-size: 9pt;
-            margin-bottom: 4pt;
+            font-size: 8pt;
+            margin-bottom: 3pt;
             color: #374151 !important;
         }
 
@@ -858,18 +878,18 @@ layout: default
 
         /* Projects */
         .project {
-            margin-bottom: 12pt;
+            margin-bottom: 8pt;
         }
 
         .project h4 {
-            font-size: 10pt;
+            font-size: 9pt;
             font-weight: 700;
-            margin-bottom: 2pt;
+            margin-bottom: 1pt;
         }
 
         .project-link {
-            font-size: 8pt;
-            margin-bottom: 4pt;
+            font-size: 7pt;
+            margin-bottom: 3pt;
         }
 
         .project-link a {
@@ -877,36 +897,36 @@ layout: default
         }
 
         .resume-container .tech-tags {
-            gap: 3pt;
-            margin-bottom: 4pt;
+            gap: 2pt;
+            margin-bottom: 3pt;
         }
 
         .resume-container .tech-tag {
-            font-size: 7pt;
+            font-size: 6pt;
             background: #f3f4f6 !important;
             color: #374151 !important;
-            padding: 2pt 6pt;
+            padding: 1pt 4pt;
             border: 1pt solid #d1d5db !important;
-            border-radius: 3pt;
+            border-radius: 2pt;
             font-weight: 600;
         }
 
         .project-desc {
-            font-size: 8pt;
-            line-height: 1.35;
+            font-size: 7pt;
+            line-height: 1.3;
             color: #4b5563 !important;
         }
 
         /* Footer */
         .resume-footer {
-            padding: 8pt 20pt;
-            margin-top: 10pt;
+            padding: 6pt 16pt;
+            margin-top: 6pt;
             background: #f9fafb !important;
             border-top: 1pt solid #e5e7eb !important;
         }
 
         .resume-footer p {
-            font-size: 8pt;
+            font-size: 7pt;
             color: #6b7280 !important;
         }
 
@@ -914,9 +934,23 @@ layout: default
             color: #2563eb !important;
         }
 
+        /* Prevent page breaks after content */
+        .resume-page-2 {
+            page-break-after: avoid;
+        }
+
+        .resume-footer {
+            page-break-after: avoid;
+            page-break-inside: avoid;
+        }
+
         @page {
-            margin: 0.4in;
+            margin: 0.35in;
             size: letter;
+        }
+
+        @page :last {
+            margin-bottom: 0.35in;
         }
     }
 
