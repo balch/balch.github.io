@@ -9,7 +9,7 @@ navigation:
     url: /#portfolio
   - title: Career
     url: /#career
-  - title: Balch~Log
+  - title: Balch Bytes
     url: /#deep-thoughts
 social:
   github: balch

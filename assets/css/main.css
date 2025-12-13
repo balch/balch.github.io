@@ -1271,7 +1271,8 @@ html {
 /* Scroll offset for anchor navigation (account for fixed header) */
 #bio,
 #portfolio,
-#career {
+#career,
+#deep-thoughts {
     scroll-margin-top: 80px;
 }
 
