@@ -122,11 +122,9 @@ permalink: /deep-thoughts/
         closingSpan.style.animationDelay = `${words.length * 0.07}s`;
         textEl.appendChild(closingSpan);
         
-        // Set author with delay
-        setTimeout(() => {
-            authorEl.textContent = '— ' + quote.author;
-            authorEl.classList.add('visible');
-        }, words.length * 70 + 300);
+        // Set author immediately while quote types
+        authorEl.textContent = '— ' + quote.author;
+        authorEl.classList.add('visible');
         
         // Track animation state
         isAnimating = true;
