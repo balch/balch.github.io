@@ -2016,3 +2016,344 @@ html {
 .screenshot-carousel .screenshot:hover {
     opacity: 0.9;
 }
+
+/* ================================================================
+   MOBILE STYLES - CAREER SECTION & RESUME
+   ================================================================ */
+
+@media (max-width: 768px) {
+
+    /* Career Section Mobile */
+    .career-section {
+        padding: 0 0 2rem;
+    }
+
+    .career-container {
+        padding: 0 1rem;
+    }
+
+    .career-section-header {
+        padding-top: 0.5rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .career-section-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .career-footer {
+        padding: 1.5rem 0;
+    }
+
+    /* Employment Card Mobile */
+    .employment-card {
+        padding: 1.25rem;
+        margin-bottom: 1.25rem;
+        border-radius: 12px;
+    }
+
+    .employment-card-header {
+        margin-bottom: 1rem;
+    }
+
+    .company-info {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: flex-start;
+    }
+
+    .company-info h2 {
+        font-size: 1.25rem;
+        line-height: 1.2;
+    }
+
+    .period-badge {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.6rem;
+    }
+
+    .location {
+        font-size: 0.85rem;
+    }
+
+    .employment-awards {
+        margin-bottom: 1rem;
+    }
+
+    .award-badge {
+        font-size: 0.75rem;
+        padding: 0.3rem 0.6rem;
+    }
+
+    /* Roles Timeline Mobile */
+    .roles-timeline {
+        padding-left: 1rem;
+        border-left-width: 2px;
+    }
+
+    .role-item {
+        margin-left: 0.25rem;
+        padding-bottom: 0.75rem;
+    }
+
+    .role-item::before {
+        left: -1.4rem;
+        width: 10px;
+        height: 10px;
+    }
+
+    .role-header {
+        flex-direction: column;
+        gap: 0.25rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .role-header h3 {
+        font-size: 1rem;
+    }
+
+    .role-period {
+        font-size: 0.75rem;
+    }
+
+    .detail-section {
+        margin-bottom: 0.75rem;
+    }
+
+    .detail-section h4 {
+        font-size: 0.9rem;
+    }
+
+    .detail-section ul {
+        padding-left: 1rem;
+    }
+
+    .detail-section li {
+        font-size: 0.9rem;
+        margin-bottom: 0.35rem;
+        line-height: 1.5;
+    }
+
+    .detail-text {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    /* Resume Page Mobile */
+    .resume-page {
+        padding: 1rem 0.5rem;
+    }
+
+    .resume-actions {
+        margin-bottom: 1rem;
+    }
+
+    .resume-container {
+        padding: 1.25rem;
+        border-radius: 8px;
+    }
+
+    .resume-header {
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .resume-header h1 {
+        font-size: 1.75rem;
+    }
+
+    .resume-title {
+        font-size: 1rem;
+    }
+
+    .resume-contact {
+        flex-direction: column;
+        gap: 0.4rem;
+    }
+
+    .contact-item {
+        font-size: 0.8rem;
+    }
+
+    .resume-summary-section {
+        padding: 0.75rem 0;
+        margin-bottom: 1rem;
+    }
+
+    .resume-summary-section p {
+        font-size: 0.9rem;
+        text-align: left;
+    }
+
+    /* Resume Body - Stack on Mobile */
+    .resume-body {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .section-title {
+        font-size: 1rem;
+    }
+
+    /* Experience Items Mobile */
+    .experience-item {
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    .experience-header {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    .company-line {
+        flex-direction: column;
+        gap: 0.25rem;
+        align-items: flex-start;
+    }
+
+    .company-line h3 {
+        font-size: 1.1rem;
+    }
+
+    .location {
+        font-size: 0.8rem;
+    }
+
+    .period {
+        font-size: 0.8rem;
+    }
+
+    .awards {
+        gap: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .award {
+        font-size: 0.7rem;
+        padding: 0.15rem 0.5rem;
+    }
+
+    .role {
+        margin-top: 0.5rem;
+    }
+
+    .role-content {
+        font-size: 0.85rem;
+    }
+
+    .detail-group h5 {
+        font-size: 0.8rem;
+    }
+
+    /* Sidebar on Mobile */
+    .resume-sidebar .resume-section {
+        margin-bottom: 1.25rem;
+    }
+
+    .skill-category h4 {
+        font-size: 0.85rem;
+    }
+
+    .skill-category li {
+        font-size: 0.8rem;
+    }
+
+    .project h4 {
+        font-size: 0.9rem;
+    }
+
+    .project-link {
+        font-size: 0.7rem;
+    }
+
+    .tech-tag {
+        font-size: 0.65rem;
+    }
+
+    .project-desc {
+        font-size: 0.75rem;
+    }
+
+    .resume-footer {
+        padding-top: 1rem;
+        margin-top: 1rem;
+    }
+
+    .resume-footer p {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+
+    /* Career Section Extra Small */
+    .career-container {
+        padding: 0 0.75rem;
+    }
+
+    .employment-card {
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .company-info h2 {
+        font-size: 1.1rem;
+    }
+
+    .period-badge {
+        font-size: 0.7rem;
+    }
+
+    .role-header h3 {
+        font-size: 0.95rem;
+    }
+
+    .detail-section li {
+        font-size: 0.85rem;
+    }
+
+    /* Resume Extra Small */
+    .resume-container {
+        padding: 1rem;
+    }
+
+    .resume-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .resume-title {
+        font-size: 0.9rem;
+    }
+
+    .contact-item {
+        font-size: 0.75rem;
+    }
+
+    .contact-item svg {
+        width: 12px;
+        height: 12px;
+    }
+
+    .resume-summary-section p {
+        font-size: 0.85rem;
+    }
+
+    .company-line h3 {
+        font-size: 1rem;
+    }
+
+    .role-content {
+        font-size: 0.8rem;
+    }
+
+    .print-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    .print-btn svg {
+        width: 16px;
+        height: 16px;
+    }
+}
