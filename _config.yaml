@@ -9,8 +9,8 @@ navigation:
     url: /#portfolio
   - title: Career
     url: /#career
-  - title: Balch Blog
-    url: /deep-thoughts/
+  - title: Balch~Log
+    url: /#deep-thoughts
 social:
   github: balch
   linkedin: balch

@@ -1460,8 +1460,72 @@ html {
    DEEP THOUGHTS STYLES
    ================================================================ */
 
+.deep-thoughts-section {
+    padding: 2rem 2rem 1rem 4rem;
+}
+
+@media (max-width: 768px) {
+    .deep-thoughts-section {
+        padding: 1.5rem 1rem;
+    }
+}
+
 .deep-thoughts-container {
-    margin-bottom: 3rem;
+    max-width: 800px;
+    margin-bottom: 1rem;
+}
+
+/* ================================================================
+   SOAPBOX (BLOG) SECTION
+   ================================================================ */
+
+.blog-section {
+    padding: 3rem 2rem 2rem 4rem;
+}
+
+@media (max-width: 768px) {
+    .blog-section {
+        padding: 2rem 1rem;
+    }
+}
+
+.blog-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.blog-section-header {
+    padding: 1rem 0 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.blog-section-header h2 {
+    font-size: clamp(2.5rem, 2rem + 3vw, 4rem);
+    font-weight: 800;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0;
+}
+
+.blog-section .post-list {
+    margin: 1rem 0;
+}
+
+.blog-section .post-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    transition: var(--transition-smooth);
+}
+
+.blog-section .post-item:hover {
+    border-color: var(--accent-primary);
+    transform: translateX(8px);
+    box-shadow: var(--shadow-sm);
 }
 
 .deep-thoughts-card {
@@ -1473,11 +1537,27 @@ html {
     box-shadow: var(--shadow-sm);
 }
 
+@media (max-width: 768px) {
+    .deep-thoughts-card {
+        padding: 1rem;
+        padding-top: 3rem;
+        /* Make room for gear button */
+    }
+}
+
 .deep-thoughts-title {
     font-size: 1.75rem;
     color: var(--text-primary);
     margin-bottom: 1rem;
 }
+
+@media (max-width: 768px) {
+    .deep-thoughts-title {
+        font-size: 1.4rem;
+        margin-bottom: 0.75rem;
+    }
+}
+
 
 .gear-button {
     position: absolute;
@@ -1492,6 +1572,27 @@ html {
     width: 60px;
     height: 40px;
 }
+
+@media (max-width: 768px) {
+    .gear-button {
+        top: 0.5rem;
+        right: 0.5rem;
+        width: 50px;
+        height: 35px;
+        padding: 0.75rem;
+        /* Larger tap target */
+    }
+
+    .quote-content {
+        padding-right: 0;
+    }
+
+    .quote-text {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+}
+
 
 .gear-button:disabled {
     cursor: wait;
