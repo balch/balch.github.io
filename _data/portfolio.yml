@@ -9,25 +9,25 @@
     - Ktor
   scroll_sections:
     - title: "Reference App?"
-      image: /assets/images/portfolio/recipes/recipes-category.png
+      image: /assets/images/portfolio/recipes/recipes_category.png
       content: |
         Keeping up with new Android **libraries and trends** is always a challenge. One technique I use is to always have a reference app handy. These apps showcase the latest Android **architecture and patterns** for UI and business logic separation, navigation UX and theming, data retrieval, threading, dependency injection, and testing.
         
         The latest incarnation is called **_Recipes_**. This app **conflates** _Meal_ and _Code_ Recipes, creating a UX to demonstrate the techniques it describes. The goal was to brush up on the latest Android **tech stack** and pack as many features as I could into an app created in my _"spare"_ time.
     - title: "Meal Recipes"
-      image: /assets/images/portfolio/recipes/recipes-detail.png
+      image: /assets/images/portfolio/recipes/recipes_detail.png
       content: |
         One data source is from **TheMealDB** which has categorized data with textual and visual information describing a semi-complex process (_aka_ **Meal Recipe**). The app features category and cuisine browsing, ingredient lists with measurements, and step-by-step cooking instructions.
         
         The UI showcases **Material 3** design with **adaptive** layouts for phones, tablets, and foldables. Shared element transitions create fluid navigation between views. 
     - title: "Code Recipes"
-      image: /assets/images/portfolio/recipes/lightmode-code.png
+      image: /assets/images/portfolio/recipes/recipes_code.png
       content: |
         The other data source was my 🧠, describing the code used to build the app in the form of **Code Recipes**. These recipes describe the wiring and plumbing used to create a visually compelling Android Application.
         
         Topics include **Metro** dependency injection, Compose navigation with Nav3, shared element transitions, and adaptive layouts. Each recipe includes **markdown-formatted** descriptions with code syntax highlighting.
     - title: "AI Agent Integration"
-      image: /assets/images/portfolio/recipes/recipes-agent.png
+      image: /assets/images/portfolio/recipes/recipes_agent.png
       content: |
         **Recipe Maestro** is the in-app chatbot that answers questions about meal and coding recipes.
         The agent configuration provides **randomized mood** prompts for more **intesting engagement**.
