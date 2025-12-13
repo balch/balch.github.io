@@ -163,6 +163,7 @@ layout: default
         </div>
         <div class="employment-web-view">
             {% for exp in site.data.employment.experience %}
+            {% if exp.visible_site != false %}
             <div class="employment-card">
                 <div class="employment-card-header">
                     <div class="company-info">
@@ -176,6 +177,14 @@ layout: default
                 <div class="employment-awards">
                     {% for award in exp.awards %}
                     <span class="award-badge">🏆 {{ award }}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+                {% if exp.badges %}
+                <div class="company-badges">
+                    {% for badge in exp.badges %}
+                    <span class="company-badge">ℹ️ {{ badge }}</span>
                     {% endfor %}
                 </div>
                 {% endif %}
@@ -208,6 +217,7 @@ layout: default
                     {% endfor %}
                 </div>
             </div>
+            {% endif %}
             {% endfor %}
         </div>
         <div class="career-footer">

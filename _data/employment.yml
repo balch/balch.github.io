@@ -2,7 +2,7 @@
 personal_info:
   name: "Jay Balcher"
   title: "Android Software Engineer"
-  email: "jay@balcher.com"
+  email: "balch61@gmail.com"
   linkedin: "linkedin.com/in/balch"
   github: "github.com/balch"
 
@@ -11,6 +11,8 @@ summary: "Principal Android Engineer with deep expertise in **media playback**, 
 # Employment History
 experience:
   - company: "The Walt Disney Company"
+    visible_site: true
+    visible_resume: true
     location: "Remote"
     period: "Feb 2018 - Present (7+ years)"
     awards:
@@ -59,6 +61,8 @@ experience:
               - "Created an engaging intermission animation visualizing the ice resurfacer's progress."
 
   - company: "Black Pixel"
+    visible_site: false
+    visible_resume: false
     location: "Remote"
     period: "Nov 2016 - Feb 2018 (1 year 4 months)"
     roles:
@@ -76,8 +80,12 @@ experience:
               - "Designed **GeoFence and Location** modules using RxJava to restrict where the application can be used."
 
   - company: "Staance"
+    visible_site: true
+    visible_resume: true
     location: "San Francisco, CA"
     period: "Feb 2016 - Aug 2016 (7 months)"
+    badges:
+      - "Startup"
     roles:
       - title: "Lead Android Engineer"
         period: "Feb 2016 - Aug 2016"
@@ -99,6 +107,8 @@ experience:
               - "Resolved technical and personnel issues resulting in a ***highly productive and cohesive team***."
 
   - company: "Nike"
+    visible_site: true
+    visible_resume: true
     location: "Beaverton, OR (WHQ)"
     period: "Oct 2014 - Aug 2015 (11 months)"
     roles:
@@ -118,8 +128,13 @@ experience:
               - "Integrated **3rd party libraries** and *mentored junior team members*."
 
   - company: "Jive Software"
+    visible_site: true
+    visible_resume: true
     location: "Portland, OR"
     period: "Oct 2011 - Aug 2014 (2 years 11 months)"
+    badges:
+      - "Startup"
+      - "IPO"
     roles:
       - title: "Senior Software Engineer"
         period: "Oct 2011 - Aug 2014"
@@ -139,8 +154,12 @@ experience:
               - "Technologies: *Java, Spring, Postgres SQL, XMPP, JMeter, REST, git, maven, Mockito*"
 
   - company: "Control4"
+    visible_site: false
+    visible_resume: false
     location: "Salt Lake City, UT"
     period: "Dec 2009 - Oct 2011 (1 year 11 months)"
+    badges:
+      - "Startup"
     roles:
       - title: "Senior Software Engineer"
         period: "Dec 2009 - Oct 2011"
@@ -160,8 +179,13 @@ experience:
               - "Developed a general purpose **object library** in Lua which *fundamentally changed* the way drivers are developed at Control4 Energy."
 
   - company: "CDC Software (Saratoga Systems)"
+    visible_site: false
+    visible_resume: false
     location: "Campbell, CA"
     period: "Feb 2004 - Dec 2009 (5 years 11 months)"
+    badges:
+      - "Startup"
+      - "Acquired"
     roles:
       - title: "Lead Software Engineer"
         period: "Feb 2004 - Dec 2009"

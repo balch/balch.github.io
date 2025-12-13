@@ -1342,6 +1342,25 @@ html {
     margin-bottom: 1.5rem;
 }
 
+/* Company Badges - Subtle styling for Startup/IPO/Acquired */
+.company-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+}
+
+.company-badge {
+    font-size: 0.8rem;
+    color: #2dd4bf;
+    background: rgba(45, 212, 191, 0.1);
+    border: 1px solid rgba(45, 212, 191, 0.4);
+    padding: 0.25rem 0.6rem;
+    border-radius: 12px;
+    font-weight: 500;
+    box-shadow: 0 0 8px rgba(45, 212, 191, 0.15);
+}
+
 .roles-timeline {
     position: relative;
     padding-left: 1.5rem;
@@ -1383,7 +1402,7 @@ html {
 
 .role-period {
     font-size: 0.85rem;
-    color: var(--text-secondary);
+    color: #bbb;
     font-family: monospace;
 }
 
