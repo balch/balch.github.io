@@ -18,57 +18,142 @@ layout: default
 
     <!-- Resume Content -->
     <div class="resume-container">
-        <!-- Header -->
-        <header class="resume-header">
-            <h1>{{ site.data.employment.personal_info.name }}</h1>
-            <p class="resume-title">{{ site.data.employment.personal_info.title }}</p>
-            <div class="resume-contact">
-                <span class="contact-item">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2">
-                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                        <polyline points="22,6 12,13 2,6"></polyline>
-                    </svg>
-                    {{ site.data.employment.personal_info.email }}
-                </span>
-                <span class="contact-item">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2">
-                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                        <rect x="2" y="9" width="4" height="12"></rect>
-                        <circle cx="4" cy="4" r="2"></circle>
-                    </svg>
-                    {{ site.data.employment.personal_info.linkedin }}
-                </span>
-                <span class="contact-item">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2">
-                        <path
-                            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                        </path>
-                    </svg>
-                    {{ site.data.employment.personal_info.github }}
-                </span>
+        <!-- ==================== PAGE 1 ==================== -->
+        <div class="resume-page-1">
+            <!-- Header -->
+            <header class="resume-header">
+                <h1>{{ site.data.employment.personal_info.name | upcase }}</h1>
+                <p class="resume-title">{{ site.data.employment.personal_info.title }}</p>
+            </header>
+
+            <!-- Summary -->
+            <section class="resume-summary-section">
+                <p>{{ site.data.bio.who_am_i | markdownify | remove: '
+                <p>' | remove: '</p>' }}</p>
+            </section>
+
+            <!-- Two Column Layout -->
+            <div class="resume-body">
+                <!-- Main Column: Experience (Disney Only) -->
+                <main class="resume-main">
+                    <section class="resume-section">
+                        <h2 class="section-title">Experience</h2>
+                        {% for exp in site.data.employment.experience %}
+                        {% if exp.visible_resume != false and forloop.first %}
+                        <div class="experience-item">
+                            <div class="experience-header">
+                                <div class="company-info">
+                                    <h3>{{ exp.company }}</h3>
+                                    <span class="location">{{ exp.location }}</span>
+                                </div>
+                                <span class="period">{{ exp.period }}</span>
+                            </div>
+
+                            {% if exp.awards %}
+                            <div class="key-achievements">
+                                <h5 class="achievements-title">KEY ACHIEVEMENTS</h5>
+                                <ul class="achievements-list">
+                                    {% for award in exp.awards %}
+                                    <li>{{ award }}</li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                            {% endif %}
+
+                            {% if exp.badges %}
+                            <div class="company-badges">
+                                {% for badge in exp.badges %}
+                                <span class="company-badge">{{ badge }}</span>
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+
+                            {% for role in exp.roles %}
+                            <div class="role">
+                                <div class="role-header">
+                                    <h4>{{ role.title }}</h4>
+                                    <span class="role-period">{{ role.period }}</span>
+                                </div>
+                                <div class="role-content">
+                                    {% for detail in role.details %}
+                                    {% if detail.subject %}
+                                    <div class="detail-group">
+                                        <h5>{{ detail.subject }}</h5>
+                                        <ul>
+                                            {% for point in detail.points %}
+                                            <li>{{ point | markdownify | remove: '<p>' | remove: '</p>' }}</li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                    {% else %}
+                                    <p class="detail-text">{{ detail | markdownify | remove: '
+                                    <p>' | remove: '</p>' }}</p>
+                                    {% endif %}
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                    </section>
+                </main>
+
+                <!-- Sidebar -->
+                <aside class="resume-sidebar">
+                    <!-- Contact Info -->
+                    <section class="resume-section">
+                        <h2 class="section-title">Contact</h2>
+                        <div class="contact-info">
+                            <p><a href="mailto:{{ site.data.employment.personal_info.email }}">{{
+                                    site.data.employment.personal_info.email }}</a></p>
+                            <p><a
+                                    href="tel:{{ site.data.employment.personal_info.phone | default: 'REDACTED' | remove: '(' | remove: ')' | remove: ' ' | remove: '-' }}">{{
+                                    site.data.employment.personal_info.phone | default: "REDACTED" }}</a></p>
+                            <p>{{ site.data.employment.personal_info.location | default: "Beaverton, OR" }}</p>
+                            <p><a href="https://{{ site.data.employment.personal_info.linkedin }}">{{
+                                    site.data.employment.personal_info.linkedin }}</a></p>
+                            <p><a href="https://{{ site.data.employment.personal_info.github }}">{{
+                                    site.data.employment.personal_info.github }}</a></p>
+                        </div>
+                    </section>
+
+                    <!-- Projects -->
+                    <section class="resume-section">
+                        <h2 class="section-title">Projects</h2>
+                        {% for project in site.data.employment.projects %}
+                        <div class="project">
+                            <h4>{% if project.emoji %}{{ project.emoji }} {% endif %}{{ project.name }}</h4>
+                            <p class="project-link"><a href="https://{{ project.link }}">{{ project.link }}</a></p>
+                            <div class="tech-tags">
+                                {% for tech in project.technologies %}
+                                <span class="tech-tag">{{ tech }}</span>
+                                {% endfor %}
+                            </div>
+                            <p class="project-desc">{{ project.description }}</p>
+                        </div>
+                        {% endfor %}
+                    </section>
+                </aside>
             </div>
-        </header>
+        </div>
 
-        <!-- Summary -->
-        <section class="resume-summary-section">
-            <p>{{ site.data.employment.summary | markdownify | remove: '
-            <p>' | remove: '</p>' }}</p>
-        </section>
+        <!-- Page Break -->
+        <div class="page-break"></div>
 
-        <!-- Two Column Layout -->
-        <div class="resume-body">
-            <!-- Main Column: Experience -->
-            <main class="resume-main">
-                <section class="resume-section">
-                    <h2 class="section-title">Experience</h2>
+        <!-- ==================== PAGE 2 ==================== -->
+        <div class="resume-page-2">
+            <section class="resume-section resume-experience-continued">
+                <h2 class="section-title">Experience (Continued)</h2>
+                <div class="experience-grid">
+                    {% assign job_index = 0 %}
                     {% for exp in site.data.employment.experience %}
                     {% if exp.visible_resume != false %}
+                    {% assign job_index = job_index | plus: 1 %}
+                    {% if job_index > 1 %}
                     <div class="experience-item">
                         <div class="experience-header">
-                            <div class="company-line">
+                            <div class="company-info">
                                 <h3>{{ exp.company }}</h3>
                                 <span class="location">{{ exp.location }}</span>
                             </div>
@@ -76,17 +161,20 @@ layout: default
                         </div>
 
                         {% if exp.awards %}
-                        <div class="awards">
-                            {% for award in exp.awards %}
-                            <span class="award">★ {{ award }}</span>
-                            {% endfor %}
+                        <div class="key-achievements">
+                            <h5 class="achievements-title">KEY ACHIEVEMENTS</h5>
+                            <ul class="achievements-list">
+                                {% for award in exp.awards %}
+                                <li>{{ award }}</li>
+                                {% endfor %}
+                            </ul>
                         </div>
                         {% endif %}
 
                         {% if exp.badges %}
                         <div class="company-badges">
                             {% for badge in exp.badges %}
-                            <span class="company-badge">ℹ {{ badge }}</span>
+                            <span class="company-badge">{{ badge }}</span>
                             {% endfor %}
                         </div>
                         {% endif %}
@@ -118,56 +206,24 @@ layout: default
                         {% endfor %}
                     </div>
                     {% endif %}
+                    {% endif %}
                     {% endfor %}
-                </section>
-            </main>
+                </div>
+            </section>
 
-            <!-- Sidebar -->
-            <aside class="resume-sidebar">
-                <!-- Skills -->
-                <section class="resume-section">
-                    <h2 class="section-title">Skills</h2>
-                    {% for skill in site.data.employment.skills %}
-                    <div class="skill-category">
-                        <h4>{{ skill.category }}</h4>
-                        <ul>
-                            {% for item in skill.items %}
-                            <li>{{ item }}</li>
-                            {% endfor %}
-                        </ul>
-                    </div>
-                    {% endfor %}
-                </section>
-
-                <!-- Projects -->
-                <section class="resume-section">
-                    <h2 class="section-title">Projects</h2>
-                    {% for project in site.data.employment.projects %}
-                    <div class="project">
-                        <h4>{{ project.name }}</h4>
-                        <p class="project-link">{{ project.link }}</p>
-                        <div class="tech-tags">
-                            {% for tech in project.technologies %}
-                            <span class="tech-tag">{{ tech }}</span>
-                            {% endfor %}
-                        </div>
-                        <p class="project-desc">{{ project.description }}</p>
-                    </div>
-                    {% endfor %}
-                </section>
-            </aside>
+            <!-- Footer -->
+            <footer class="resume-footer">
+                <p>Full professional history on <strong><a
+                            href="https://{{ site.data.employment.personal_info.linkedin }}">LinkedIn</a></strong> ·
+                    Portfolio and code on <strong><a
+                            href="https://{{ site.data.employment.personal_info.github }}">GitHub</a></strong></p>
+            </footer>
         </div>
-
-        <!-- Footer -->
-        <footer class="resume-footer">
-            <p>Full professional history on <strong>LinkedIn</strong> · Portfolio and code on <strong>GitHub</strong>
-            </p>
-        </footer>
     </div>
 </div>
 
 <style>
-    /* Resume Page Styles */
+    /* Resume Page Styles - Cream Theme (matching PdfResume.tsx) */
     .resume-page {
         max-width: 900px;
         margin: 0 auto;
@@ -181,220 +237,309 @@ layout: default
     }
 
     .resume-container {
-        background: var(--bg-secondary, #1a1a2e);
+        background: #fff;
         border-radius: 12px;
-        padding: 2.5rem;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        padding: 0;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        color: #1a1a1a;
+        overflow: hidden;
     }
 
-    /* Header */
+    /* Override site's global dark theme variables */
+    .resume-container,
+    .resume-container * {
+        --text-primary: #1a1a1a;
+        --text-secondary: #333;
+        --accent-primary: #2563eb;
+    }
+
+    /* Reset all paragraph and list text colors */
+    .resume-container p,
+    .resume-container li,
+    .resume-container span,
+    .resume-container div {
+        color: #333;
+    }
+
+    .resume-container h1,
+    .resume-container h2,
+    .resume-container h3,
+    .resume-container h4,
+    .resume-container h5,
+    .resume-container h6 {
+        color: #1a1a1a;
+    }
+
+    .resume-container a {
+        color: #2563eb;
+    }
+
+    /* Page Break - Hidden on screen, active on print */
+    .page-break {
+        display: block;
+        height: 2rem;
+        background: linear-gradient(to right, transparent, #e5e5e5 20%, #e5e5e5 80%, transparent);
+        margin: 0;
+    }
+
+    /* Header - Gray Background */
     .resume-header {
-        text-align: center;
-        border-bottom: 2px solid var(--accent-primary, #4f8cff);
-        padding-bottom: 1.5rem;
-        margin-bottom: 1.5rem;
+        background: #f8f8f8;
+        border-bottom: 1px solid #e0e0e0;
+        text-align: left;
+        padding: 2rem 2.5rem;
+        margin-bottom: 0;
     }
 
     .resume-header h1 {
         font-size: 2.5rem;
-        margin: 0 0 0.25rem;
-        color: var(--text-primary, #fff);
-        letter-spacing: 0.02em;
+        margin: 0 0 0.35rem;
+        color: #1a1a1a;
+        letter-spacing: 0.04em;
+        font-weight: 800;
     }
 
     .resume-title {
-        font-size: 1.25rem;
-        color: var(--accent-primary, #4f8cff);
-        margin: 0 0 1rem;
-        font-weight: 500;
-    }
-
-    .resume-contact {
-        display: flex;
-        justify-content: center;
-        gap: 2rem;
-        flex-wrap: wrap;
-    }
-
-    .contact-item {
-        display: flex;
-        align-items: center;
-        gap: 0.4rem;
-        font-size: 0.9rem;
-        color: var(--text-secondary, #a0a0a0);
-    }
-
-    .contact-item svg {
-        opacity: 0.7;
+        font-size: 1.35rem;
+        color: #2563eb;
+        margin: 0;
+        font-weight: 600;
     }
 
     /* Summary */
     .resume-summary-section {
-        padding: 1rem 0;
-        border-bottom: 1px solid var(--border-color, #333);
-        margin-bottom: 1.5rem;
+        padding: 1.25rem 2rem;
+        background: #fff;
+        margin: 0;
+        border-bottom: 1px solid #e0e0e0;
     }
 
     .resume-summary-section p {
-        font-size: 1rem;
-        line-height: 1.6;
-        color: var(--text-secondary, #ccc);
+        font-size: 0.95rem;
+        line-height: 1.7;
+        color: #333;
         margin: 0;
-        text-align: center;
+        text-align: left;
     }
 
-    /* Body Layout */
+    /* Body Layout - 65/35 split */
     .resume-body {
         display: grid;
-        grid-template-columns: 1fr 280px;
-        gap: 2.5rem;
+        grid-template-columns: 65% 35%;
+        gap: 0;
+    }
+
+    .resume-main {
+        padding: 1.5rem 2rem;
+    }
+
+    /* Page 2 - Full Width */
+    .resume-page-2 {
+        padding: 1.5rem 2rem;
+    }
+
+    .resume-experience-continued {
+        margin-bottom: 0;
+    }
+
+    .resume-experience-continued .experience-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
     }
 
     /* Section Titles */
     .section-title {
-        font-size: 1.1rem;
+        font-size: 0.75rem;
         text-transform: uppercase;
-        letter-spacing: 0.1em;
-        color: var(--accent-primary, #4f8cff);
-        border-bottom: 1px solid var(--accent-primary, #4f8cff);
+        letter-spacing: 0.2em;
+        color: #666;
+        border-bottom: 1px solid #e0e0e0;
         padding-bottom: 0.5rem;
         margin: 0 0 1rem;
+        font-weight: 700;
     }
 
     /* Experience Items */
     .experience-item {
         margin-bottom: 1.5rem;
-        padding-bottom: 1.5rem;
-        border-bottom: 1px solid var(--border-color, #333);
+        padding-bottom: 0;
+        border-bottom: none;
     }
 
     .experience-item:last-child {
-        border-bottom: none;
         margin-bottom: 0;
-        padding-bottom: 0;
     }
 
     .experience-header {
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.25rem;
     }
 
-    .company-line {
+    .company-info {
         display: flex;
-        align-items: baseline;
-        gap: 0.75rem;
+        flex-direction: column;
+        gap: 0.1rem;
     }
 
-    .company-line h3 {
-        font-size: 1.15rem;
+    .company-info h3 {
+        font-size: 1.1rem;
         margin: 0;
-        color: var(--text-primary, #fff);
+        color: #1a1a1a;
+        font-weight: 700;
     }
 
     .location {
         font-size: 0.85rem;
-        color: var(--text-tertiary, #888);
+        color: #555;
     }
 
     .period {
         font-size: 0.85rem;
-        color: var(--text-tertiary, #888);
+        color: #2563eb;
         white-space: nowrap;
-    }
-
-    .awards {
-        display: flex;
-        gap: 1rem;
-        flex-wrap: wrap;
-        margin-bottom: 0.75rem;
-    }
-
-    .award {
-        font-size: 0.8rem;
-        color: var(--accent-secondary, #ffc857);
-        background: rgba(255, 200, 87, 0.1);
+        font-weight: 600;
+        background: #f0f4ff;
         padding: 0.2rem 0.6rem;
         border-radius: 4px;
     }
 
+    /* KEY ACHIEVEMENTS Box */
+    .key-achievements {
+        background: #e8f4fc;
+        border-left: 4px solid #3b82f6;
+        padding: 0.65rem 1rem;
+        margin: 0.65rem 0;
+        border-radius: 0 4px 4px 0;
+    }
+
+    .achievements-title {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: #1e40af;
+        margin: 0 0 0.35rem;
+        font-weight: 700;
+    }
+
+    .achievements-list {
+        list-style: disc;
+        padding-left: 1.1rem;
+        margin: 0;
+    }
+
+    .achievements-list li {
+        font-size: 0.85rem;
+        color: #333;
+        margin-bottom: 0.15rem;
+        line-height: 1.4;
+    }
+
+    /* Company Badges */
+    .company-badges {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        margin-bottom: 0.5rem;
+    }
+
+    .company-badge {
+        font-size: 0.7rem;
+        color: #555;
+        background: #f0f0f0;
+        padding: 0.15rem 0.5rem;
+        border-radius: 3px;
+        font-weight: 500;
+    }
+
     /* Roles */
     .role {
-        margin-top: 0.75rem;
+        margin-top: 0.85rem;
+        padding-left: 1rem;
+        border-left: 2px solid #e0e0e0;
     }
 
     .role-header {
         display: flex;
         justify-content: space-between;
         align-items: baseline;
-        margin-bottom: 0.4rem;
+        margin-bottom: 0.25rem;
     }
 
     .role-header h4 {
-        font-size: 1rem;
+        font-size: 0.95rem;
         margin: 0;
-        color: var(--text-primary, #eee);
+        color: #1a1a1a;
         font-weight: 600;
     }
 
     .role-period {
         font-size: 0.8rem;
-        color: var(--text-tertiary, #888);
+        color: #666;
+        font-family: monospace;
     }
 
     .role-content {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
         line-height: 1.5;
     }
 
     .detail-group h5 {
-        font-size: 0.85rem;
-        color: var(--text-secondary, #bbb);
+        font-size: 0.8rem;
+        color: #1a1a1a;
         margin: 0.5rem 0 0.25rem;
-        font-weight: 500;
+        font-weight: 600;
     }
 
     .role-content ul {
-        margin: 0.25rem 0 0.5rem;
-        padding-left: 1.25rem;
+        margin: 0.15rem 0 0.5rem;
+        padding-left: 1.1rem;
     }
 
     .role-content li {
-        color: var(--text-secondary, #ccc);
+        color: #333;
         margin-bottom: 0.2rem;
+        line-height: 1.45;
     }
 
     .detail-text {
-        color: var(--text-secondary, #ccc);
+        color: #333;
         margin: 0.25rem 0;
+        line-height: 1.45;
     }
 
     /* Sidebar */
+    .resume-sidebar {
+        background: #f8fafc;
+        border-left: 1px solid #e0e0e0;
+        padding: 1.5rem;
+    }
+
     .resume-sidebar .resume-section {
         margin-bottom: 1.5rem;
     }
 
-    .skill-category {
-        margin-bottom: 1rem;
+    .resume-sidebar .resume-section:last-child {
+        margin-bottom: 0;
     }
 
-    .skill-category h4 {
-        font-size: 0.9rem;
-        color: var(--text-primary, #eee);
-        margin: 0 0 0.4rem;
-    }
-
-    .skill-category ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    .skill-category li {
+    /* Contact Info in Sidebar */
+    .contact-info p {
         font-size: 0.85rem;
-        color: var(--text-secondary, #aaa);
-        padding: 0.15rem 0;
+        color: #333;
+        margin: 0 0 0.4rem;
+        line-height: 1.4;
+    }
+
+    .contact-info a {
+        color: #2563eb;
+        text-decoration: none;
+    }
+
+    .contact-info a:hover {
+        text-decoration: underline;
     }
 
     /* Projects */
@@ -402,37 +547,56 @@ layout: default
         margin-bottom: 1.25rem;
     }
 
+    .project:last-child {
+        margin-bottom: 0;
+    }
+
     .project h4 {
-        font-size: 0.95rem;
-        color: var(--text-primary, #eee);
-        margin: 0 0 0.2rem;
+        font-size: 0.9rem;
+        color: #1a1a1a;
+        margin: 0 0 0.15rem;
+        font-weight: 700;
     }
 
     .project-link {
         font-size: 0.75rem;
-        color: var(--accent-primary, #4f8cff);
         margin: 0 0 0.4rem;
         word-break: break-all;
     }
 
-    .tech-tags {
+    .project-link a {
+        color: #2563eb;
+        text-decoration: none;
+    }
+
+    .project-link a:hover {
+        text-decoration: underline;
+    }
+
+    .resume-container .tech-tags {
         display: flex;
         flex-wrap: wrap;
         gap: 0.3rem;
         margin-bottom: 0.4rem;
     }
 
-    .tech-tag {
+    .resume-container .tech-tag {
         font-size: 0.7rem;
-        background: rgba(79, 140, 255, 0.15);
-        color: var(--accent-primary, #4f8cff);
+        background: #f0f0f0;
+        color: #444;
         padding: 0.15rem 0.4rem;
         border-radius: 3px;
+        border: 1px solid #ddd;
+        font-weight: 600;
+    }
+
+    .resume-container .tech-tag::before {
+        display: none;
     }
 
     .project-desc {
         font-size: 0.8rem;
-        color: var(--text-secondary, #aaa);
+        color: #555;
         margin: 0;
         line-height: 1.4;
     }
@@ -440,19 +604,34 @@ layout: default
     /* Footer */
     .resume-footer {
         text-align: center;
-        padding-top: 1.5rem;
+        padding: 1rem 2rem;
         margin-top: 1.5rem;
-        border-top: 1px solid var(--border-color, #333);
+        border-top: 1px solid #e0e0e0;
+        background: #f8f8f8;
     }
 
     .resume-footer p {
-        font-size: 0.85rem;
-        color: var(--text-tertiary, #888);
+        font-size: 0.8rem;
+        color: #555;
         margin: 0;
     }
 
-    /* Print Styles */
+    .resume-footer a {
+        color: #2563eb;
+        text-decoration: none;
+    }
+
+    .resume-footer a:hover {
+        text-decoration: underline;
+    }
+
+    /* Print Styles - WYSIWYG */
     @media print {
+        * {
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
         .resume-page {
             max-width: none;
             padding: 0;
@@ -462,97 +641,116 @@ layout: default
             background: white;
             box-shadow: none;
             border-radius: 0;
+        }
+
+        /* Page Break */
+        .page-break {
+            display: block;
+            page-break-after: always;
+            break-after: page;
+            height: 0;
+            margin: 0;
             padding: 0;
+            background: none;
+        }
+
+        /* Ensure Page 1 stays together */
+        .resume-page-1 {
+            page-break-inside: avoid;
+        }
+
+        /* Header */
+        .resume-header {
+            background: #f8f8f8 !important;
+            padding: 1.25rem 1.5rem;
         }
 
         .resume-header h1 {
-            color: #111;
             font-size: 2rem;
+            color: #1a1a1a !important;
         }
 
         .resume-title {
-            color: #333;
+            color: #2563eb !important;
         }
 
-        .resume-contact {
-            gap: 1.5rem;
+        .resume-summary-section {
+            padding: 0.85rem 1.5rem;
         }
 
-        .contact-item {
-            color: #444;
+        .resume-body {
+            padding: 0;
         }
 
-        .resume-summary-section p {
-            color: #333;
+        .resume-main {
+            padding: 1rem 1.5rem;
         }
 
+        .resume-sidebar {
+            background: #f8fafc !important;
+            padding: 1rem;
+        }
+
+        .resume-page-2 {
+            padding: 1rem 1.5rem;
+        }
+
+        /* Preserve all text colors */
         .section-title {
-            color: #222;
-            border-color: #222;
+            color: #666 !important;
         }
 
-        .company-line h3,
-        .role-header h4,
-        .skill-category h4,
-        .project h4 {
-            color: #111;
+        .company-info h3 {
+            color: #1a1a1a !important;
         }
 
-        .location,
-        .period,
-        .role-period {
-            color: #555;
+        .role-header h4 {
+            color: #1a1a1a !important;
+        }
+
+        .period {
+            color: #2563eb !important;
+            background: #f0f4ff !important;
         }
 
         .role-content li,
         .detail-text,
-        .skill-category li,
-        .project-desc {
-            color: #333;
+        .contact-info p,
+        .achievements-list li {
+            color: #333 !important;
         }
 
         .detail-group h5 {
-            color: #444;
+            color: #1a1a1a !important;
         }
 
-        .award {
-            background: #f5f5f5;
-            color: #666;
+        .key-achievements {
+            background: #e8f4fc !important;
+            border-color: #3b82f6 !important;
         }
 
-        .tech-tag {
-            background: #eee;
-            color: #333;
+        .achievements-title {
+            color: #1e40af !important;
         }
 
-        .project-link {
-            color: #333;
+        .resume-container .tech-tag {
+            background: #f0f0f0 !important;
+            color: #444 !important;
         }
 
-        .resume-footer p {
-            color: #666;
-        }
-
-        .experience-item,
-        .resume-summary-section {
-            border-color: #ddd;
-        }
-
-        .resume-header {
-            border-color: #333;
+        .contact-info a,
+        .project-link a,
+        .resume-footer a {
+            color: #2563eb !important;
         }
 
         .resume-footer {
-            border-color: #ddd;
-        }
-
-        /* Adjust layout for print */
-        .resume-body {
-            gap: 1.5rem;
+            background: #f8f8f8 !important;
         }
 
         @page {
-            margin: 0.5in;
+            margin: 0.4in;
+            size: letter;
         }
     }
 
@@ -569,103 +767,98 @@ layout: default
         }
 
         .resume-container {
-            padding: 1rem;
             border-radius: 8px;
             box-shadow: none;
         }
 
         .resume-header {
-            padding-bottom: 1rem;
-            margin-bottom: 1rem;
+            padding: 1.25rem 1rem;
         }
 
         .resume-header h1 {
-            font-size: 1.5rem;
+            font-size: 1.75rem;
         }
 
         .resume-title {
-            font-size: 0.95rem;
-            margin-bottom: 0.75rem;
-        }
-
-        .resume-contact {
-            flex-direction: column;
-            gap: 0.35rem;
-            align-items: center;
-        }
-
-        .contact-item {
-            font-size: 0.8rem;
-        }
-
-        .contact-item svg {
-            width: 12px;
-            height: 12px;
+            font-size: 1rem;
         }
 
         .resume-summary-section {
-            padding: 0.5rem 0;
-            margin-bottom: 1rem;
+            padding: 0.85rem 1rem;
         }
 
         .resume-summary-section p {
-            font-size: 0.85rem;
-            text-align: left;
+            font-size: 0.9rem;
         }
 
         .resume-body {
             grid-template-columns: 1fr;
-            gap: 1.25rem;
+            gap: 0;
+        }
+
+        .resume-main {
+            padding: 1rem;
+        }
+
+        .resume-sidebar {
+            border-left: none;
+            border-top: 1px solid #e0e0e0;
+            padding: 1rem;
+        }
+
+        .resume-page-2 {
+            padding: 1rem;
+        }
+
+        .page-break {
+            height: 1rem;
         }
 
         .section-title {
-            font-size: 0.95rem;
-            padding-bottom: 0.4rem;
+            font-size: 0.7rem;
             margin-bottom: 0.75rem;
         }
 
         .experience-item {
             margin-bottom: 1rem;
-            padding-bottom: 1rem;
         }
 
         .experience-header {
             flex-direction: column;
-            gap: 0.2rem;
+            gap: 0.25rem;
         }
 
-        .company-line {
-            flex-direction: column;
-            gap: 0.15rem;
-            align-items: flex-start;
-        }
-
-        .company-line h3 {
+        .company-info h3 {
             font-size: 1rem;
         }
 
         .period {
-            font-size: 0.75rem;
+            font-size: 0.8rem;
+            align-self: flex-start;
         }
 
-        .awards {
-            gap: 0.35rem;
-            margin-bottom: 0.4rem;
+        .key-achievements {
+            padding: 0.5rem 0.75rem;
+            margin: 0.5rem 0;
         }
 
-        .award {
-            font-size: 0.65rem;
-            padding: 0.1rem 0.4rem;
+        .achievements-title {
+            font-size: 0.6rem;
+        }
+
+        .achievements-list li {
+            font-size: 0.8rem;
         }
 
         .role {
-            margin-top: 0.4rem;
+            margin-top: 0.65rem;
+            padding-left: 0.75rem;
         }
 
         .role-header {
             flex-direction: column;
             gap: 0.1rem;
-            margin-bottom: 0.3rem;
+            margin-bottom: 0.15rem;
         }
 
         .role-header h4 {
@@ -673,7 +866,7 @@ layout: default
         }
 
         .role-period {
-            font-size: 0.7rem;
+            font-size: 0.75rem;
         }
 
         .role-content {
@@ -682,32 +875,20 @@ layout: default
 
         .role-content ul {
             padding-left: 1rem;
-            margin: 0.2rem 0 0.4rem;
-        }
-
-        .role-content li {
-            margin-bottom: 0.15rem;
+            margin: 0.15rem 0 0.35rem;
         }
 
         .detail-group h5 {
             font-size: 0.75rem;
-            margin: 0.3rem 0 0.15rem;
+            margin: 0.35rem 0 0.15rem;
         }
 
-        .skill-category {
-            margin-bottom: 0.75rem;
-        }
-
-        .skill-category h4 {
+        .contact-info p {
             font-size: 0.8rem;
         }
 
-        .skill-category li {
-            font-size: 0.75rem;
-        }
-
         .project {
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.85rem;
         }
 
         .project h4 {
@@ -715,21 +896,20 @@ layout: default
         }
 
         .project-link {
-            font-size: 0.65rem;
+            font-size: 0.7rem;
         }
 
-        .tech-tag {
-            font-size: 0.6rem;
+        .resume-container .tech-tag {
+            font-size: 0.65rem;
             padding: 0.1rem 0.3rem;
         }
 
         .project-desc {
-            font-size: 0.7rem;
+            font-size: 0.75rem;
         }
 
         .resume-footer {
-            padding-top: 0.75rem;
-            margin-top: 0.75rem;
+            padding: 0.85rem 1rem;
         }
 
         .resume-footer p {
@@ -743,28 +923,33 @@ layout: default
         }
 
         .resume-container {
-            padding: 0.75rem;
             border-radius: 4px;
         }
 
+        .resume-header {
+            padding: 1rem 0.75rem;
+        }
+
         .resume-header h1 {
-            font-size: 1.3rem;
+            font-size: 1.5rem;
         }
 
         .resume-title {
-            font-size: 0.85rem;
-        }
-
-        .contact-item {
-            font-size: 0.7rem;
-        }
-
-        .company-line h3 {
             font-size: 0.9rem;
         }
 
+        .resume-main,
+        .resume-sidebar,
+        .resume-page-2 {
+            padding: 0.75rem;
+        }
+
+        .company-info h3 {
+            font-size: 0.95rem;
+        }
+
         .role-header h4 {
-            font-size: 0.8rem;
+            font-size: 0.85rem;
         }
 
         .role-content {

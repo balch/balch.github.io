@@ -3,10 +3,10 @@ personal_info:
   name: "Jay Balcher"
   title: "Android Software Engineer"
   email: "balch61@gmail.com"
+  phone: "REDACTED"
+  location: "Beaverton, OR"
   linkedin: "linkedin.com/in/balch"
   github: "github.com/balch"
-
-summary: "Principal Android Engineer with deep expertise in **media playback**, system architecture, and team leadership. Passionate about building high-quality, scalable mobile applications and mentoring engineering teams."
 
 # Employment History
 experience:
@@ -48,8 +48,10 @@ experience:
       - title: "Senior Android Engineer, Disney+"
         period: "Dec 2020 - Feb 2022"
         details:
-          - "Developed and shipped key features for the Disney+ Playback UX."
-          - "Contributed to the **successful launch of Star+** in Latin America."
+          - subject: "Android Playback Team - USA"
+            points:
+            - "Developed and shipped key features for the Disney+ Playback UX."
+            - "Contributed to the **successful launch of Star+** in Latin America."
       - title: "NHL Android Lead"
         period: "Feb 2018 - Dec 2020"
         details:
@@ -87,24 +89,24 @@ experience:
     badges:
       - "Startup"
     roles:
-      - title: "Lead Android Engineer"
+      - title: "Engineering Team Lead"
         period: "Feb 2016 - Aug 2016"
         details:
+          - subject: "Team Leadership"
+            points:
+              - "**Mentored** junior engineer with *no prior Android or Java experience* into a critical team member responsible for major features."
+              - "Resolved technical and personnel issues resulting in a ***highly productive and cohesive team***."
+          - subject: "Technical Leadership"
+            points:
+              - "Eliminated tech debt dramatically improving **application performance** and *stability* in 2 sprints."
+              - "Enabled **ProGuard** in release builds for a *smaller and more secure* APK."
+              - "Implemented **GitFlow** branch and release process producing *better code and faster release cycles*."
           - subject: "Product"
             points:
               - "STAANCE provides a platform for people to **make a statement**, view other's reactions, and *start meaningful conversations*."
           - subject: "UI Development"
             points:
               - "Created ***compelling and interactive UI*** for major app features, including notifications, agree/disagree slider, and animated floating action buttons."
-          - subject: "Technical Leadership"
-            points:
-              - "Eliminated tech debt dramatically improving **application performance** and *stability* in 2 sprints."
-              - "Enabled **ProGuard** in release builds for a *smaller and more secure* APK."
-              - "Implemented **GitFlow** branch and release process producing *better code and faster release cycles*."
-          - subject: "Team Leadership"
-            points:
-              - "**Mentored** junior engineer with *no prior Android or Java experience* into a critical team member responsible for major features."
-              - "Resolved technical and personnel issues resulting in a ***highly productive and cohesive team***."
 
   - company: "Nike"
     visible_site: true
