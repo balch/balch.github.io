@@ -18,7 +18,12 @@
     <div class="container">
       <nav>
         <a href="{{ '/' | relative_url }}" class="logo">{{ site.title }}</a>
-        <ul class="nav-links">
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+        <ul class="nav-links" id="navLinks">
           {% for item in site.navigation %}
           <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
           {% endfor %}
@@ -44,6 +49,35 @@
       </p>
     </div>
   </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const navToggle = document.getElementById('navToggle');
+      const navLinks = document.getElementById('navLinks');
+
+      if (navToggle && navLinks) {
+        navToggle.addEventListener('click', () => {
+          const isOpen = navToggle.classList.toggle('open');
+          navLinks.classList.toggle('open');
+          navToggle.setAttribute('aria-expanded', isOpen);
+
+          // Haptic feedback
+          if (navigator.vibrate) {
+            navigator.vibrate(isOpen ? [30, 50, 20] : [20]);
+          }
+        });
+
+        // Close menu when clicking a link
+        navLinks.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            navToggle.classList.remove('open');
+            navLinks.classList.remove('open');
+            navToggle.setAttribute('aria-expanded', 'false');
+          });
+        });
+      }
+    });
+  </script>
 
 </body>
 
