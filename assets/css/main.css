@@ -871,6 +871,19 @@ html {
     border-bottom: none;
 }
 
+/* Last scroll section with project link */
+.scroll-section-last {
+    border-bottom: none;
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid rgba(139, 92, 246, 0.3);
+}
+
+.project-link-container {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+}
+
 .scroll-section-title {
     font-size: clamp(1.25rem, 1rem + 1vw, 1.5rem);
     color: var(--accent-secondary);

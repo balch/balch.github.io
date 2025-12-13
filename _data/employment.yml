@@ -58,6 +58,126 @@ experience:
               - "Implemented **GameFlow**, a real-time visualization of in-game momentum."
               - "Created an engaging intermission animation visualizing the ice resurfacer's progress."
 
+  - company: "Black Pixel"
+    location: "Remote"
+    period: "Nov 2016 - Feb 2018 (1 year 4 months)"
+    roles:
+      - title: "Senior Android Engineer"
+        period: "Nov 2016 - Feb 2018"
+        details:
+          - subject: "Digital Design Studio"
+            points:
+              - "Member of digital design studio contracted out to large **Advanced Media group**."
+              - "Integrated ***realtime sports data*** with streaming video using **ExoPlayer**."
+              - "Developed for Android **Mobile, TV, and Chromecast** platforms."
+          - subject: "Technical Improvements"
+            points:
+              - "Enabled **ProGuard** in release builds resulting in a *faster and more secure* APK."
+              - "Designed **GeoFence and Location** modules using RxJava to restrict where the application can be used."
+
+  - company: "Staance"
+    location: "San Francisco, CA"
+    period: "Feb 2016 - Aug 2016 (7 months)"
+    roles:
+      - title: "Lead Android Engineer"
+        period: "Feb 2016 - Aug 2016"
+        details:
+          - subject: "Product"
+            points:
+              - "STAANCE provides a platform for people to **make a statement**, view other's reactions, and *start meaningful conversations*."
+          - subject: "UI Development"
+            points:
+              - "Created ***compelling and interactive UI*** for major app features, including notifications, agree/disagree slider, and animated floating action buttons."
+          - subject: "Technical Leadership"
+            points:
+              - "Eliminated tech debt dramatically improving **application performance** and *stability* in 2 sprints."
+              - "Enabled **ProGuard** in release builds for a *smaller and more secure* APK."
+              - "Implemented **GitFlow** branch and release process producing *better code and faster release cycles*."
+          - subject: "Team Leadership"
+            points:
+              - "**Mentored** junior engineer with *no prior Android or Java experience* into a critical team member responsible for major features."
+              - "Resolved technical and personnel issues resulting in a ***highly productive and cohesive team***."
+
+  - company: "Nike"
+    location: "Beaverton, OR (WHQ)"
+    period: "Oct 2014 - Aug 2015 (11 months)"
+    roles:
+      - title: "Senior Android Engineer"
+        period: "Oct 2014 - Aug 2015"
+        details:
+          - subject: "Nike+ Running"
+            points:
+              - "Senior developer on the **Nike+ Android Running** team working on features and stabilization."
+              - "Nike's *most popular* Android app used by ***millions of runners*** around the world."
+              - "Application has over **10 million installs** and maintains a *4.4+ rating* on Google Play."
+          - subject: "Key Contributions"
+            points:
+              - "Built ***new home screen*** with rolling number and **leaderboard animations**."
+              - "Implemented **memory and bandwidth** optimizations."
+              - "Worked with **GPS, BLE, SQL, REST, JUnit**."
+              - "Integrated **3rd party libraries** and *mentored junior team members*."
+
+  - company: "Jive Software"
+    location: "Portland, OR"
+    period: "Oct 2011 - Aug 2014 (2 years 11 months)"
+    roles:
+      - title: "Senior Software Engineer"
+        period: "Oct 2011 - Aug 2014"
+        details:
+          - subject: "Jive for Android"
+            points:
+              - "Member of the Jive for Android team working on the ***launch of a native Android application***."
+              - "Responsibilities include requirement gathering, **new feature design** and implementation, maintenance and bug fixing."
+              - "Contributed to defining ***architectural patterns*** used throughout the application."
+              - "Technologies: *Android SDK, Java, REST Services, Robolectric, git, gerrit, maven, IntelliJ*"
+          - subject: "Jive Cloud Admin"
+            points:
+              - "Key member on the team responsible for **launching, improving, maintaining**, and troubleshooting Jive Cloud SAAS service."
+              - "Played vital role in the launch of the **Try-Jive service** and *resolving all issues in a timely manner*."
+              - "Developed **JMeter load tests** instrumental in pinpointing ***critical bottlenecks*** in the service stack."
+              - "Developed functionality that improved the *speed, reliability, and stability* of upgrading Jive's **largest customers**."
+              - "Technologies: *Java, Spring, Postgres SQL, XMPP, JMeter, REST, git, maven, Mockito*"
+
+  - company: "Control4"
+    location: "Salt Lake City, UT"
+    period: "Dec 2009 - Oct 2011 (1 year 11 months)"
+    roles:
+      - title: "Senior Software Engineer"
+        period: "Dec 2009 - Oct 2011"
+        details:
+          - subject: "Advantage Web Services"
+            points:
+              - "Principal role in the ***architecture and development*** of Control4's REST web services."
+              - "Service acts as a conduit between the **EC100's** and the utilities' head-end systems."
+              - "Designed to ***massively scale***."
+              - "Technologies: *Java, Spring, Tomcat, Hibernate, MySql, Maven, JMX, JMeter*"
+          - subject: "Energy Analytics Driver"
+            points:
+              - "Developed a **Lua application** running on the EC100 responsible for *analyzing and serving energy usage* and pricing information."
+              - "Created an on-device ***Sqlite database schema*** to store up to *five years of energy usage* information."
+              - "Database layer able to detect **version changes** and update the schema when appropriate."
+              - "Created a ***mini object relation mapping layer*** to save Lua objects into the database."
+              - "Developed a general purpose **object library** in Lua which *fundamentally changed* the way drivers are developed at Control4 Energy."
+
+  - company: "CDC Software (Saratoga Systems)"
+    location: "Campbell, CA"
+    period: "Feb 2004 - Dec 2009 (5 years 11 months)"
+    roles:
+      - title: "Lead Software Engineer"
+        period: "Feb 2004 - Dec 2009"
+        details:
+          - subject: "Pivotal CRM"
+            points:
+              - "***Principal member*** of the UI team responsible for designing and developing new features."
+              - "Responsible for the enhancement and maintenance of this **enterprise class CRM** application."
+              - "Components developed throughout ***N. America and overseas*** – understood overall architecture and contributed to multiple functional areas."
+              - "Technologies: *C# 3.0, Smart Client, WinForms, WPF*"
+          - subject: "Additional Projects"
+            points:
+              - "**Pivotal SharePoint Portal**: *C#, ASP.NET 2.0, AJAX.NET, SharePoint, WebParts, Javascript*"
+              - "**Saratoga CRM**: *C#, ASP.NET 2.0, AJAX.NET, Web Services, Javascript/JSON*"
+              - "**Apresta Mobile Clients**: *C#, .NET Compact Framework, Java, J2ME, RIM JDE, ASP.NET*"
+
 # Print-only sections
 skills:
   - category: "Architecture Principles"
