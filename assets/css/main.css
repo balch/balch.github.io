@@ -265,15 +265,20 @@ main {
 .page-header,
 .post-header {
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
 }
 
-.page-header h1,
-.post-header h1 {
+.page-header h1 {
     background: var(--accent-gradient);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+/* Post titles use white to preserve emoji rendering */
+.post-header h1 {
+    color: var(--text-primary);
+    font-size: clamp(1.75rem, 1.25rem + 2vw, 2.5rem);
 }
 
 /* Portfolio Grid */
@@ -1633,6 +1638,19 @@ html {
     padding: 1.5rem;
     margin-bottom: 1.5rem;
     transition: var(--transition-smooth);
+    position: relative;
+    cursor: pointer;
+}
+
+/* Make the entire post card clickable */
+.blog-section .post-link::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
 }
 
 .blog-section .post-item:hover {
