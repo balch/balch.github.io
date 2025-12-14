@@ -1086,8 +1086,18 @@ header.nav-hidden~main .post-header-sticky {
         margin: 1.25rem 0;
     }
 
+    /* Mobile figure wrapping - similar to portfolio mobile treatment */
     .post-content figure.fig-right,
-    .post-content figure.fig-left,
+    .post-content figure.fig-left {
+        float: right;
+        max-width: 40%;
+        margin: 0 0 1rem 1rem;
+        text-align: center;
+        /* Use shape-outside for text to flow above the image */
+        shape-outside: inset(3rem 0 0 0);
+        padding-top: 3rem;
+    }
+
     .post-content figure.fig-center {
         float: none;
         display: block;
@@ -1098,7 +1108,7 @@ header.nav-hidden~main .post-header-sticky {
 
     .post-content figure.fig-small,
     .post-content figure.fig-medium {
-        max-width: 100%;
+        max-width: 45%;
     }
 
     .post-content figure img {
