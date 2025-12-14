@@ -1129,11 +1129,6 @@ header.nav-hidden~main .post-header-sticky {
         padding: 0.6rem 1rem;
     }
 
-    /* When main nav is hidden on mobile, move post header to top */
-    header.nav-hidden~main .post-header-sticky {
-        top: 0;
-    }
-
     .post .post-content {
         padding-top: 20px;
     }
@@ -1153,6 +1148,7 @@ header.nav-hidden~main .post-header-sticky {
 
     .post-meta-inline {
         font-size: 0.75rem;
+        display: none !important;
     }
 }
 
@@ -1788,14 +1784,14 @@ html {
     }
 
     .nav-dropdown a {
-        padding: 0.7rem 0 0.7rem 1.5rem;
+        padding: 0.7rem 1rem 0.7rem 2rem;
         font-size: 1rem;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         gap: 0.15rem;
         border-left: 2px solid var(--accent-primary);
-        margin-left: 0.5rem;
+        margin-left: 1rem;
     }
 
     .nav-dropdown a:hover {

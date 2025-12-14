@@ -2,21 +2,18 @@
 layout: post
 title:  "🙏 Antigravity!"
 date:   2025-12-14 08:00:00 -0800
-categories: new
 ---
 
-This site was created in a little over 2 weeks (nights and weekends, of course), using **Google's Antigravity IDE**.
+This site was created in a little over 2 weeks using **Google's Antigravity IDE**. 
 
-I wanted to create a space to post articles and get creative. I quickly chose **GitHub Pages** based on the **ease** of getting a basic site deployed and the **cost**. I hadn't heard of _Jekyll_ before, but I needed slick styling and I liked the data separation in Markdown aspect. The built-in themes were OK, but I needed something ***more***. The next day I downloaded Antigravity, and within an hour I had a **custom Jekyll theme** that was easily customizable and extendable. Antigravity has **supercharged** my **productivity** and **creativity**. 
+I wanted a space to post articles and get creative with UX. I quickly chose **GitHub Pages** based on the **ease** of getting a basic site **deployed** and the **cost**. I hadn't heard of _Jekyll_ before, but I needed slick styling. I liked the data separation in Markdown and blog management aspects, but the built-in themes were just OK and I needed something ***more***. The next day I downloaded Antigravity, and within an hour I had a **custom Jekyll theme** that was easily customizable and extendable. Antigravity has **supercharged** my **productivity** and **creativity**. 
 
 <figure class="fig-right fig-medium">
-  <img src="/assets/images/posts/2025-12-14-ty-antigravity/sending-dom.png" alt="First Draft">
-  <figcaption>Providing DOM to help with debugging.</figcaption>
+  <img src="/assets/images/posts/2025-12-14-ty-antigravity/implementation-plan.png" alt="Implementation Plan">
+  <figcaption>Implementation Plan</figcaption>
 </figure>
 
 This is the first time I've seen a proper **Implementation Plan**, **Task List**, and **Walkthrough** by an AI Agent. The ability to influence the **Implementation Plan** with in-line comments before the task executes is **brilliant** and *obvious* at the same time. 
-
-The organization in the Agent Chat is impressive, with the running tasks neatly displaying in sub-sections, and easy access to the task and code artifacts. 
 
 <div class="clearfix"></div>
 
@@ -26,6 +23,15 @@ The organization in the Agent Chat is impressive, with the running tasks neatly 
 </figure>
 
 After completing a task the Agent asked for Browser Manipulation permissions that I cautiously, but curiously granted. Next it started scrolling through the site, taking **screenshots** and inspecting the **DOM**. The AI explained it was complete and showed me screenshots in the **Walkthrough**. One problem—no CSS was applied. While this functionality is interesting and is fun when it works, it does add extra time to the entire process and is still a **WIP**.
+
+<div class="clearfix"></div>
+
+<figure class="fig-right fig-small">
+  <img src="/assets/images/posts/2025-12-14-ty-antigravity/sending-dom.png" alt="Sending DOM">
+  <figcaption>Providing DOM to help with debugging.</figcaption>
+</figure>
+
+The organization in the Agent Chat is impressive, with the running tasks neatly displaying in sub-sections, and easy access to the task and code artifacts. The Agent is always agreeable and can usually spot the issue quickly (and is correct about 45% of the time). I find some problems the AI does get stuck on and clearing the chat history and giving the AI time to rest and sleep sometimes helps. 
 
 <div class="clearfix"></div>
 
