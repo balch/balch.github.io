@@ -1,6 +1,7 @@
 title: balch.github.io
 description: My Github Pages
 show_downloads: false
+future: true
 # theme: jekyll-theme-dinky
 navigation:
   - title: Home

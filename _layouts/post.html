@@ -3,14 +3,38 @@ layout: default
 ---
 
 <article class="post">
-    <header class="post-header">
-        <h1 class="post-title">{{ page.title }}</h1>
-        <p class="post-meta">
-            <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%b %-d, %Y" }}</time>
-        </p>
+    <header class="post-header-sticky">
+        <div class="post-header-content">
+            <img src="/assets/images/profile-pic.jpg" alt="Jay Balcher" class="post-author-avatar-sm">
+            <div class="post-header-info">
+                <h1 class="post-title-inline">{{ page.title }}</h1>
+                <div class="post-meta-inline">
+                    <span class="post-author-inline">Jay Balcher</span>
+                    <span class="post-meta-sep">·</span>
+                    <time class="post-date-inline" datetime="{{ page.date | date_to_xmlschema }}"
+                        data-utc="{{ page.date | date_to_xmlschema }}">
+                        {{ page.date | date: "%b %-d, %Y" }}
+                    </time>
+                </div>
+            </div>
+        </div>
     </header>
 
     <div class="post-content">
         {{ content }}
     </div>
 </article>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Convert post date to user's local timezone
+        const timeEl = document.querySelector('.post-date-inline[data-utc]');
+        if (timeEl) {
+            const utcDate = new Date(timeEl.dataset.utc);
+            const options = { year: 'numeric', month: 'short', day: 'numeric' };
+            timeEl.textContent = utcDate.toLocaleDateString(undefined, options);
+        }
+
+        // Post header now uses CSS sticky - no JavaScript positioning needed
+    });
+</script>
