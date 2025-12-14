@@ -51,7 +51,7 @@ I mainly used the **Agent Manager** and being able to add *pending comments* dur
 
 Using this method I was able to generate many features, averaging a couple hours per feature, as I watched sports on my reclining sofa. Some features I started in **AI Studio** and polished with **opus-4.5** in **Antigravity**. Linking folders using **Workspaces** worked well for porting data and copy to build this site. 
 
-This site contains the following features: fade-in and parallax scrolling background image, single flow navigation, type-writer and other text reveal effects, haptics on Android devices, reactive UX with usable Mobile support, Deep Thoughts, click to expand images, Classic Resume with 2 page printable format, and ...
+This site contains the following features: fade-in and parallax scrolling background image, single flow navigation, typewriter and other text reveal effects, haptics on Android devices, reactive UX with usable mobile support, Deep Thoughts, click to expand images, Classic Resume with 2 page printable format, and ...
 
 <div class="clearfix"></div>
 
