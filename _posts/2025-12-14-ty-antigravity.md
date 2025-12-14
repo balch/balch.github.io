@@ -8,12 +8,12 @@ This site was created in a little over 2 weeks using **Google's Antigravity IDE*
 
 I wanted a space to post articles and get creative with UX. I quickly chose **GitHub Pages** based on the **ease** of getting a basic site **deployed** and the **cost**. I hadn't heard of _Jekyll_ before, but I needed slick styling. I liked the data separation in Markdown and blog management aspects, but the built-in themes were just OK and I needed something ***more***. The next day I downloaded Antigravity, and within an hour I had a **custom Jekyll theme** that was easily customizable and extendable. Antigravity has **supercharged** my **productivity** and **creativity**. 
 
-<figure class="fig-right fig-medium">
+<figure class="fig-left fig-small">
   <img src="/assets/images/posts/2025-12-14-ty-antigravity/implementation-plan.png" alt="Implementation Plan">
   <figcaption>Implementation Plan</figcaption>
 </figure>
 
-This is the first time I've seen a proper **Implementation Plan**, **Task List**, and **Walkthrough** by an AI Agent. The ability to influence the **Implementation Plan** with in-line comments before the task executes is **brilliant** and *obvious* at the same time. 
+This is the first time I've seen a proper Implementation Plan, Task List, and Walkthrough by an AI Agent. The ability to influence the **Implementation Plan** with in-line comments before the task executes is **brilliant** and *obvious* at the same time. The **Task List** are fun to watch during Agent execution and do give an accurate representation of the progress. The **Walkthrough** are very detailed and the **manual verification steps** at the end remind me of the PR Test Steps enforced by development teams.
 
 <div class="clearfix"></div>
 
@@ -26,7 +26,7 @@ After completing a task the Agent asked for Browser Manipulation permissions tha
 
 <div class="clearfix"></div>
 
-<figure class="fig-right fig-small">
+<figure class="fig-left fig-small">
   <img src="/assets/images/posts/2025-12-14-ty-antigravity/sending-dom.png" alt="Sending DOM">
   <figcaption>Providing DOM to help with debugging.</figcaption>
 </figure>
@@ -35,7 +35,7 @@ The organization in the Agent Chat is impressive, with the running tasks neatly 
 
 <div class="clearfix"></div>
 
-<figure class="fig-right fig-medium">
+<figure class="fig-right fig-small">
   <img src="/assets/images/posts/2025-12-14-ty-antigravity/pending-comment-win.png" alt="Pending Comments">
   <figcaption>pending comments point to issues and influence session</figcaption>
 </figure>
@@ -44,7 +44,7 @@ I mainly used the **Agent Manager** and being able to add *pending comments* dur
 
 <div class="clearfix"></div>
 
-<figure class="fig-right fig-medium">
+<figure class="fig-left fig-small">
   <img src="/assets/images/posts/2025-12-14-ty-antigravity/final-product.png" alt="The final polished featured post">
   <figcaption>After a few iterations, exactly what I was looking for</figcaption>
 </figure>
