@@ -167,24 +167,55 @@
         const lightboxImg = lightbox.querySelector('img');
         const lightboxClose = lightbox.querySelector('.lightbox-close');
 
+        // Track if we pushed a history state for the lightbox
+        let lightboxHistoryPushed = false;
+
+        // Open lightbox function
+        const openLightbox = (src, alt) => {
+          lightboxImg.src = src;
+          lightboxImg.alt = alt;
+          lightbox.classList.add('active');
+          document.body.style.overflow = 'hidden';
+
+          // Push state for back button support (Android)
+          if (!lightboxHistoryPushed) {
+            history.pushState({ lightbox: true }, '');
+            lightboxHistoryPushed = true;
+          }
+        };
+
+        // Close lightbox handlers
+        const closeLightbox = (fromPopState = false) => {
+          if (!lightbox.classList.contains('active')) return;
+
+          lightbox.classList.remove('active');
+          document.body.style.overflow = '';
+
+          // If not triggered by popstate, go back to remove our history entry
+          if (!fromPopState && lightboxHistoryPushed) {
+            lightboxHistoryPushed = false;
+            history.back();
+          } else {
+            lightboxHistoryPushed = false;
+          }
+        };
+
+        // Handle browser back button
+        window.addEventListener('popstate', (e) => {
+          if (lightbox.classList.contains('active')) {
+            closeLightbox(true);
+          }
+        });
+
         // Add click handlers to all images in post content
         postContent.querySelectorAll('img').forEach(img => {
           img.addEventListener('click', () => {
-            lightboxImg.src = img.src;
-            lightboxImg.alt = img.alt;
-            lightbox.classList.add('active');
-            document.body.style.overflow = 'hidden';
+            openLightbox(img.src, img.alt);
           });
         });
 
-        // Close lightbox handlers
-        const closeLightbox = () => {
-          lightbox.classList.remove('active');
-          document.body.style.overflow = '';
-        };
-
-        lightbox.addEventListener('click', closeLightbox);
-        lightboxClose.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', () => closeLightbox());
+        lightboxClose.addEventListener('click', () => closeLightbox());
 
         // Prevent closing when clicking the image itself
         lightboxImg.addEventListener('click', (e) => e.stopPropagation());

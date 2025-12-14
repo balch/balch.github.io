@@ -564,6 +564,66 @@ layout: default
         const typewriters = document.querySelectorAll('.typewriter-text');
         const blocks = document.querySelectorAll('.typewriter-block');
 
+        // Global state for animation cancellation
+        let typingCancelled = false;
+        let typingHapticInterval = null;
+
+        // Function to immediately reveal all content (skip animations)
+        const skipAllAnimations = () => {
+            if (typingCancelled) return; // Already cancelled
+            typingCancelled = true;
+
+            // Stop any haptic feedback
+            if (typingHapticInterval) {
+                clearInterval(typingHapticInterval);
+                typingHapticInterval = null;
+            }
+            if (navigator.vibrate) navigator.vibrate(0);
+
+            // Reveal parallax background
+            const parallaxBg = document.querySelector('.bio-parallax-bg');
+            if (parallaxBg) {
+                parallaxBg.classList.add('visible', 'faded');
+            }
+
+            // Reveal all typewriter text elements with their full text
+            document.querySelectorAll('.typewriter-text').forEach(el => {
+                const text = el.getAttribute('data-text');
+                if (text) {
+                    el.innerHTML = '';
+                    el.textContent = text;
+                    el.classList.add('typing');
+                }
+            });
+
+            // Reveal typewriter blocks
+            document.querySelectorAll('.typewriter-block').forEach(el => {
+                el.classList.add('typing');
+                const p = el.querySelector('p');
+                if (p) {
+                    // Reset to original text without animation spans
+                    const text = p.textContent.replace(/\s+/g, ' ').trim();
+                    p.innerHTML = text;
+                    p.style.opacity = 1;
+                }
+            });
+
+            // Reveal disclosure and into blocks
+            const disclosureBlock = document.querySelector('.disclosure-block');
+            if (disclosureBlock) disclosureBlock.classList.add('visible');
+
+            const intoBlock = document.querySelector('.into-block');
+            if (intoBlock) intoBlock.classList.add('visible');
+        };
+
+        // Cancel animation on scroll
+        let scrollCancelEnabled = true;
+        window.addEventListener('scroll', () => {
+            if (scrollCancelEnabled && !typingCancelled && window.scrollY > 50) {
+                skipAllAnimations();
+            }
+        }, { passive: true });
+
         // Helper to create a character span with random jitter variables
         const createCharSpan = (char) => {
             const span = document.createElement('span');
@@ -578,6 +638,8 @@ layout: default
         };
 
         const typeString = async (element, text, startDelay = 0) => {
+            if (typingCancelled) return; // Skip if cancelled
+
             element.classList.add('typing'); // Make visible
             // Clear content and add cursor
             element.innerHTML = '';
@@ -587,9 +649,12 @@ layout: default
 
             // Wait for start delay
             if (startDelay > 0) await new Promise(r => setTimeout(r, startDelay));
+            if (typingCancelled) { cursor.remove(); return; }
 
             const chars = text.split('');
             for (let i = 0; i < chars.length; i++) {
+                if (typingCancelled) { cursor.remove(); return; }
+
                 const charSpan = createCharSpan(chars[i]);
                 element.insertBefore(charSpan, cursor);
 
@@ -612,6 +677,8 @@ layout: default
         };
 
         const rippleBlock = async (element, startDelay = 0) => {
+            if (typingCancelled) return; // Skip if cancelled
+
             element.classList.add('typing'); // Make visible
             const p = element.querySelector('p');
             if (!p) return;
@@ -626,6 +693,7 @@ layout: default
             p.style.opacity = 1; // Ensure container is visible
 
             if (startDelay > 0) await new Promise(r => setTimeout(r, startDelay));
+            if (typingCancelled) return;
 
             const words = text.split(' ');
 
@@ -647,6 +715,7 @@ layout: default
             // Trigger animation class and wait for animations to complete
             return new Promise(resolve => {
                 requestAnimationFrame(() => {
+                    if (typingCancelled) { resolve(); return; }
                     const spans = p.querySelectorAll('.ripple-word');
                     spans.forEach(span => span.classList.add('visible'));
                     // Calculate total animation time: last word delay + animation duration (0.8s)
@@ -676,6 +745,8 @@ layout: default
                 }
             });
 
+            if (typingCancelled) return; // Check before starting
+
             // 0. First fade in the background image so user can appreciate it
             const parallaxBg = document.querySelector('.bio-parallax-bg');
             if (parallaxBg) {
@@ -683,13 +754,14 @@ layout: default
                 await new Promise(r => setTimeout(r, 500)); // Wait for 0.5s fade-in
             }
 
+            if (typingCancelled) return;
+
             // 1. Name - start fading the background to dimmer state
             const nameEl = document.querySelector('.typewriter-text[data-text="Jay Balcher"]');
             if (parallaxBg) parallaxBg.classList.add('faded'); // Start dim transition
 
             // Start continuous haptic for name typing
-            let typingHapticInterval = null;
-            if (navigator.vibrate) {
+            if (navigator.vibrate && !typingCancelled) {
                 typingHapticInterval = setInterval(() => {
                     navigator.vibrate([20, 60]);
                 }, 100);
@@ -699,15 +771,17 @@ layout: default
 
             // Stop haptic and give a "thunk" transition effect
             if (typingHapticInterval) clearInterval(typingHapticInterval);
-            hapticPulse([80, 50, 40]); // Strong thunk between name and title
+            if (!typingCancelled) hapticPulse([80, 50, 40]); // Strong thunk between name and title
 
             // Small pause for effect
             await new Promise(r => setTimeout(r, 100));
 
+            if (typingCancelled) return;
+
             // 2. Title - restart haptic
             const titleEl = document.querySelector('.typewriter-text[data-text="Android Software Engineer"]');
 
-            if (navigator.vibrate) {
+            if (navigator.vibrate && !typingCancelled) {
                 typingHapticInterval = setInterval(() => {
                     navigator.vibrate([20, 60]);
                 }, 100);
@@ -719,9 +793,13 @@ layout: default
             if (typingHapticInterval) clearInterval(typingHapticInterval);
             navigator.vibrate && navigator.vibrate(0); // Ensure vibration stops
 
+            if (typingCancelled) return;
+
             // 3. Bio Body (Ripple Effect)
             const bioBlock = document.querySelector('.typewriter-block');
             if (bioBlock) await rippleBlock(bioBlock, 100);
+
+            if (typingCancelled) return;
 
             // 4. Disclosure (Fade In after ripple completes)
             const disclosureBlock = document.querySelector('.disclosure-block');
@@ -736,6 +814,9 @@ layout: default
             if (intoBlock) {
                 intoBlock.classList.add('visible');
             }
+
+            // Disable scroll cancel after animation completes naturally
+            scrollCancelEnabled = false;
 
         };
 
@@ -933,6 +1014,9 @@ layout: default
         const lightboxImg = lightboxOverlay.querySelector('img');
         const lightboxClose = lightboxOverlay.querySelector('.lightbox-close');
 
+        // Track if we pushed a history state for the lightbox
+        let lightboxHistoryPushed = false;
+
         const openLightbox = (src, alt) => {
             lightboxImg.src = src;
             lightboxImg.alt = alt || 'Full screen image';
@@ -940,14 +1024,37 @@ layout: default
             document.body.style.overflow = 'hidden';
             // Haptic feedback for image expand
             hapticPulse([40, 30, 60]);
+
+            // Push state for back button support (Android)
+            if (!lightboxHistoryPushed) {
+                history.pushState({ lightbox: true }, '');
+                lightboxHistoryPushed = true;
+            }
         };
 
-        const closeLightbox = () => {
+        const closeLightbox = (fromPopState = false) => {
+            if (!lightboxOverlay.classList.contains('active')) return;
+
             lightboxOverlay.classList.remove('active');
             document.body.style.overflow = '';
             // Soft haptic for close
             hapticPulse([20]);
+
+            // If not triggered by popstate, go back to remove our history entry
+            if (!fromPopState && lightboxHistoryPushed) {
+                lightboxHistoryPushed = false;
+                history.back();
+            } else {
+                lightboxHistoryPushed = false;
+            }
         };
+
+        // Handle browser back button
+        window.addEventListener('popstate', (e) => {
+            if (lightboxOverlay.classList.contains('active')) {
+                closeLightbox(true);
+            }
+        });
 
         // Click on any portfolio image to open lightbox
         const clickableImages = document.querySelectorAll('.project-image img, .mobile-project-image img, .screenshot-carousel .screenshot');

@@ -6,7 +6,7 @@ date:   2025-12-14 08:00:00 -0800
 
 This site was created in a little over 2 weeks using **Google's Antigravity IDE**. 
 
-I wanted a space to post articles and get creative with UX. I quickly chose **GitHub Pages** based on the **ease** of getting a basic site **deployed** and the **cost**. I hadn't heard of _Jekyll_ before, but I needed slick styling. I liked the data separation in Markdown and blog management aspects, but the built-in themes were just OK and I needed something ***more***. The next day I downloaded Antigravity, and within an hour I had a **custom Jekyll theme** that was easily customizable and extendable. Antigravity has **supercharged** my **productivity** and **creativity**. 
+I wanted a space to post articles and get creative with UX. I quickly chose **GitHub Pages** based on the **ease** of getting a basic site **deployed** and the **cost**. I hadn't heard of _Jekyll_ before, but I needed slick styling and liked the data separation in Markdown and blog management aspects. The built-in themes were just OK and I needed something ***more***. The next day I downloaded Antigravity, and within an hour I had a **custom Jekyll theme** that was easily customizable and extendable. Antigravity has **supercharged** my **productivity** and **creativity**. 
 
 <figure class="fig-left fig-small">
   <img src="/assets/images/posts/2025-12-14-ty-antigravity/implementation-plan.png" alt="Implementation Plan">
@@ -40,7 +40,7 @@ The organization in the Agent Chat is impressive, with the running tasks neatly 
   <figcaption>pending comments point to issues and influence session</figcaption>
 </figure>
 
-I mainly used the **Agent Manager** and being able to add *pending comments* during task execution that influenced the results was cool and came in handy a few times. I ended up relying on manual verification and found that uploading screenshots with `divs` selected in **Browser Dev Tools** was effective for resolving issues quickly. Giving clear prompts and referencing images was helpful in guiding the AI to get the desired results.
+I started with the **Agent Manager**, but lately find myself prompting in the **Editor** more and ediiting at the same time. Prompting with *pending comments* during task execution that influences the results is cool and comes in handy. I ended up relying on manual verification and found that uploading screenshots with `div`s selected in **Browser Dev Tools** was effective for resolving issues quickly. Giving clear prompts and referencing images was helpful in guiding the AI to get the desired results.
 
 <div class="clearfix"></div>
 
