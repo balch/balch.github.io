@@ -1122,16 +1122,26 @@ header.nav-hidden~main .post-header-sticky {
         padding: 0 0.5rem;
     }
 
-    /* Compact sticky post header adjustments */
+    /* Compact sticky post header adjustments - use fixed on mobile for Safari compatibility */
     .post-header-sticky {
-        top: 52px;
-        /* Mobile nav height */
+        position: fixed;
+        top: 85px;
+        /* Fallback before JS calculates exact header height */
+        left: 0;
+        right: 0;
+        width: 100%;
         padding: 0.6rem 1rem;
     }
 
     /* When main nav is hidden on mobile, move header to top */
-    header.nav-hidden~main .post-header-sticky {
+    header.nav-hidden~main .post-header-sticky,
+    .layout-post.nav-hidden .post-header-sticky {
         top: 0 !important;
+    }
+
+    /* Add padding to post content to account for fixed header */
+    .post .post-header-sticky+.post-content {
+        padding-top: 70px;
     }
 
     .post .post-content {

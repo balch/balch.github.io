@@ -35,6 +35,39 @@ layout: default
             timeEl.textContent = utcDate.toLocaleDateString(undefined, options);
         }
 
-        // Post header now uses CSS sticky - no JavaScript positioning needed
+        // Handle mobile fixed header positioning
+        const postHeader = document.querySelector('.post-header-sticky');
+        const mainHeader = document.querySelector('body > header');
+
+        if (postHeader && mainHeader && window.innerWidth <= 768) {
+            // Get actual header height dynamically
+            const getHeaderHeight = () => mainHeader.offsetHeight;
+
+            // Update post header position when main nav visibility changes
+            const updatePostHeaderPosition = () => {
+                if (mainHeader.classList.contains('nav-hidden')) {
+                    postHeader.style.top = '0';
+                } else {
+                    postHeader.style.top = getHeaderHeight() + 'px';
+                }
+            };
+
+            // Initial position
+            updatePostHeaderPosition();
+
+            // Watch for nav visibility changes using MutationObserver
+            const observer = new MutationObserver((mutations) => {
+                mutations.forEach((mutation) => {
+                    if (mutation.attributeName === 'class') {
+                        updatePostHeaderPosition();
+                    }
+                });
+            });
+
+            observer.observe(mainHeader, { attributes: true });
+
+            // Also update on resize
+            window.addEventListener('resize', updatePostHeaderPosition);
+        }
     });
 </script>
