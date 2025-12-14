@@ -37,7 +37,8 @@
             <ul class="nav-dropdown">
               {% if item.children == 'posts' %}
               {% for post in site.posts %}
-              <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+              <li><a href="{{ post.url | relative_url }}"><span class="nav-post-title">{{ post.title }}</span><span
+                    class="nav-post-date">{{ post.date | date: "%b %d, %Y" }}</span></a></li>
               {% endfor %}
               {% endif %}
             </ul>

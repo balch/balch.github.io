@@ -266,6 +266,32 @@ nav {
     /* Disable underline effect in dropdown */
 }
 
+/* Post listing in nav dropdown with dates */
+.nav-dropdown a {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nav-post-title {
+    flex: 1;
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.nav-post-date {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    opacity: 0.7;
+    white-space: nowrap;
+    display: none;
+    /* Hidden on desktop by default, shown on mobile */
+}
+
 /* Hero Section */
 .hero {
     padding: 8rem 0 6rem;
@@ -1507,6 +1533,11 @@ html {
         display: flex;
     }
 
+    /* Disable sticky header on mobile to prevent scroll issues */
+    header {
+        position: relative;
+    }
+
     header .container nav {
         position: relative;
     }
@@ -1641,7 +1672,10 @@ html {
     .nav-dropdown a {
         padding: 0.7rem 0 0.7rem 1.5rem;
         font-size: 1rem;
-        display: block;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.15rem;
         border-left: 2px solid var(--accent-primary);
         margin-left: 0.5rem;
     }
@@ -1649,6 +1683,16 @@ html {
     .nav-dropdown a:hover {
         background: transparent;
         color: var(--accent-secondary);
+    }
+
+    /* Show post dates on mobile */
+    .nav-post-date {
+        display: inline;
+        font-size: 0.75rem;
+    }
+
+    .nav-post-title {
+        white-space: normal;
     }
 
     .portfolio-grid {
