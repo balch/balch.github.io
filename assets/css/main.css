@@ -277,10 +277,10 @@ nav {
 /* Post listing in nav dropdown with dates */
 .nav-dropdown a {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0.25rem;
 }
 
 .nav-post-title {
@@ -296,8 +296,8 @@ nav {
     color: var(--text-secondary);
     opacity: 0.7;
     white-space: nowrap;
-    display: none;
-    /* Hidden on desktop by default, shown on mobile */
+    display: block;
+    margin-top: 0.1rem;
 }
 
 /* Hero Section */
@@ -407,7 +407,7 @@ main {
 
 /* When main nav is hidden, move post header to very top */
 header.nav-hidden~main .post-header-sticky {
-    top: 0;
+    top: 0 !important;
 }
 
 .post-header-content {
@@ -1129,6 +1129,11 @@ header.nav-hidden~main .post-header-sticky {
         padding: 0.6rem 1rem;
     }
 
+    /* When main nav is hidden on mobile, move header to top */
+    header.nav-hidden~main .post-header-sticky {
+        top: 0 !important;
+    }
+
     .post .post-content {
         padding-top: 20px;
     }
@@ -1144,11 +1149,20 @@ header.nav-hidden~main .post-header-sticky {
 
     .post-title-inline {
         font-size: 0.95rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     .post-meta-inline {
         font-size: 0.75rem;
-        display: none !important;
+        display: flex;
+        align-items: center;
+    }
+
+    .post-author-inline,
+    .post-meta-sep {
+        display: none;
     }
 }
 
@@ -1801,8 +1815,10 @@ html {
 
     /* Show post dates on mobile */
     .nav-post-date {
-        display: inline;
+        display: block;
         font-size: 0.75rem;
+        margin-top: 0.2rem;
+        padding-left: 0;
     }
 
     .nav-post-title {
