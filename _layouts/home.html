@@ -316,7 +316,7 @@ layout: default
     // --- Deep Thoughts Quotes Data ---
     const quotes = [
         {% for quote in site.data.quotes %}
-    { text: {{ quote.text| jsonify }}, author: {{ quote.author| jsonify }} } {% unless forloop.last %}, {% endunless %}
+    { text: {{ quote.text | jsonify }}, author: {{ quote.author | jsonify }} } {% unless forloop.last %}, {% endunless %}
     {% endfor %}
     ];
 
@@ -484,18 +484,16 @@ layout: default
                         // Display initial quote
                         displayQuote();
 
-                        // Start initial gear spin with haptics
+                        // Start initial gear spin (no haptics on auto-load, only on user click)
                         const gearLarge = document.querySelector('.gear-large');
                         const gearSmall = document.querySelector('.gear-small');
                         if (gearLarge && gearSmall) {
                             gearLarge.classList.add('spinning');
                             gearSmall.classList.add('spinning-reverse');
-                            startSpinHaptics();
 
                             setTimeout(() => {
                                 gearLarge.classList.remove('spinning');
                                 gearSmall.classList.remove('spinning-reverse');
-                                stopSpinHaptics();
                             }, 2000);
                         }
 

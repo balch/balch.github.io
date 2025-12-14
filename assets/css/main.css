@@ -1595,6 +1595,62 @@ html {
         display: none;
     }
 
+    /* Mobile expandable navigation (Balch Bytes dropdown) */
+    .nav-expandable {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .nav-expand-btn {
+        width: 100%;
+        text-align: left;
+        padding: 0.85rem 0;
+        font-size: 1.1rem;
+        justify-content: flex-start;
+    }
+
+    .nav-dropdown {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        min-width: auto;
+        background: transparent;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+        padding: 0;
+        margin: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease, opacity 0.3s ease;
+    }
+
+    .nav-expandable.expanded .nav-dropdown {
+        max-height: 500px;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        padding-bottom: 0.5rem;
+    }
+
+    .nav-dropdown li {
+        border-bottom: none;
+    }
+
+    .nav-dropdown a {
+        padding: 0.7rem 0 0.7rem 1.5rem;
+        font-size: 1rem;
+        display: block;
+        border-left: 2px solid var(--accent-primary);
+        margin-left: 0.5rem;
+    }
+
+    .nav-dropdown a:hover {
+        background: transparent;
+        color: var(--accent-secondary);
+    }
+
     .portfolio-grid {
         grid-template-columns: 1fr;
     }
