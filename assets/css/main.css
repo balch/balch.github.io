@@ -1538,6 +1538,12 @@ html {
         position: relative;
     }
 
+    /* Keep sticky header for post pages on mobile */
+    .layout-post header {
+        position: sticky;
+        top: 0;
+    }
+
     header .container nav {
         position: relative;
     }
