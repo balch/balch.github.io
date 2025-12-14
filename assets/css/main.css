@@ -187,6 +187,85 @@ nav {
     transform: rotate(-45deg) translate(5px, -5px);
 }
 
+/* Expandable Navigation Dropdown */
+.nav-expandable {
+    position: relative;
+}
+
+.nav-expand-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    font-weight: 500;
+    font-size: 0.95rem;
+    cursor: pointer;
+    padding: 0.5rem 0;
+    font-family: inherit;
+    transition: var(--transition-smooth);
+}
+
+.nav-expand-btn:hover {
+    color: var(--text-primary);
+}
+
+.nav-chevron {
+    transition: transform 0.3s ease;
+}
+
+.nav-expandable.expanded .nav-chevron {
+    transform: rotate(180deg);
+}
+
+.nav-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 220px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: var(--shadow-lg);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-50%) translateY(-10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 0.5rem 0;
+    list-style: none;
+    z-index: 100;
+}
+
+.nav-expandable.expanded .nav-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.nav-dropdown li {
+    padding: 0;
+}
+
+.nav-dropdown a {
+    display: block;
+    padding: 0.75rem 1.25rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    transition: var(--transition-smooth);
+}
+
+.nav-dropdown a:hover {
+    color: var(--text-primary);
+    background: rgba(139, 92, 246, 0.1);
+}
+
+.nav-dropdown a::after {
+    display: none;
+    /* Disable underline effect in dropdown */
+}
+
 /* Hero Section */
 .hero {
     padding: 8rem 0 6rem;
@@ -480,6 +559,89 @@ main {
 
 .portfolio-item.featured::before {
     opacity: 1;
+}
+
+/* Featured Post Section */
+.featured-post-section {
+    padding: 2rem 2rem 1rem 4rem;
+}
+
+.featured-post-container {
+    max-width: 800px;
+}
+
+.featured-post-card {
+    display: block;
+    text-decoration: none;
+}
+
+.featured-post-meta {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.featured-badge {
+    display: inline-block;
+    padding: 0.3rem 0.75rem;
+    background: transparent;
+    border: 1px solid #7dd3fc;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #7dd3fc;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.featured-date {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.featured-post-title {
+    font-size: 1.75rem;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+}
+
+.featured-post-excerpt {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 0.75rem;
+}
+
+.read-more-link {
+    display: inline-block;
+    color: #7dd3fc;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: var(--transition-smooth);
+}
+
+.featured-post-card:hover .read-more-link {
+    color: var(--accent-secondary);
+}
+
+@media (max-width: 768px) {
+    .featured-post-section {
+        padding: 1.5rem 1rem;
+    }
+
+    .featured-post-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .featured-post-title {
+        font-size: 1.5rem;
+    }
 }
 
 
@@ -1459,8 +1621,8 @@ html {
 }
 
 .period-badge {
-    background: rgba(139, 92, 246, 0.2);
-    color: var(--accent-primary);
+    background: rgba(125, 211, 252, 0.2);
+    color: #7dd3fc;
     padding: 0.35rem 0.75rem;
     border-radius: 20px;
     font-size: 0.85rem;
@@ -1490,13 +1652,13 @@ html {
 
 .company-badge {
     font-size: 0.8rem;
-    color: #2dd4bf;
-    background: rgba(45, 212, 191, 0.1);
-    border: 1px solid rgba(45, 212, 191, 0.4);
+    color: #7dd3fc;
+    background: rgba(125, 211, 252, 0.1);
+    border: 1px solid rgba(125, 211, 252, 0.4);
     padding: 0.25rem 0.6rem;
     border-radius: 12px;
     font-weight: 500;
-    box-shadow: 0 0 8px rgba(45, 212, 191, 0.15);
+    box-shadow: 0 0 8px rgba(125, 211, 252, 0.15);
 }
 
 .roles-timeline {

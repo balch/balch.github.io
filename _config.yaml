@@ -10,7 +10,8 @@ navigation:
   - title: Career
     url: /#career
   - title: Balch Bytes
-    url: /#deep-thoughts
+    expandable: true
+    children: posts
 social:
   github: balch
   linkedin: balch

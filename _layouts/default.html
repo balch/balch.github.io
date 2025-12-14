@@ -25,7 +25,26 @@
         </button>
         <ul class="nav-links" id="navLinks">
           {% for item in site.navigation %}
+          {% if item.expandable %}
+          <li class="nav-expandable">
+            <button class="nav-expand-btn" aria-expanded="false">
+              {{ item.title }}
+              <svg class="nav-chevron" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <ul class="nav-dropdown">
+              {% if item.children == 'posts' %}
+              {% for post in site.posts %}
+              <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+              {% endfor %}
+              {% endif %}
+            </ul>
+          </li>
+          {% else %}
           <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
+          {% endif %}
           {% endfor %}
         </ul>
       </nav>
@@ -74,6 +93,31 @@
             navLinks.classList.remove('open');
             navToggle.setAttribute('aria-expanded', 'false');
           });
+        });
+
+        // Handle expandable nav items
+        document.querySelectorAll('.nav-expand-btn').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const expanded = btn.getAttribute('aria-expanded') === 'true';
+            btn.setAttribute('aria-expanded', !expanded);
+            btn.parentElement.classList.toggle('expanded');
+
+            // Haptic feedback
+            if (navigator.vibrate) {
+              navigator.vibrate(expanded ? [20] : [30, 50, 20]);
+            }
+          });
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+          if (!e.target.closest('.nav-expandable')) {
+            document.querySelectorAll('.nav-expandable.expanded').forEach(item => {
+              item.classList.remove('expanded');
+              item.querySelector('.nav-expand-btn').setAttribute('aria-expanded', 'false');
+            });
+          }
         });
       }
     });
