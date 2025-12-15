@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "🙏 Antigravity!"
+title:  "🙌 Antigravity!"
 date:   2025-12-14 08:00:00 -0800
 ---
 
