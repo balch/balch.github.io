@@ -466,6 +466,171 @@ header.nav-hidden~main .post-header-sticky {
     color: var(--text-secondary);
 }
 
+/* Share Button Styles */
+.share-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: transparent;
+    border: none;
+    border-radius: 8px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    padding: 0.5rem;
+    flex-shrink: 0;
+}
+
+.share-btn:hover {
+    color: var(--text-primary);
+    background: rgba(139, 92, 246, 0.15);
+}
+
+.share-btn:active {
+    transform: scale(0.95);
+}
+
+.share-btn svg {
+    flex-shrink: 0;
+}
+
+/* Header Share Button - compact */
+.share-btn-header {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+}
+
+/* Footer Share Button - with text */
+.share-btn-footer {
+    padding: 0.6rem 1.25rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    font-family: inherit;
+}
+
+/* Post Footer Styles */
+.post-footer {
+    max-width: 800px;
+    margin: 3rem auto 0;
+    padding: 2rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.post-footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.share-label {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+/* Share Toast Notification */
+.share-toast {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: var(--bg-card);
+    border: 1px solid var(--accent-primary);
+    border-radius: 12px;
+    padding: 0.875rem 1.5rem;
+    box-shadow: var(--shadow-lg), 0 0 20px rgba(139, 92, 246, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1100;
+}
+
+.share-toast.show {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+.share-toast svg {
+    color: #22c55e;
+}
+
+.share-toast span {
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Share Container for dropdown positioning */
+.share-container {
+    position: relative;
+}
+
+/* Share Dropdown Menu */
+.share-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 0.5rem;
+    min-width: 140px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    box-shadow: var(--shadow-lg);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 100;
+    padding: 0.4rem;
+}
+
+/* Dropdown opens upward for footer */
+.share-dropdown-up {
+    top: auto;
+    bottom: 100%;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    transform: translateY(8px);
+}
+
+.share-container.open .share-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.share-dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    background: transparent;
+    border: none;
+    border-radius: 6px;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-family: inherit;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.share-dropdown-item:hover {
+    background: rgba(139, 92, 246, 0.15);
+    color: var(--text-primary);
+}
+
+.share-dropdown-item svg {
+    flex-shrink: 0;
+}
+
 /* Auto-hide header state */
 .post-header-sticky.header-hidden {
     transform: translateY(-100%);
