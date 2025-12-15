@@ -502,6 +502,13 @@ header.nav-hidden~main .post-header-sticky {
     border-radius: 50%;
 }
 
+/* Mobile: add right margin to share button */
+@media (max-width: 768px) {
+    .share-container {
+        margin-right: 1rem;
+    }
+}
+
 /* Footer Share Button - with text */
 .share-btn-footer {
     padding: 0.6rem 1.25rem;
@@ -529,6 +536,22 @@ header.nav-hidden~main .post-header-sticky {
 .share-label {
     color: var(--text-secondary);
     font-size: 0.95rem;
+}
+
+/* Mobile: tighter footer layout */
+@media (max-width: 768px) {
+    .post-footer {
+        padding: 1.25rem 1rem;
+        margin-top: 2rem;
+    }
+
+    .post-footer-content {
+        gap: 0.75rem;
+    }
+
+    .share-label {
+        font-size: 0.9rem;
+    }
 }
 
 /* Share Toast Notification */
