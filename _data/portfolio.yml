@@ -34,7 +34,7 @@
 
         The agent was built using **Koog** and integrates with the **Gemini** models. Multiple **tools** were created to provide access to remote and local data sources and allow for AI **recipe creation** and **navigation**. The Agent Screen also displays token and tool usage metrics.
       
-- title: 🤔🎭🎶 Mood Music AI
+- title: Mood Music AI
   image: /assets/images/portfolio/mood-music.svg
   link: https://github.com/balch/MoodMusic
   technologies:
@@ -46,7 +46,7 @@
     - title: "The Game"
       image: /assets/images/portfolio/mood-music/1-initial_game_display.png
       content: |
-        Mood Music is a game where users ***guess the mood*** of the music they hear. Players are presented with colorful buttons, each assigned a secret mood. Press a button to hear **AI-generated music**, then guess which emotion it evokes.
+        🤔🎭🎶 Mood Music is a game where users ***guess the mood*** of the music they hear. Players are presented with colorful buttons, each assigned a secret mood. Press a button to hear **AI-generated music**, then guess which emotion it evokes.
         
         The game features multiple difficulty modes. Easy mode shows only the moods used in that round. Hard mode tests your *emotional IQ* by showing all possible moods.
     - title: "Making Your Guess"
