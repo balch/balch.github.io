@@ -34,7 +34,7 @@
 
         The agent was built using **Koog** and integrates with the **Gemini** models. Multiple **tools** were created to provide access to remote and local data sources and allow for AI **recipe creation** and **navigation**. The Agent Screen also displays token and tool usage metrics.
       
-- title: Mood Music AI
+- title: 🤔🎭🎶 Mood Music AI
   image: /assets/images/portfolio/mood-music.svg
   link: https://github.com/balch/MoodMusic
   technologies:
