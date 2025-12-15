@@ -1,6 +1,6 @@
 {
-    "name": "⚙️ balch.github.io ⚙️",
-    "short_name": "balch",
+    "name": "balch.github.io",
+    "short_name": "⚙️ Balch Bytes ⚙️",
     "description": "Jay Balcher's personal website and blog",
     "start_url": "/",
     "display": "standalone",
