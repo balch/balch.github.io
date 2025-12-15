@@ -57,4 +57,4 @@ This site contains the following features: fade-in and parallax scrolling backgr
 
 In the *Imitation is the sincerest form of flattery* category, I'm extremely impressed by the UX treatment on [antigravity.google](https://antigravity.google/).
 
-So far, **Antigravity** has been the coolest IDE and most productive AI tool I've used—and the **ROI** is [off the charts](https://antigravity.google/pricing).
+So far, **Antigravity** has been the slickest *chat UX* and most *productive AI tool* I've used-and the **ROI** is [off the charts](https://antigravity.google/pricing).
