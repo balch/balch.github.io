@@ -84,7 +84,7 @@ experience:
     visible_site: true
     visible_resume: true
     location: "San Francisco, CA"
-    period: "Feb 2016 - Aug 2016 (7 months)"
+    # period: "Feb 2016 - Aug 2016 (7 months)"
     badges:
       - "Startup"
     roles:
@@ -111,7 +111,7 @@ experience:
     visible_site: true
     visible_resume: true
     location: "Beaverton, OR (WHQ)"
-    period: "Oct 2014 - Aug 2015 (11 months)"
+    # period: "Oct 2014 - Aug 2015 (11 months)"
     roles:
       - title: "Senior Android Engineer"
         period: "Oct 2014 - Aug 2015"
@@ -132,7 +132,7 @@ experience:
     visible_site: true
     visible_resume: true
     location: "Portland, OR"
-    period: "Oct 2011 - Aug 2014 (2 years 11 months)"
+    # period: "Oct 2011 - Aug 2014 (2 years 11 months)"
     badges:
       - "Startup"
       - "IPO"
@@ -158,7 +158,7 @@ experience:
     visible_site: false
     visible_resume: false
     location: "Salt Lake City, UT"
-    period: "Dec 2009 - Oct 2011 (1 year 11 months)"
+    # period: "Dec 2009 - Oct 2011 (1 year 11 months)"
     badges:
       - "Startup"
     roles:

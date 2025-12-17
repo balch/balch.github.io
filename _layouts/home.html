@@ -254,7 +254,7 @@ layout: default
                 <div class="employment-card-header">
                     <div class="company-info">
                         <h2>{{ exp.company }}</h2>
-                        <span class="period-badge">{{ exp.period }}</span>
+                        {% if exp.period %}<span class="period-badge">{{ exp.period }}</span>{% endif %}
                     </div>
                     <p class="location">{{ exp.location }}</p>
                 </div>

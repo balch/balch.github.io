@@ -46,7 +46,7 @@ layout: default
                                     <h3>{{ exp.company }}</h3>
                                     <span class="location">{{ exp.location }}</span>
                                 </div>
-                                <span class="period">{{ exp.period }}</span>
+                                {% if exp.period %}<span class="period">{{ exp.period }}</span>{% endif %}
                             </div>
 
                             {% if exp.awards %}
@@ -154,7 +154,7 @@ layout: default
                                 <h3>{{ exp.company }}</h3>
                                 <span class="location">{{ exp.location }}</span>
                             </div>
-                            <span class="period">{{ exp.period }}</span>
+                            {% if exp.period %}<span class="period">{{ exp.period }}</span>{% endif %}
                         </div>
 
                         {% if exp.awards %}
