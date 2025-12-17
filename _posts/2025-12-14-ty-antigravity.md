@@ -4,7 +4,7 @@ title:  "🙌 Antigravity!"
 date:   2025-12-14 08:00:00 -0800
 ---
 
-This site was created in a little over 2 weeks using **Google's Antigravity IDE**. 
+[This site](https://balch.github.io) was created in a little over 2 weeks using **Google's Antigravity IDE**. 
 
 I wanted a space to post articles and get creative with UX. I quickly chose **GitHub Pages** based on the **ease** of getting a basic site **deployed** and the **cost**. I hadn't heard of _Jekyll_ before, but I needed slick styling and liked the data separation in Markdown and blog management aspects. The built-in themes were just OK and I needed something ***more***. The next day I downloaded Antigravity, and within an hour I had a **custom Jekyll theme** that was easily customizable and extendable. Antigravity has **supercharged** my **productivity** and **creativity**. 
 
