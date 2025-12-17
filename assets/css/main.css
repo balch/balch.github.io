@@ -35,6 +35,7 @@ body {
     font-size: 16px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: clip;
 }
 
 /* Typography */
@@ -305,6 +306,7 @@ nav {
     padding: 8rem 0 6rem;
     text-align: center;
     position: relative;
+    overflow-x: hidden;
 }
 
 .hero::before {
@@ -314,6 +316,7 @@ nav {
     left: 50%;
     transform: translateX(-50%);
     width: 800px;
+    max-width: 100vw;
     height: 400px;
     background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
     pointer-events: none;
@@ -2693,7 +2696,7 @@ html {
 }
 
 .quote-content {
-    padding-right: 3rem;
+    padding-right: 1.5rem;
 }
 
 .quote-text {

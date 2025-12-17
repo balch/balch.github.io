@@ -9,7 +9,7 @@ date:   2025-12-14 08:00:00 -0800
 I wanted a space to post articles and get creative with UX. I quickly chose **GitHub Pages** based on the **ease** of getting a basic site **deployed** and the **cost**. I hadn't heard of _Jekyll_ before, but I needed slick styling and liked the data separation in Markdown and blog management aspects. The built-in themes were just OK and I needed something ***more***. The next day I downloaded Antigravity, and within an hour I had a **custom Jekyll theme** that was easily customizable and extendable. Antigravity has **supercharged** my **productivity** and **creativity**. 
 
 <figure class="fig-left fig-small">
-  <img src="/assets/images/posts/2025-12-14-ty-antigravity/implementation-plan.png" alt="Implementation Plan">
+  <img src="/assets/images/posts/2025-12-14-ty-antigravity/implementation-plan.webp" alt="Implementation Plan">
   <figcaption>Implementation Plan</figcaption>
 </figure>
 
@@ -18,7 +18,7 @@ This is the first time I've seen a proper Implementation Plan, Task List, and Wa
 <div class="clearfix"></div>
 
 <figure class="fig-right fig-small">
-  <img src="/assets/images/posts/2025-12-14-ty-antigravity/browser-interaction.png" alt="Browser Interaction">
+  <img src="/assets/images/posts/2025-12-14-ty-antigravity/browser-interaction.webp" alt="Browser Interaction">
   <figcaption>AI Agent scrolling through the site and taking screenshots.</figcaption>
 </figure>
 
@@ -27,7 +27,7 @@ After completing a task the Agent asked for Browser Manipulation permissions tha
 <div class="clearfix"></div>
 
 <figure class="fig-left fig-small">
-  <img src="/assets/images/posts/2025-12-14-ty-antigravity/sending-dom.png" alt="Sending DOM">
+  <img src="/assets/images/posts/2025-12-14-ty-antigravity/sending-dom.webp" alt="Sending DOM">
   <figcaption>Providing DOM to help with debugging.</figcaption>
 </figure>
 
@@ -36,7 +36,7 @@ The organization in the Agent Chat is impressive, with the running tasks neatly 
 <div class="clearfix"></div>
 
 <figure class="fig-right fig-small">
-  <img src="/assets/images/posts/2025-12-14-ty-antigravity/pending-comment-win.png" alt="Pending Comments">
+  <img src="/assets/images/posts/2025-12-14-ty-antigravity/pending-comment-win.webp" alt="Pending Comments">
   <figcaption>pending comments point to issues and influence session</figcaption>
 </figure>
 
@@ -45,7 +45,7 @@ I started with the **Agent Manager**, but lately find myself prompting in the **
 <div class="clearfix"></div>
 
 <figure class="fig-left fig-small">
-  <img src="/assets/images/posts/2025-12-14-ty-antigravity/final-product.png" alt="The final polished featured post">
+  <img src="/assets/images/posts/2025-12-14-ty-antigravity/final-product.webp" alt="The final polished featured post">
   <figcaption>After a few iterations, exactly what I was looking for</figcaption>
 </figure>
 
