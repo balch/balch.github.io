@@ -64,7 +64,7 @@
 
 - title: "VIBE LANDER: Retro Game Built on KMP 🎮"
   image: /assets/images/portfolio/vibe-lander.svg
-  link: https://github.com/balch/VibeLander
+  link: https://github.com/balch/lander
   technologies:
     - Kotlin Multiplatform
     - Compose Multiplatform
