@@ -11,8 +11,8 @@ I like to consider myself a **Just-in-Time (JIT) Domain Expert**.
 To me, it means being able to be productive creating apps that use and expose technologies I don't fully understand the 
 inner workings of, **until I have to**. It's essentially the art of **high-level abstraction** with the ability to 
 focus on the **important next steps**, applying my knowledge of software engineering without getting bogged down 
-in the *minutiae* and instead relying on other domain experts to fill in the gaps. Combined with **attention to detail** and 
-**meticulous testing** I am able to create applications without being a domain expert.  
+in the *minutiae* and instead relying on access to information and other domain experts to fill in the gaps. Combined with **attention to detail** and 
+**meticulous testing** I am able to create applications without being THE domain expert.  
 
 <figure class="fig-right fig-large">
   <img src="https://polestartechnicalservices.com/wp-content/uploads/2020/09/CAFTA-Fault-Tree.png" alt="CAFTA">
