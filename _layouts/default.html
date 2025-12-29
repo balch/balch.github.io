@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
   <meta name="description" content="{{ page.description | default: site.description }}">
+  <meta name="author" content="Jay Balcher">
   
   {% assign default_image = "/assets/images/profile-pic.jpg" | absolute_url %}
   {% if page.image %}
@@ -18,9 +19,10 @@
     {% assign og_image = default_image %}
   {% endif %}
 
-  <!-- Open Graph / Facebook -->
+  <!-- Open Graph / Facebook / LinkedIn -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:site_name" content="{{ site.title }}">
   <meta property="og:title" content="{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}">
   <meta property="og:description" content="{{ page.description | default: site.description }}">
   <meta property="og:image" content="{{ og_image }}">
