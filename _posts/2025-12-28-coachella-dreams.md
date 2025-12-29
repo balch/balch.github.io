@@ -3,6 +3,7 @@ layout: post
 title:  "Dreams of Coachella"
 date:   2025-12-28 22:30:00 -0800
 image: /assets/images/posts/2025-12-28-coachella-dreams/orpheus-main.webp
+description: "I’ve always been a big music fan and enjoy playing instruments (guitar and drums), despite my lack of natural ability and timing. A couple of years ago, I discovered Synth-based Eurorack instruments and ever since have dreamed about performing at a side stage at Coachella."
 ---
 
 I like to consider myself a **Just-in-Time (JIT) Domain Expert**. 
