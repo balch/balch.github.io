@@ -25,7 +25,7 @@ working software that I would not be able to use correctly end-to-end. To my sur
 [still being sold](https://polestartechnicalservices.com/cafta-software/) and **looks exactly the same**.
 
 In the age of AI, this ability has allowed me to start creating apps without fully understanding the underlying 
-languages ([this website]({% post_url 2025-12-14-ty-antigravity %})) or domain knowledge ([Lander project](https://github.com/balch/lander)).
+languages ([this website]({% post_url 2025-12-14-ty-antigravity %})) or domain knowledge ([Lander](https://github.com/balch/lander)).
 
 <figure class="fig-left fig-small">
   <img src="/assets/images/posts/2025-12-28-coachella-dreams/orpheus-main.webp" alt="Main Screen">
