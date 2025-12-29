@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Just-in-Time (JIT) Domain Expert"
+title:  "Dreams of Coachella"
 date:   2025-12-28 22:30:00 -0800
 ---
 
@@ -28,7 +28,7 @@ In the age of AI, this ability has allowed me to start creating apps without ful
 languages ([this website]({% post_url 2025-12-14-ty-antigravity %})) or domain knowledge ([Lander project](https://github.com/balch/lander)).
 
 <figure class="fig-left fig-small">
-  <img src="/assets/images/posts/2025-12-28-jit-expert/orpheus-main.webp" alt="Main Screen">
+  <img src="/assets/images/posts/2025-12-28-coachella-dreams/orpheus-main.webp" alt="Main Screen">
   <figcaption>Synth FM Emulator</figcaption>
 </figure>
 
@@ -42,7 +42,7 @@ My latest project is my third AI music side project. The first is still a WIP an
 The second is [Mood Music](https://github.com/balch/MoodMusic) which features AI generated music using *Lyria RealTime*.
 
 <figure class="fig-right fig-small">
-  <img src="/assets/images/posts/2025-12-28-jit-expert/orpheus-live-code.webp" alt="Live Code">
+  <img src="/assets/images/posts/2025-12-28-coachella-dreams/orpheus-live-code.webp" alt="Live Code">
   <figcaption>Live Code</figcaption>
 </figure>
 
@@ -50,7 +50,7 @@ This project is a **Synth FM Software Emulator** inspired by one of the instrume
 (but was too expensive for my needs and ability).  
 
 <figure class="fig-left fig-small">
-  <img src="/assets/images/posts/2025-12-28-jit-expert/orpheus-mobile.webp" alt="Mobile">
+  <img src="/assets/images/posts/2025-12-28-coachella-dreams/orpheus-mobile.webp" alt="Mobile">
   <figcaption>Mobile Landscape</figcaption>
 </figure>
 
@@ -59,7 +59,7 @@ okay on the other platforms. I'm mainly using it on my laptop for the **CPU** an
 running on my Android phone and have ideas....
 
 <figure class="fig-right fig-small">
-  <img src="/assets/images/posts/2025-12-28-jit-expert/orpheus-chat.webp" alt="AI Chat">
+  <img src="/assets/images/posts/2025-12-28-coachella-dreams/orpheus-chat.webp" alt="AI Chat">
   <figcaption>AI Chat</figcaption>
 </figure>
 
