@@ -11,8 +11,7 @@ layout: default
                 <div class="post-meta-inline">
                     <span class="post-author-inline">Jay Balcher</span>
                     <span class="post-meta-sep">·</span>
-                    <time class="post-date-inline" datetime="{{ page.date | date_to_xmlschema }}"
-                        data-utc="{{ page.date | date_to_xmlschema }}">
+                    <time class="post-date-inline">
                         {{ page.date | date: "%b %-d, %Y" }}
                     </time>
                 </div>
@@ -87,13 +86,6 @@ layout: default
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        // Convert post date to user's local timezone
-        const timeEl = document.querySelector('.post-date-inline[data-utc]');
-        if (timeEl) {
-            const utcDate = new Date(timeEl.dataset.utc);
-            const options = { year: 'numeric', month: 'short', day: 'numeric' };
-            timeEl.textContent = utcDate.toLocaleDateString(undefined, options);
-        }
 
         // Handle mobile fixed header positioning
         const postHeader = document.querySelector('.post-header-sticky');
