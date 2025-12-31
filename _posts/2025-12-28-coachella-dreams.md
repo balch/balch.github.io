@@ -16,17 +16,7 @@ focus on the **important next steps**, applying my knowledge of software enginee
 in the *minutiae* and instead relying on access to information and other domain experts to fill in the gaps. Combined with **attention to detail** and 
 **meticulous testing** I am able to create applications without being THE domain expert.  
 
-<figure class="fig-right fig-large">
-  <img src="https://polestartechnicalservices.com/wp-content/uploads/2020/09/CAFTA-Fault-Tree.png" alt="CAFTA">
-  <figcaption>CAFTA Fault Tree</figcaption>
-</figure>
-
-That started in my first job of building Windows apps for *Fault Tree Analysis* software used to determine the 
-failure probability that **nuclear power plants** would **meltdown**. In this position, I learned how to turn requirements into
-working software that I would not be able to use correctly end-to-end. To my surprise, this software is 
-[still being sold](https://polestartechnicalservices.com/cafta-software/) and **looks exactly the same**.
-
-In the age of AI, this ability has allowed me to start creating apps without fully understanding the underlying 
+In this new age of AI, this ability has allowed me to start creating apps without fully understanding the underlying 
 languages ([this website]({% post_url 2025-12-14-ty-antigravity %})) or domain knowledge ([Lander](https://github.com/balch/lander)).
 
 <figure class="fig-left fig-small">
