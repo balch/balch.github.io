@@ -293,8 +293,9 @@
           }
         });
 
-        // Add click handlers to all images in post content (excluding those in tables)
-        postContent.querySelectorAll('img:not(td img)').forEach(img => {
+        // Add click handlers to all images in post content (including table images)
+        postContent.querySelectorAll('img').forEach(img => {
+          img.style.cursor = 'zoom-in';
           img.addEventListener('click', () => {
             openImageLightbox(img.src, img.alt);
           });

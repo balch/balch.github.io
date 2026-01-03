@@ -44,11 +44,11 @@ Features I intend to cover include
 
 | Feature                                                   | Description                                                      | Screenshots |
 |:----------------------------------------------------------|:-----------------------------------------------------------------|:------------|
-| Separation of Concerns<br>Single Responsibility Principle | Architecture to support many dynamic features                    |             |
+| Separation of Concerns<br>Single Responsibility Principle | Architecture to support many dynamic features                    | <img src="/assets/images/posts/2026-01-03-hello_orpheus-fm/architecture_diagram.webp" alt="Architecture Diagram" style="height: 120px; border-radius: 6px;"> |
 | Adaptive UX                                               | App supports different UX for Desktop and Mobile formfactors     | <img src="/assets/images/posts/2026-01-03-hello_orpheus-fm/mobile_portrait.webp" alt="Portrait" style="height: 100px; border-radius: 6px;"><img src="/assets/images/posts/2026-01-03-hello_orpheus-fm/mobile_landscape.webp" alt="Landscape" style="height: 100px; border-radius: 6px;"> |
-| TidalCycles and REPL                                      | Mini-Notation for defining and playing music in code             | <video src="/assets/images/posts/2026-01-03-hello_orpheus-fm/REPL.mp4" autoplay loop muted playsinline style="max-width: 200px; border-radius: 8px;"></video> |
-| Midi integration                                          | MIDI devices for external control with interactive learning mode |             |
 | Frequency Modulation, LFOs, Delays                        | Sound scaping tools                                              | <img src="/assets/images/posts/2026-01-03-hello_orpheus-fm/fm_lfo_delays.webp" alt="FM LFO Delays" style="height: 80px; border-radius: 6px;"> |
-| AI Agent App integration                                  | Using Prompts and Tools for Sound Control                        |             | 
+| TidalCycles and REPL                                      | Mini-Notation for defining and playing music in code             | <video class="video-lightbox-trigger" src="/assets/images/posts/2026-01-03-hello_orpheus-fm/REPL.mp4" autoplay loop muted playsinline style="height: 100px; border-radius: 6px;"></video> |
+| AI Agent App integration                                  | Using Prompts and Tools for Sound Control                        | <video class="video-lightbox-trigger" src="/assets/images/posts/2026-01-03-hello_orpheus-fm/ai_song.mp4" autoplay loop muted playsinline style="height: 100px; border-radius: 6px;"></video> | 
+| Midi integration                                          | MIDI devices for external control with interactive learning mode | <img src="/assets/images/posts/2026-01-03-hello_orpheus-fm/midi_integration.webp" alt="MIDI Integration" style="height: 100px; border-radius: 6px;"> |
 | TBD                                                       |                                                                  |             | 
 
