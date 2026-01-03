@@ -1200,6 +1200,79 @@ header.nav-hidden~main .post-header-sticky {
 .post-content ul,
 .post-content ol {
     overflow: hidden;
+    list-style: disc;
+    padding-left: 1.5rem;
+    margin: 1rem 0;
+}
+
+.post-content ol {
+    list-style: decimal;
+}
+
+.post-content li {
+    margin-bottom: 0.5rem;
+}
+
+/* Tables in post content */
+.post-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    background: var(--bg-card);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.post-content thead {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.15) 0%, rgba(6, 182, 212, 0.15) 100%);
+    border-bottom: 2px solid var(--accent-primary);
+}
+
+.post-content th {
+    padding: 1rem 1.25rem;
+    text-align: left;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-primary);
+}
+
+.post-content td {
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    vertical-align: top;
+}
+
+.post-content tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.post-content tbody tr:hover {
+    background: rgba(139, 92, 246, 0.05);
+}
+
+.post-content tbody tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.post-content tbody tr:nth-child(even):hover {
+    background: rgba(139, 92, 246, 0.08);
+}
+
+/* Make table cells with multiple images display inline */
+.post-content td:last-child {
+    white-space: nowrap;
+}
+
+.post-content td img,
+.post-content td video {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 4px;
 }
 
 /* Image Lightbox Modal */
@@ -3542,8 +3615,8 @@ html {
     position: sticky;
     top: 80px;
     align-self: flex-start;
-    width: 160px;
-    min-width: 160px;
+    width: 220px;
+    min-width: 220px;
     max-height: calc(100vh - 100px);
     overflow-y: auto;
     overflow-x: hidden;
@@ -3564,7 +3637,6 @@ html {
 .sidebar-header {
     margin-bottom: 0.5rem;
     padding-bottom: 0.4rem;
-    border-bottom: 1px solid var(--border-color);
 }
 
 .sidebar-title {
@@ -3677,8 +3749,8 @@ html {
 /* Adjust for larger tablet */
 @media (min-width: 1025px) and (max-width: 1200px) {
     .post-sidebar {
-        width: 150px;
-        min-width: 150px;
+        width: 220px;
+        min-width: 220px;
         padding: 0.875rem 0.5rem 0.875rem 0;
     }
     
