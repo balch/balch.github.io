@@ -1,18 +1,18 @@
 ---
 layout: post
 title:  "Introducing Orphic-FM"
-date:   2026-01-03 21:30:00 -0800
+date:   2026-01-03 12:00:00 -0800
 image: /assets/images/posts/2026-01-03-hello_orpheus-fm/orpheus_avatar.webp
 description: "Meet Orpheus, the AI-powered mascot of Orphic-FM - a Synth FM Software Emulator built with Kotlin/Compose Multiplatform."
 ---
 
-### <img src="/assets/images/posts/2026-01-03-hello_orpheus-fm/orpheus_avatar.webp" alt="Orpheus" style="height: 1.2em; vertical-align: middle; margin-right: 0.3em;"> Meet Orpheus from Orphic-FM!
+### <img src="/assets/images/posts/2026-01-03-hello_orpheus-fm/orpheus_avatar.webp" alt="Orpheus" style="height: 2.0em; vertical-align: middle; margin-right: 0.3em;"> Meet Orpheus from Orphic-FM!
 
-**Orpheus** (from Ancient Greek: Ὀρφεύς) was a **divine musician** from *Greek Mythology* who used his music to charm Hades and Persephone so he could *rescue* his wife, **Eurydice** from the **Underworld**. He was a master of the **Lyre**.
+> **Orpheus** (from Ancient Greek: Ὀρφεύς) was a **divine musician** from *Greek Mythology* who used his music to charm Hades and Persephone so he could *rescue* his wife, **Eurydice** from the **Underworld**. He was a master of the **Lyre**.
 
-**FM** stands for *Frequency Modulation* which describes a technique to enhance sound by creating **rich harmonics** involving changing the pitch of waveforms produced by Oscillators. 
+> **FM** stands for *Frequency Modulation* which describes a technique to enhance sound by creating **rich harmonics** involving changing the pitch of waveforms produced by Oscillators. 
 
-**Orphic-FM** is a software app inspired by the [LYRA-8](https://somasynths.com/lyra-organismic-synthesizer/) *organismic synthesizer* invented by SOMA LABORATORY. This app's official purpose is to provide a platform for musical creativity enhanced by AI integration. In reality, I'm just looking for some interesting sounds and visuals to help me get to sleep faster. 
+**Orphic-FM** is a software app inspired by the [LYRA-8](https://somasynths.com/lyra-organismic-synthesizer/) *organismic synthesizer* invented by SOMA LABORATORY. This app's official purpose is to provide a platform for musical creativity enhanced by AI integration. In reality, I'm just looking for some interesting sounds and visuals to help me relax and meditate. 
 
 The AI integration features a persona named **Orpheus** who has full access to all the sound features in the app. The agent operates by streaming prompts and tool commands in an effort to shape the soundscape in real-time. The AI integration contains:
 
