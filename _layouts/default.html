@@ -218,29 +218,51 @@
         });
       }
 
-      // Image Lightbox for blog posts
+      // Image and Video Lightbox for blog posts
       const postContent = document.querySelector('.post-content');
       if (postContent) {
-        // Create lightbox elements
+        // Create lightbox elements with video support
         const lightbox = document.createElement('div');
         lightbox.className = 'image-lightbox';
-        lightbox.innerHTML = '<span class="lightbox-close">&times;</span><img src="" alt="">';
+        lightbox.innerHTML = `
+          <span class="lightbox-close">&times;</span>
+          <img src="" alt="" class="lightbox-media">
+          <video class="lightbox-media lightbox-video" controls style="display: none;"></video>
+        `;
         document.body.appendChild(lightbox);
 
         const lightboxImg = lightbox.querySelector('img');
+        const lightboxVideo = lightbox.querySelector('video');
         const lightboxClose = lightbox.querySelector('.lightbox-close');
 
         // Track if we pushed a history state for the lightbox
         let lightboxHistoryPushed = false;
 
-        // Open lightbox function
-        const openLightbox = (src, alt) => {
+        // Open lightbox for image
+        const openImageLightbox = (src, alt) => {
           lightboxImg.src = src;
           lightboxImg.alt = alt;
+          lightboxImg.style.display = 'block';
+          lightboxVideo.style.display = 'none';
+          lightboxVideo.pause();
           lightbox.classList.add('active');
           document.body.style.overflow = 'hidden';
 
-          // Push state for back button support (Android)
+          if (!lightboxHistoryPushed) {
+            history.pushState({ lightbox: true }, '');
+            lightboxHistoryPushed = true;
+          }
+        };
+
+        // Open lightbox for video
+        const openVideoLightbox = (src) => {
+          lightboxVideo.src = src;
+          lightboxVideo.style.display = 'block';
+          lightboxImg.style.display = 'none';
+          lightbox.classList.add('active');
+          document.body.style.overflow = 'hidden';
+          lightboxVideo.play();
+
           if (!lightboxHistoryPushed) {
             history.pushState({ lightbox: true }, '');
             lightboxHistoryPushed = true;
@@ -253,8 +275,9 @@
 
           lightbox.classList.remove('active');
           document.body.style.overflow = '';
+          lightboxVideo.pause();
+          lightboxVideo.src = '';
 
-          // If not triggered by popstate, go back to remove our history entry
           if (!fromPopState && lightboxHistoryPushed) {
             lightboxHistoryPushed = false;
             history.back();
@@ -270,23 +293,50 @@
           }
         });
 
-        // Add click handlers to all images in post content
-        postContent.querySelectorAll('img').forEach(img => {
+        // Add click handlers to all images in post content (excluding those in tables)
+        postContent.querySelectorAll('img:not(td img)').forEach(img => {
           img.addEventListener('click', () => {
-            openLightbox(img.src, img.alt);
+            openImageLightbox(img.src, img.alt);
           });
         });
 
-        lightbox.addEventListener('click', () => closeLightbox());
+        // Add click handlers to videos with .video-lightbox-trigger class
+        postContent.querySelectorAll('video.video-lightbox-trigger').forEach(video => {
+          video.addEventListener('click', () => {
+            openVideoLightbox(video.src || video.querySelector('source')?.src);
+          });
+        });
+
+        lightbox.addEventListener('click', (e) => {
+          if (e.target === lightbox) closeLightbox();
+        });
         lightboxClose.addEventListener('click', () => closeLightbox());
 
-        // Prevent closing when clicking the image itself
+        // Prevent closing when clicking the media itself
         lightboxImg.addEventListener('click', (e) => e.stopPropagation());
+        lightboxVideo.addEventListener('click', (e) => e.stopPropagation());
 
         // Close on Escape key
         document.addEventListener('keydown', (e) => {
           if (e.key === 'Escape' && lightbox.classList.contains('active')) {
             closeLightbox();
+          }
+        });
+
+        // Sound toggle for inline videos
+        postContent.querySelectorAll('.video-container').forEach(container => {
+          const video = container.querySelector('video');
+          const soundBtn = container.querySelector('.sound-toggle');
+          
+          if (video && soundBtn) {
+            soundBtn.addEventListener('click', (e) => {
+              e.stopPropagation();
+              video.muted = !video.muted;
+              soundBtn.classList.toggle('unmuted', !video.muted);
+              soundBtn.innerHTML = video.muted 
+                ? '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>'
+                : '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>';
+            });
           }
         });
       }

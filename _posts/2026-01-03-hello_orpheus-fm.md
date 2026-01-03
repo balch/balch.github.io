@@ -3,7 +3,7 @@ layout: post
 title:  "Introducing Orphic-FM"
 date:   2026-01-03 21:30:00 -0800
 image: /assets/images/posts/2026-01-03-hello_orpheus-fm/orpheus_avatar.webp
-description: "Meet Orpheus, the AI-powered mascot of Orpheus FM - a Synth FM Software Emulator built with Kotlin/Compose Multiplatform."
+description: "Meet Orpheus, the AI-powered mascot of Orphic-FM - a Synth FM Software Emulator built with Kotlin/Compose Multiplatform."
 ---
 
 ### <img src="/assets/images/posts/2026-01-03-hello_orpheus-fm/orpheus_avatar.webp" alt="Orpheus" style="height: 1.2em; vertical-align: middle; margin-right: 0.3em;"> Meet Orpheus from Orphic-FM!
@@ -23,6 +23,23 @@ The AI integration features a persona named **Orpheus** who has full access to a
 
 Getting compelling sounds out of the instrument is an art which I intend to explore in a series of posts about soundscaping, feature demonstrations, and technical underpinnings of the app.
 
+#### Quick Demos
+
+<div class="video-grid">
+  <div class="video-container">
+    <video class="video-lightbox-trigger" src="/assets/images/posts/2026-01-03-hello_orpheus-fm/pads.mp4" autoplay loop muted playsinline></video>
+    <button class="sound-toggle" aria-label="Toggle sound">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+    </button>
+  </div>
+  <div class="video-container">
+    <video class="video-lightbox-trigger" src="/assets/images/posts/2026-01-03-hello_orpheus-fm/strings.mp4" autoplay loop muted playsinline></video>
+    <button class="sound-toggle" aria-label="Toggle sound">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+    </button>
+  </div>
+</div>
+
 Features I intend to cover include
 
 | Feature                                                   | Description                                                      | Screenshots |
@@ -32,6 +49,6 @@ Features I intend to cover include
 | TidalCycles and REPL                                      | Mini-Notation for defining and playing music in code             | <video src="/assets/images/posts/2026-01-03-hello_orpheus-fm/REPL.mp4" autoplay loop muted playsinline style="max-width: 200px; border-radius: 8px;"></video> |
 | Midi integration                                          | MIDI devices for external control with interactive learning mode |             |
 | Frequency Modulation, LFOs, Delays                        | Sound scaping tools                                              | <img src="/assets/images/posts/2026-01-03-hello_orpheus-fm/fm_lfo_delays.webp" alt="FM LFO Delays" style="height: 80px; border-radius: 6px;"> |
-| AI Agent App interation                                   | Using Prompts and Tools for Sound Control                        |             | 
+| AI Agent App integration                                  | Using Prompts and Tools for Sound Control                        |             | 
 | TBD                                                       |                                                                  |             | 
 
