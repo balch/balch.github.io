@@ -9,7 +9,7 @@ redirect_from:
   - /2026/01/03/hello_orpheus-fm/
 ---
 
-### <img src="/assets/images/posts/2026-01-03-hello-orpheus-fm/orpheus_avatar.webp" alt="Orpheus" style="height: 2.0em; vertical-align: middle; margin-right: 0.3em;"> Meet Orpheus from Orphic-FM!
+### <img src="/assets/images/posts/2026-01-03-hello-orpheus-fm/orpheus_avatar_small.webp" alt="Orpheus" style="height: 2.0em; vertical-align: middle; margin-right: 0.3em;"> Meet Orpheus from Orphic-FM!
 
 > **Orpheus** (from Ancient Greek: Ὀρφεύς) was a **divine musician** from *Greek Mythology* who used his music to charm Hades and Persephone so he could *rescue* his wife, **Eurydice** from the **Underworld**. He was a master of the **Lyre**.
 
