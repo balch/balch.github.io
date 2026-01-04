@@ -21,8 +21,6 @@ The AI integration features a persona named **Orpheus** who has full access to a
 - **Tidal Mode** – Uses the [TidalCycles](https://tidalcycles.org) programming language to create interactive music the user can "watch" and "change" in real-time
 - **Chat Mode** – User can issue prompts to create and influence sounds
 
-Getting compelling sounds out of the instrument is an art which I intend to explore in a series of posts about soundscaping, feature demonstrations, and technical underpinnings of the app.
-
 #### Quick Demos
 
 <div class="video-grid">
@@ -39,6 +37,8 @@ Getting compelling sounds out of the instrument is an art which I intend to expl
     </button>
   </div>
 </div>
+
+Getting compelling sounds out of the instrument is an art which I intend to explore in a series of posts about soundscaping, feature demonstrations, and technical underpinnings of the app.
 
 Features I intend to cover include
 
