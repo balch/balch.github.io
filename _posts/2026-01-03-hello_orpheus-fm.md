@@ -2,7 +2,7 @@
 layout: post
 title:  "Introducing Orphic-FM"
 date:   2026-01-03 12:00:00 -0800
-image: /assets/images/posts/2026-01-03-hello_orpheus-fm/orpheus_avatar.webp
+image: /assets/images/posts/2026-01-03-hello_orpheus-fm/social_card.png
 description: "Meet Orpheus, the AI-powered persona of Orphic-FM - a Synth FM Software Emulator built with Kotlin/Compose Multiplatform."
 ---
 
