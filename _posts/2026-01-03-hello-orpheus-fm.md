@@ -20,7 +20,7 @@ redirect_from:
 The AI integration features a persona named **Orpheus** who has full access to all the sound features in the app. The agent operates by streaming prompts and tool commands in an effort to shape the soundscape in real-time. The AI integration contains:
 
 - **Drone Mode** – AI creates evolving background drones used to accompany the user sonic creations
-- **Solo Mode** – Sit back and watch the AI generate a complete compilation based on predefined prompts that represent parts of a song
+- **Solo Mode** – Sit back and watch the AI generate a complete composition based on predefined prompts that represent parts of a song
 - **Tidal Mode** – Uses the [TidalCycles](https://tidalcycles.org) programming language to create interactive music the user can "watch" and "change" in real-time
 - **Chat Mode** – User can issue prompts to create and influence sounds
 
