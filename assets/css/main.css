@@ -136,6 +136,8 @@ nav {
     font-size: 0.95rem;
     position: relative;
     padding: 0.5rem 0;
+    display: flex;
+    align-items: center;
 }
 
 .nav-links a::after {
@@ -155,6 +157,15 @@ nav {
 
 .nav-links a:hover::after {
     width: 100%;
+}
+
+.nav-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    vertical-align: middle;
+    margin-right: 8px;
+    border: 1px solid var(--border-color);
 }
 
 /* Mobile Navigation Toggle - Hidden on Desktop */
@@ -2128,9 +2139,9 @@ html {
     }
 
     .nav-links.open {
-        max-height: 400px;
+        max-height: 450px;
         opacity: 1;
-        padding: 1rem 2rem 1.5rem;
+        padding: 0.5rem 2rem 1.5rem;
     }
 
     /* Staggered item animations */
@@ -2177,8 +2188,9 @@ html {
 
     .nav-links a {
         font-size: 1.1rem;
-        padding: 0.85rem 0;
-        display: block;
+        padding: 0.65rem 0;
+        display: flex;
+        align-items: center;
         color: var(--text-secondary);
     }
 
@@ -2199,7 +2211,7 @@ html {
     .nav-expand-btn {
         width: 100%;
         text-align: left;
-        padding: 0.85rem 0;
+        padding: 0.65rem 0;
         font-size: 1.1rem;
         justify-content: flex-start;
     }

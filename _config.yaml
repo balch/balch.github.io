@@ -11,9 +11,12 @@ navigation:
     url: /#portfolio
   - title: Career
     url: /#career
-  - title: Balch Bytes
+  - title: Posts
     expandable: true
     children: posts
+  - title: Orphic.fm
+    url: https://orphic.fm
+    image: /assets/images/posts/2026-01-03-hello-orpheus-fm/orpheus_avatar_small.webp
 social:
   github: balch
   linkedin: balch
