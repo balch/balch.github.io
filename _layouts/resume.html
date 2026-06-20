@@ -121,7 +121,7 @@ layout: default
                         {% for project in site.data.employment.projects %}
                         <div class="project">
                             <h4>{% if project.emoji %}{{ project.emoji }} {% endif %}{{ project.name }}</h4>
-                            <p class="project-link"><a href="https://{{ project.link }}">{{ project.link }}</a></p>
+                            <p class="project-link"><a href="https://{{ project.link }}">{% if project.link_label %}{{ project.link_label }}{% else %}{{ project.link }}{% endif %}</a></p>
                             <div class="tech-tags">
                                 {% for tech in project.technologies %}
                                 <span class="tech-tag">{{ tech }}</span>
