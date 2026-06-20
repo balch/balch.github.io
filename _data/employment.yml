@@ -219,6 +219,15 @@ skills:
       - "Dagger/Hilt"
 
 projects:
+  - name: "Orphic DJ"
+    description: "A standalone generative music app spun out of the Orphic-FM Application Feature Set, reusing its shared generative engine, C++ DSP graph, and feature modules. Kotlin Multiplatform across Android and desktop."
+    technologies:
+      - "Kotlin Multiplatform"
+      - "Compose"
+      - "C++ DSP"
+      - "Generative Audio"
+    link: "play.google.com/store/apps/details?id=org.balch.djapp"
+    link_label: "Latest Play Store Release"
   - name: "Recipes Reference App"
     description: "An Android reference app demonstrating modern tech stack principles by merging Meal and Code Recipes, where the UX itself showcases the coding techniques it describes."
     technologies:

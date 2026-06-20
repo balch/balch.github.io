@@ -1,3 +1,34 @@
+- title: Orphic DJ
+  image: /assets/images/portfolio/orphic-dj/by-the-numbers.webp
+  link: https://play.google.com/store/apps/details?id=org.balch.djapp
+  featured: true
+  technologies:
+    - Kotlin Multiplatform
+    - Compose Multiplatform
+    - C++ DSP
+    - Generative Audio
+    - Android / Desktop
+  scroll_sections:
+    - title: "An Interactive Album"
+      image: /assets/images/portfolio/orphic-dj/by-the-numbers.webp
+      content: |
+        Orphic DJ is an interactive album of original generative music you shape to your taste, playing live on your device, endlessly. Press play and no two listens are ever the same. No streaming, no library, no playlists.
+
+        Inside you get **11 vibes, 11 visualizations, 8 generative tracks, 2 turntables, and infinite music** that never repeats.
+    - title: "Four Knobs Shape Everything"
+      image: /assets/images/portfolio/orphic-dj/four-knobs.webp
+      content: |
+        Four knobs capture the essence of any track. **Energy** moves from calm ambient drift to a driving beat. **Complexity** goes sparse to layered. **Mood** runs bright to dark. **Space** opens from intimate to vast.
+    - title: "Two Turntables"
+      image: /assets/images/portfolio/orphic-dj/two-turntables.webp
+      content: |
+        Open the DJ module and jam. Two decks and a crossfader set the stage, then you embellish the mix live. Trigger drop effects on the fly, push the delay into runaway feedback loops, and scratch across the beat. Filters, stutters, freezes, brakes, and ring mod are all a tap away.
+    - title: "Built on the Orphic-FM Feature Set"
+      image: /assets/images/portfolio/orphic-dj/widget.webp
+      content: |
+        Orphic DJ is not a one-off. It is assembled from the same reusable feature set that powers Orphic-FM: a shared generative engine, a C++ DSP graph, and a catalog of self-contained feature modules. It's designed so an instrument can be lifted out and shipped on its own, and Orphic DJ is the first to make that leap. The same engine runs across Android and desktop, stays completely offline with no account or ads, and keeps a home-screen widget a glance away.
+
+        Available free on [Google Play](https://play.google.com/store/apps/details?id=org.balch.djapp). Source on [GitHub](https://github.com/balch/orphic-fm-app).
 - title: Recipes Reference App
   image: /assets/images/portfolio/recipes-app.svg
   link: https://github.com/balch/Recipes
