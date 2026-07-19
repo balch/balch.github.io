@@ -51,4 +51,4 @@ It landed on `main` as [`78863406`](https://github.com/balch/orphic-fm-app/commi
 
 Both v1.8.0 and v1.8.1 didn't just get built by AI. They got shipped by AI too: tagging, building the AAB and APK, and publishing the GitHub release all ran through the normal release process, Since I was out of quata, I fired up **Antigravity** and used _Gemini-3.5-Flash (high)_ to push the releases and publish to the PlayStore.
 
-There's more on how the Void Anomaly sounds and where it sits in the mix on the [orphic-fm devlog](https://orphic.fm/devlog/void/). The whole app, DSP engine included, is open source at [github.com/balch/orphic-fm-app](https://github.com/balch/orphic-fm-app).
+There's more on how the Void Anomaly sounds and where it sits in the mix on the [orphic-fm devlog](https://orphic.fm/devlog/#lost-in-space). The whole app, DSP engine included, is open source at [github.com/balch/orphic-fm-app](https://github.com/balch/orphic-fm-app).
