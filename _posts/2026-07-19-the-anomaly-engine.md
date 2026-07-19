@@ -39,7 +39,7 @@ It landed on `main` as [`78863406`](https://github.com/balch/orphic-fm-app/commi
 ### By the Numbers
 
 | Metric | Night 1 | Night 2 |
-|:---|:---|:---|
+|:---|:---:|:---:|
 | Dates | Fri Jul 17, 8:12 PM to Sat Jul 18, 1:05 PM PDT (about 17 hours) | Sat Jul 18, 9:20 PM to Sun Jul 19, 2:33 AM PDT (about 5 hours 13 minutes) |
 | Models | `claude-fable-5` + `claude-opus-4-8` | `claude-opus-4-8` |
 | Total turns | 583 | 303 |
