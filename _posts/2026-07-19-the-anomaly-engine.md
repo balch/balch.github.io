@@ -2,7 +2,7 @@
 layout: post
 title:  "The Anomaly Engine"
 date:   2026-07-19 09:00:00 -0700
-image: /assets/images/posts/2026-07-19-the-anomaly-engine/hero.jpg
+image: /assets/images/posts/2026-07-19-the-anomaly-engine/vibe-info-all-melodic.png
 description: "A drum-solo bug that silenced a whole track got fixed properly, then rebuilt on purpose as a tunable effect, and then seven more followed. Built almost entirely by AI across two overnight sessions."
 ---
 
