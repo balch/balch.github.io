@@ -1295,7 +1295,8 @@ header.nav-hidden~main .post-header-sticky {
 }
 
 /* Make table cells with multiple images display inline */
-.post-content td:last-child {
+.post-content td:has(img),
+.post-content td:has(video) {
     white-space: nowrap;
 }
 
@@ -1330,7 +1331,8 @@ header.nav-hidden~main .post-header-sticky {
         min-width: 100px;
     }
     
-    .post-content td:last-child {
+    .post-content td:has(img),
+    .post-content td:has(video) {
         white-space: nowrap;
     }
     

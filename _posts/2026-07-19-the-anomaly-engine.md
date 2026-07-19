@@ -26,7 +26,7 @@ The fix is small and specific: `render_drum_lead` now exempts the lead member's 
 
 With the bug understood and fixed, the same overnight session kept going and built the Void Anomaly: a tunable duck where volume ramps down, settles on a near-silent floor (with an optional ghost flicker instead of dead silence), then ramps back up. It got wired into the Vibe system at a rare probability, and a manual trigger was added too, so an anomaly can be summoned on demand instead of waiting on the odds. The `Anomaly` schema itself was sealed, giving the next session a solid shape to build on.
 
-<video class="video-lightbox-trigger" src="https://orphic-fm-video.orphic-fm.workers.dev/anomalies-assets/LostInSpace.mp4" autoplay loop muted playsinline style="max-width: 360px; border-radius: 8px;"></video>
+<video class="video-lightbox-trigger" src="https://github.com/balch/balch.github.io/releases/download/anomalies-assets/void-anomaly.mp4" autoplay loop muted playsinline style="max-width: 360px; border-radius: 8px;"></video>
 
 It landed on `main` as [`e3ed37a3`](https://github.com/balch/orphic-fm-app/commit/e3ed37a39f2bab980f10a9cb376c9b5850544cb6), tagged **v1.8.0**, "Lost in Space, Fire Sky, and Anomalies."
 
@@ -38,7 +38,7 @@ It landed on `main` as [`78863406`](https://github.com/balch/orphic-fm-app/commi
 
 ### By the Numbers
 
-|  | Night 1 | Night 2 |
+| Metric | Night 1 | Night 2 |
 |:---|:---|:---|
 | Dates | Fri Jul 17, 8:12 PM to Sat Jul 18, 1:05 PM PDT (about 17 hours) | Sat Jul 18, 9:20 PM to Sun Jul 19, 2:33 AM PDT (about 5 hours 13 minutes) |
 | Models | `claude-fable-5` + `claude-opus-4-8` | `claude-opus-4-8` |
