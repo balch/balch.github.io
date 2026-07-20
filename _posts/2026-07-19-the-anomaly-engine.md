@@ -6,7 +6,7 @@ image: /assets/images/posts/2026-07-19-the-anomaly-engine/vibe-info-all-melodic.
 description: "A drum-solo bug that silenced a whole track got fixed properly, then rebuilt on purpose as a tunable effect, and then seven more followed. Built almost entirely by AI across two overnight sessions."
 ---
 
-"Anomaly" is my term for odd, interesting issues that shows up in apps from time to time. The kind that might turn into a real bug, might be a one-off service hiccup, might never see again. This time I knew it was a real bug, but I liked it and started prompting Fabel with
+"Anomaly" is my term for odd, interesting issues that shows up in apps from time to time. The kind that might turn into a real bug, might be a one-off service hiccup, might never see again. This time I knew it was a real bug, but I liked it and started prompting Fable with
 >"I've run into a weird issue twice, where in Lost in Space the music cuts out mid section... The thing is, its brilliant if we tweak it a bit, we need the sound to ramp down and ramp back up..."
 
 With only a couple of days left of Fable 5 access, I wanted to see what it could do over a couple of nights while I slept. AnomalyEngine is the result! I captured that sequence, made it tunable, and added it to the Vibes with a rare probability. I knew I needed to be able to activate the anomaly on demand, so I added that too.
