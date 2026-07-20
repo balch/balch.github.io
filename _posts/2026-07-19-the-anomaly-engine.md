@@ -26,7 +26,7 @@ The fix is small and specific: `render_drum_lead` now exempts the lead member's 
 
 With the bug understood and fixed, I kept the session going and had it build the Void Anomaly: a tunable duck where volume ramps down, settles on a near-silent floor (with an optional ghost flicker instead of dead silence), then ramps back up. I wired it into the Vibe system at a rare probability, added a manual trigger. Before I called it a night, I sealed the Anomaly schema. That was the deliberate part: get the shape right while the scope is still one effect, so night two is filling in a contract instead of negotiating one.
 
-<video class="video-lightbox-trigger" src="https://github.com/balch/balch.github.io/releases/download/anomalies-assets/void-anomaly.mp4" autoplay loop muted playsinline style="max-width: 360px; border-radius: 8px;"></video>
+<video class="video-lightbox-trigger" src="https://orphic-fm-video.orphic-fm.workers.dev/anomalies-assets/LostInSpace.mp4" autoplay loop muted playsinline style="max-width: 360px; border-radius: 8px;"></video>
 
 It landed on `main` as [`e3ed37a3`](https://github.com/balch/orphic-fm-app/commit/e3ed37a39f2bab980f10a9cb376c9b5850544cb6), tagged **v1.8.0**, "Lost in Space, Fire Sky, and Anomalies."
 
